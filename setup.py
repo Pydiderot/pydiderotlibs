@@ -3,29 +3,34 @@
 from setuptools import setup, find_packages
 #import pydiderotlib
 
+
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
 setup(
-    name='pydiderotlib',
+    name='pydiderotlibs',
     version='0.0.1',
     packages=find_packages(),
-    packages_dir = {'' : 'pydiderotlib'},
+    packages_dir = {'' : 'pydiderotlibs'},
     author='Professeurs de Mathématiques du lycée Denis Diderot (Marseille)',
     description="Librairies utilisées dans l'enseignement de l'informatique",
-    url='',
-    download_url='https://github.com/cspaier/',
+    url='https://github.com/cspaier/pydiderotlibs',
     license='MIT',
     keywords = ["python", "teaching"],
-        classifiers=[
+    classifiers=[
         "Programming Language :: Python :: 3",
         "Development Status :: 1 - Planning",
-        "License :: OSI Approved :: MIT",
+        "License :: OSI Approved :: MIT License",
         "Natural Language :: French",
         "Operating System :: OS Independent",
-        "Topic :: Teaching",
+        "Topic :: Education",
     ],
     install_requires=[
           'pygame',
       ],
-    long_description=open('README.md').read(),
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     # Active la prise en compte du fichier MANIFEST.in
     include_package_data=True,
     )

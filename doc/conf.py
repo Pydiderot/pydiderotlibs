@@ -16,8 +16,7 @@ import os
 import sys
 import zipfile
 
-sys.path.append(os.path.join(os.path.dirname(__name__), '..', 'Thonny', 'Lib'))
-sys.path.append(os.path.join(os.path.dirname(__name__), '..', 'Thonny', 'Lib', 'site-packages'))
+sys.path.append(os.path.join(os.path.dirname(__name__), '..', 'pydiderotlibs'))
 
 # -- Project information -----------------------------------------------------
 
