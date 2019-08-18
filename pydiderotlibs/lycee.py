@@ -22,12 +22,12 @@ from lycee import *
 
 import math
 
-from .arithmetique import *
-from .trigo import *
-from .stats_proba import *
-from .fonctions_usuelles import *
-from .vecteurs import *
-from .chaines import *
-from .listes import *
+from arithmetique import *
+from trigo import *
+from stats_proba import *
+from fonctions_usuelles import *
+from vecteurs import *
+from chaines import *
+from listes import *
 
 pi = math.pi

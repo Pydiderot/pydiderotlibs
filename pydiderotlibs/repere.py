@@ -6,7 +6,7 @@ On peut l'utiliser librement sous licence MIT
 
 from tkinter import *
 from math import floor
-from .couleurs import rgb, rgb2hex
+from couleurs import rgb, rgb2hex
 global fenetre
 
 class _Fenetre_graphique(Canvas):

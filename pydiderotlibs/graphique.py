@@ -7,7 +7,7 @@ import sys
 import math
 
 from time import sleep #pour rendre transparent côté élève l'utilisation de "sleep"
-from .couleurs import rgb
+from couleurs import rgb
 
 
 def creer_fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
