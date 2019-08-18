@@ -1,5 +1,5 @@
 # Repere
-:download:`repere.py </../Thonny/Lib/site-packages/repere.py>`
+:download:`repere.py </../pydiderotlibs/repere.py>`
 ## A propos
 Cette [bibliothèque](https://github.com/cspaier/thonny/blob/diderot/Thonny/Lib/site-packages/repere.py) facilite l'affichage d'une fenêtre munie d'un repère interactif (zoom, déplacement). Des fonctions sont disponibles pour tracer des objets géométriques simples.
 
@@ -44,7 +44,6 @@ On peut agir sur le repère grâce à la souris:
 .. note::
     Il faut désactiver `l'affichage de variables </#affichage-des-variables>`_  dans thonny pour pouvoir utiliser cette librairie.
 
-## Couleurs
 .. mdinclude:: ../couleurs.md
 
 
@@ -53,7 +52,7 @@ On peut agir sur le repère grâce à la souris:
 Le coté non dynamique mentionné plus haut vient de l'utilisation de Tkinter. C'est [techniquement possible](https://stackoverflow.com/questions/459083/how-do-you-run-your-own-code-alongside-tkinters-event-loop) avec la méthode [after](http://effbot.org/tkinterbook/widget.htm#Tkinter.Widget.after-method) mais pas réaliste dans un cadre pédagogique.
 
 La principale modification par rapport à la version de Olivier Brebant est de créer une variable globale `fenetre`.
-Cela simplifie l'utilisation pour les $E = mc^2$ élèves auquel on cache le coté méthodes et attributs de la programmation orientée objet. Concrètement, on passe d'une utilisation:
+Cela simplifie l'utilisation pour les élèves auquel on cache le coté méthodes et attributs de la programmation orientée objet. Concrètement, on passe d'une utilisation:
 
 ```python
 fen = creer_fenetre()

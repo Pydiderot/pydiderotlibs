@@ -1,6 +1,6 @@
-# entree
+# Entree
 ## A propos
-:download:`entree.py </../Thonny/Lib/site-packages/entree.py>`
+:download:`entree.py </../pydiderotlibs/entree.py>`
 
 Cette librairie fournie des fonctions d'entrées utilisateur affichant une fenêtre avec un champ de saisie texte. Le code est disponible [ici](https://github.com/cspaier/thonny/blob/diderot/Thonny/Lib/site-packages/entree.py).
 

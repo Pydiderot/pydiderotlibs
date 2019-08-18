@@ -2,13 +2,13 @@
 
 ## A propos
 
-:download:`graphique.py </../Thonny/Lib/site-packages/graphique.py>`
+:download:`graphique.py </../pydiderotlibs/graphique.py>`
 
 Cette librairie permet l'affichage d'une fenêtre graphique dynamique et fournie des fonctions permettant d'y afficher des objets géométriques simples (point, cercle, segment, vecteur, rectangle).
 
-Basée sur pygame, vous pouvez également récupérer les événements clavier ou souris pour interagir avec l'utilisateur.
+Basée sur [pygame](https://www.pygame.org/wiki/about), vous pouvez également récupérer les événements clavier ou souris pour interagir avec l'utilisateur.
 
-Vous pouvez, par exemple, l'utiliser pour construire un jeux de type pong.
+Vous pouvez, par exemple, l'utiliser pour construire un jeux de type [pong](https://fr.wikipedia.org/wiki/Pong).
 
 
 ## Utilisation
@@ -98,7 +98,6 @@ while 1:
 ```
 
 .. _couleur:
-## Couleurs
 .. mdinclude:: ../couleurs.md
 
 ## Documentation

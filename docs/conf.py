@@ -20,7 +20,7 @@ sys.path.append(os.path.join(os.path.dirname(__name__), '..', 'pydiderotlibs'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Environnement python du lycée Diderot (13)'
+project = 'Librairies python du lycée Diderot (Marseille)'
 
 author = ''
 
@@ -220,7 +220,7 @@ fichiers = list(map(lambda x: x + ".py", fichiers))
 # On stocke le chemin du dossier courant
 chemin_courant = os.path.dirname(os.path.realpath(__file__))
 # chemin relatif contenant les fichiers à zipper
-chemin = os.path.join(os.path.dirname(__name__), '..', '..', '..', 'Thonny', 'Lib', 'site-packages')
+chemin = os.path.join(os.path.dirname(__name__), '..', '..', '..', 'pydiderotlibs')
 # On se place dans le dossier des fichiers statiques
 os.chdir(html_static_path[0])
 
