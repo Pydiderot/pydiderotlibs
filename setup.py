@@ -1,12 +1,19 @@
 # -*- coding: utf-8 -*-
 
 from setuptools import setup, find_packages
+import os.path
 #import pydiderotlib
 
 
+setupdir = os.path.dirname(__file__)
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
+
+requirements = []
+for line in open(os.path.join(setupdir, 'requirements.txt'), encoding="UTF-8"):
+    if line.strip() and not line.startswith('#'):
+        requirements.append(line)
 
 setup(
     name='pydiderotlibs',
@@ -26,9 +33,7 @@ setup(
         "Operating System :: OS Independent",
         "Topic :: Education",
     ],
-    install_requires=[
-          'pygame',
-      ],
+    install_requires=requirements,
     long_description=long_description,
     long_description_content_type="text/markdown",
     # Active la prise en compte du fichier MANIFEST.in
