@@ -20,6 +20,7 @@ Pour l'utiliser, il suffit d'ajouter en début de programme
 from lycee import *
 """
 
+
 import math
 
 from arithmetique import *
