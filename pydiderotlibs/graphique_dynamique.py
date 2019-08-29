@@ -11,6 +11,9 @@ from couleurs import rgb
 
 
 def creer_fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
+    '''
+    alias de fenetre()
+    '''
     fenetre(largeur, hauteur, titre)
 
 def fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
@@ -34,6 +37,9 @@ def fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
 
 
 def ecoute_evenements():
+    '''
+    alias de demande_evenements()
+    '''
     demande_evenements()
     
 def demande_evenements():
@@ -89,10 +95,13 @@ def demande_evenements():
     return evenements
 
 
-def trace_cercle(x, y, rayon=5, epaisseur=0, couleur='bleu'):
-    cercle(x, y, rayon, epaisseur, couleur)
+def trace_cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
+    '''
+    alias de cercle()
+    '''
+    cercle(x, y, couleur , rayon, epaisseur)
 
-def cercle(x, y, rayon=5, epaisseur=0, couleur='bleu'):
+def cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
     """
     Trace un cercle dans la fenetre graphique.
 
@@ -109,6 +118,9 @@ def cercle(x, y, rayon=5, epaisseur=0, couleur='bleu'):
 
 
 def trace_point(x, y, couleur='bleu'):
+    '''
+    alias de point()
+    '''
     point(x, y, couleur)
 
 def point(x, y, couleur='bleu'):
@@ -126,9 +138,12 @@ def point(x, y, couleur='bleu'):
 
 
 def trace_rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
-    rectangle(x, y, largeur, hauteur, couleur, epaisseur)
+    '''
+    alias de rectangle()
+    '''
+    rectangle(x, y, largeur, hauteur,couleur, epaisseur)
 
-def rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
+def rectangle(x, y, largeur, hauteur, couleur='bleu' epaisseur=1):
     """
     Trace un rectangle horizontal dans la fenetre graphique .
 
@@ -150,6 +165,9 @@ def rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
 
 
 def trace_segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
+    '''
+    alias de segment()
+    '''
     segment(x1, y1, x2, y2, couleur, epaisseur)
 
 def segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
@@ -170,6 +188,9 @@ def segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
 
 
 def trace_vecteur(x, y, v, couleur='rouge', epaisseur=2):
+    '''
+    alias de vecteur()
+    '''
     vecteur(x, y, v, couleur, epaisseur)
 
 def vecteur(x, y, v, couleur='rouge', epaisseur=2):
@@ -205,6 +226,9 @@ def vecteur(x, y, v, couleur='rouge', epaisseur=2):
     pygame.display.update()
 
 def trace_image(x, y, nom, largeur=50, hauteur=50):
+    '''
+    alias de image()
+    '''
     image(x, y, nom, largeur, hauteur)
 
 def image(x, y, nom, largeur=50, hauteur=50):
@@ -214,6 +238,7 @@ def image(x, y, nom, largeur=50, hauteur=50):
     Arguments:
         x (int): Abscisse du centre de l'image
         y (int): Ordonnée du centre de l'image
+        nom (str) : nom du fichier image (qui doit être dans le répertoire du script)
         largeur (int, optionel): Largeur de l'image (50 par défaut)
         hauteur (int, optionel): Hauteur de l'image (50 par défaut)
     """
@@ -221,18 +246,27 @@ def image(x, y, nom, largeur=50, hauteur=50):
     fenetre.blit(image, (int(x-largeur/2),int(y-hauteur/2)))
     pygame.display.update()
 
-def trace_explosion(x,y,r=10,couleur='vert',c=0.5,n=10):
-    explosion(x,y,r,couleur,c,n)
+def trace_explosion(x,y,couleur='orange',r=10,c=0.5,n=10):
+    '''
+    alias de explosion()
+    '''
+    explosion(x,y,couleur,r,c,n)
 
-def explosion(x,y,r=10,couleur='vert',c=0.5,n=10):
+def explosion(x,y,couleur='orange',r=10,c=0.5,n=10):
     '''
     trace un polygône régulier étoilé à 2n côté,
-    coloré dans la couleur indiquée,
-    centré en (x,y) (x et y sont des entiers),
     de rayon extérieur r,
     et tel que le rayon intérieur est égal à c*r
     (pour c=0, le polygône est réduit à n rayons du cencle de rayon r
     pour c=1, c'est un polygône régulier à 2n côtés)
+    
+    Arguments:
+        x (int): Abscisse du centre de l'explosion
+        y (int): Ordonnée du centre de l'explosion
+        couleur (:ref:`couleur <couleur>`, optionel): Couleur (``orange`` par défaut)
+        r (int): Rayon extérieur
+        c (float):Coefficient pour obtenir le rayon intérieur égal à c*r
+        n (int): Nombre de sommets
     '''
     couleur = rgb(couleur)
     pointlist=[]
@@ -245,6 +279,9 @@ def explosion(x,y,r=10,couleur='vert',c=0.5,n=10):
     pygame.display.update()
 
 def trace_axes(color='noir'):
+    '''
+    alias de axes()
+    '''
     axes(color)
 
 def axes(color='noir'):

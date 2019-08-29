@@ -275,6 +275,9 @@ class _Fenetre_graphique(Canvas):
 ################################## Fin de la classe _Fenetre_graphique ##############
 
 def trace_point(x,y, couleur='noir', taille=1, forme='rond'):
+    '''
+    alias de point()
+    '''
     point(x,y, couleur, taille, forme)
 
 def point(x,y, couleur='noir', taille=1, forme='rond'):
@@ -314,9 +317,12 @@ def point(x,y, couleur='noir', taille=1, forme='rond'):
     fenetre.objets.append(tab)
 
 def trace_texte(x, y, texte, couleur='noir'):
+    '''
+    alias de texte()
+    '''
     texte(x,y,texte,couleur)
     
-def texte(x, y, texte, couleur='noir'):
+def texte(x, y,texte, couleur='noir'):
     """Trace un texte dans la fenêtre graphique au coordonées ``x, y``.
 
     Arguments:
@@ -339,6 +345,9 @@ def texte(x, y, texte, couleur='noir'):
     fenetre.objets.append(tab)
 
 def trace_segment(x1, y1, x2, y2, couleur='noir', taille=2):
+    '''
+    alias de segment()
+    '''
     segment(x1, y1, x2, y2, couleur, taille)
 
 def segment(x1, y1, x2, y2, couleur='noir', taille=2):
@@ -365,6 +374,9 @@ def segment(x1, y1, x2, y2, couleur='noir', taille=2):
     fenetre.objets.append(tab)
 
 def trace_rectangle(x1, y1, x2, y2, couleur='noir', taille=2, remplissage='jaune'):
+    '''
+    alias de rectangle()
+    '''
     rectangle(x1, y1, x2, y2, couleur, taille, remplissage)
 
 def rectangle(x1, y1, x2, y2, couleur='noir', taille=2, remplissage='jaune'):
@@ -403,10 +415,13 @@ def affiche_fenetre():
     fenetre.loop
 
 ### Fonction principale pour demarrer ####
-def creer_fenetre(titre = "Repère mathematique", xmin=-10, xmax=10, ymin=-10, ymax=10, fond = 'blanc', axes = True):
-    fenetre(titre, xmin, xmax, ymin, ymax, fond, axes)
+def creer_fenetre(xmin=-10, xmax=10, ymin=-10, ymax=10, fond = 'blanc',titre = "Repère mathematique", axes = True):
+    '''
+    alias de fenetre()
+    '''
+    fenetre(xmin, xmax, ymin, ymax, fond,titre, axes)
 
-def fenetre(titre = "Repère mathematique", xmin=-10, xmax=10, ymin=-10, ymax=10, fond = 'blanc', axes = True):
+def fenetre(xmin=-10, xmax=10, ymin=-10, ymax=10, fond = 'blanc',titre = "Repère mathematique", axes = True):
     """Initialise l'object fenetre graphique sans l'afficher.
 
     Arguments:
