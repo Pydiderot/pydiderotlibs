@@ -373,17 +373,18 @@ def segment(x1, y1, x2, y2, couleur='noir', taille=2):
     tab[7] = taille
     fenetre.objets.append(tab)
 
-def trace_rectangle(x1, y1, x2, y2, couleur='noir', taille=2, remplissage='jaune'):
+def trace_rectangle(x1, y1, largeur, hauteur, couleur='noir', taille=2, remplissage='jaune'):
     '''
     alias de rectangle()
     '''
-    rectangle(x1, y1, x2, y2, couleur, taille, remplissage)
+    rectangle(x1, y1, largeur, hauteur, couleur, taille, remplissage)
 
-def rectangle(x1, y1, x2, y2, couleur='noir', taille=2, remplissage='jaune'):
-    """Trace un rectangle dont les sommets opposés sont les points de coordonées ``(x1, y1)`` et ``(x2, y2)``.
+def rectangle(x1, y1, largeur, hauteur, couleur='noir', taille=2, remplissage='jaune'):
+    """Trace un rectangle dont le sommet en bas à gauche a pour coordonnées ``(x1, y1)``.
 
     Arguments:
-        x1,y1,x2,y2 (float): Coordonées des sommets du rectangle.
+        x1,y1 (float): Coordonnées du sommet en bas à gauche du rectangle.
+        largeur,hauteur (float): Largeur et hauteur du rectangle
         couleur (`couleur <#couleurs>`_, optionel): Couleur des cotés du rectangle (``noir`` par défaut).
         taille (int, optionel): épaisseur des cotés du rectangle. ( ``2`` par défaut).
         remplissage (str, optionel): Couleur de l'intérieur du rectangle (``yellow`` par default)
@@ -396,13 +397,13 @@ def rectangle(x1, y1, x2, y2, couleur='noir', taille=2, remplissage='jaune'):
     global fenetre
 
     tab = [0]*9
-    tab[0] = fenetre.create_rectangle(fenetre._conv(x1,y1),fenetre._conv(x2,y2),
+    tab[0] = fenetre.create_rectangle(fenetre._conv(x1,y1),fenetre._conv(x1+largeur,y1+hauteur),
                                    outline = couleur, width = taille, fill= remplissage)
     tab[1] = 'rectangle'
     tab[2] = x1
     tab[3] = y1
-    tab[4] = x2
-    tab[5] = y2
+    tab[4] = x1+largeur
+    tab[5] = y1+hauteur
     tab[6] = couleur
     tab[7] = taille
     tab[8] = remplissage
