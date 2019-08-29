@@ -321,7 +321,13 @@ def trace_texte(x, y, texte, couleur='noir'):
     alias de texte()
     '''
     texte(x,y,texte,couleur)
-    
+
+def text(x, y, texte, couleur='noir'):
+    '''
+    alias de texte()
+    '''
+    texte(x,y,texte,couleur)
+
 def texte(x, y,texte, couleur='noir'):
     """Trace un texte dans la fenêtre graphique au coordonées ``x, y``.
 
@@ -417,6 +423,12 @@ def affiche_fenetre():
 
 ### Fonction principale pour demarrer ####
 def creer_fenetre(xmin=-10, xmax=10, ymin=-10, ymax=10, fond = 'blanc',titre = "Repère mathematique", axes = True):
+    '''
+    alias de fenetre()
+    '''
+    fenetre(xmin, xmax, ymin, ymax, fond,titre, axes)
+
+def window(xmin=-10, xmax=10, ymin=-10, ymax=10, fond = 'blanc',titre = "Repère mathematique", axes = True):
     '''
     alias de fenetre()
     '''

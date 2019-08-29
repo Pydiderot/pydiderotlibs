@@ -16,6 +16,12 @@ def creer_fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
     '''
     fenetre(largeur, hauteur, titre)
 
+def window(largeur=200, hauteur=300, titre="Fenetre graphique"):
+    '''
+    alias de fenetre()
+    '''
+    fenetre(largeur, hauteur, titre)
+
 def fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
     """
     Crée et affiche une fenêtre graphique.
@@ -37,6 +43,12 @@ def fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
 
 
 def ecoute_evenements():
+    '''
+    alias de demande_evenements()
+    '''
+    demande_evenements()
+    
+def events():
     '''
     alias de demande_evenements()
     '''
@@ -96,6 +108,12 @@ def demande_evenements():
 
 
 def trace_cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
+    '''
+    alias de cercle()
+    '''
+    cercle(x, y, couleur , rayon, epaisseur)
+
+def circle(x, y, couleur='bleu', rayon=5, epaisseur=0):
     '''
     alias de cercle()
     '''
@@ -188,6 +206,12 @@ def segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
 
 
 def trace_vecteur(x, y, v, couleur='rouge', epaisseur=2):
+    '''
+    alias de vecteur()
+    '''
+    vecteur(x, y, v, couleur, epaisseur)
+
+def vector(x, y, v, couleur='rouge', epaisseur=2):
     '''
     alias de vecteur()
     '''
