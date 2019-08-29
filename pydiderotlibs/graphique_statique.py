@@ -274,9 +274,10 @@ class _Fenetre_graphique(Canvas):
 
 ################################## Fin de la classe _Fenetre_graphique ##############
 
-
-
 def trace_point(x,y, couleur='noir', taille=1, forme='rond'):
+    point(x,y, couleur, taille, forme)
+
+def point(x,y, couleur='noir', taille=1, forme='rond'):
     """Ajoute un point dans la fenetre graphique aux coordonees ``(x, y)``.
 
     Arguments:
@@ -313,6 +314,9 @@ def trace_point(x,y, couleur='noir', taille=1, forme='rond'):
     fenetre.objets.append(tab)
 
 def trace_texte(x, y, texte, couleur='noir'):
+    texte(x,y,texte,couleur)
+    
+def texte(x, y, texte, couleur='noir'):
     """Trace un texte dans la fenêtre graphique au coordonées ``x, y``.
 
     Arguments:
@@ -335,6 +339,9 @@ def trace_texte(x, y, texte, couleur='noir'):
     fenetre.objets.append(tab)
 
 def trace_segment(x1, y1, x2, y2, couleur='noir', taille=2):
+    segment(x1, y1, x2, y2, couleur, taille)
+
+def segment(x1, y1, x2, y2, couleur='noir', taille=2):
     """Trace un segment entre les points de coordonées ``(x1, y1)`` et ``(x2, y2)``.
 
     Arguments:
@@ -358,6 +365,9 @@ def trace_segment(x1, y1, x2, y2, couleur='noir', taille=2):
     fenetre.objets.append(tab)
 
 def trace_rectangle(x1, y1, x2, y2, couleur='noir', taille=2, remplissage='jaune'):
+    rectangle(x1, y1, x2, y2, couleur, taille, remplissage)
+
+def rectangle(x1, y1, x2, y2, couleur='noir', taille=2, remplissage='jaune'):
     """Trace un rectangle dont les sommets opposés sont les points de coordonées ``(x1, y1)`` et ``(x2, y2)``.
 
     Arguments:
@@ -394,6 +404,9 @@ def affiche_fenetre():
 
 ### Fonction principale pour demarrer ####
 def creer_fenetre(titre = "Repère mathematique", xmin=-10, xmax=10, ymin=-10, ymax=10, fond = 'blanc', axes = True):
+    fenetre(titre, xmin, xmax, ymin, ymax, fond, axes)
+
+def fenetre(titre = "Repère mathematique", xmin=-10, xmax=10, ymin=-10, ymax=10, fond = 'blanc', axes = True):
     """Initialise l'object fenetre graphique sans l'afficher.
 
     Arguments:

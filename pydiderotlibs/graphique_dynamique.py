@@ -11,6 +11,9 @@ from couleurs import rgb
 
 
 def creer_fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
+    fenetre(largeur, hauteur, titre)
+
+def fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
     """
     Crée et affiche une fenêtre graphique.
 
@@ -30,21 +33,23 @@ def creer_fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
     pygame.display.update()
 
 
-
+def ecoute_evenements():
+    demande_evenements()
+    
 def demande_evenements():
     """
     Récupère les évenements pygame gère la fermeture de la fenetre et retourne les évenements formatés.
 
-    Renvoie un dictionaire d'évenements formaté comme suit:
+    Renvoie un dictionnaire d'évenements formaté comme suit:
     ``{'touche1': None, 'touche2':None, 'souris': [x,y], 'click': [x,y]}``
 
-    Les valeurs ``None`` pour les touches peuvent surprendre mais il est nécéssaire d'utiliser un dictionaire pour avoir les coordonnées
-    éventuelles de la souris lors d'un click par exemple. Pour les touches clavier, l'importance est la présence de la cléf et la valeur associé est donc ``None``.
+    Les valeurs ``None`` pour les touches peuvent surprendre mais il est nécéssaire d'utiliser un dictionnaire pour avoir les coordonnées
+    éventuelles de la souris lors d'un click par exemple. Pour les touches clavier, l'importance est la présence de la cléf et la valeur associée est donc ``None``.
 
     - Les caractères alphanumériques sont encodés en ascii (``'a'``, ``'n'``, ``';'``) et, si présent, leur valeur est ``None``.
     - les touches spéciales ont les clefs ``'espace'``, ``'haut'``, ``'bas'``, ``'droite'``, ``'gauche'`` et, si présent, leur valeur est ``None``.
-    - Un clic avec le bouton gauche de la souris ajoute une clef ``'clic'``. Sa valeur est une liste ``[x, y]`` des coordonées de la souris.
-    - Un déplacement de la souris ajoute une clef ``'souris'``. Sa valeur est une liste ``[x, y]`` des coordonées de la souris.
+    - Un clic avec le bouton gauche de la souris ajoute une clef ``'clic'``. Sa valeur est une liste ``[x, y]`` des coordonnées de la souris.
+    - Un déplacement de la souris ajoute une clef ``'souris'``. Sa valeur est une liste ``[x, y]`` des coordonnées de la souris.
 
     """
 
@@ -85,6 +90,9 @@ def demande_evenements():
 
 
 def trace_cercle(x, y, rayon=5, epaisseur=0, couleur='bleu'):
+    cercle(x, y, rayon, epaisseur, couleur)
+
+def cercle(x, y, rayon=5, epaisseur=0, couleur='bleu'):
     """
     Trace un cercle dans la fenetre graphique.
 
@@ -101,6 +109,9 @@ def trace_cercle(x, y, rayon=5, epaisseur=0, couleur='bleu'):
 
 
 def trace_point(x, y, couleur='bleu'):
+    point(x, y, couleur)
+
+def point(x, y, couleur='bleu'):
     """
     Trace un point dans la fenetre graphique.
 
@@ -115,6 +126,9 @@ def trace_point(x, y, couleur='bleu'):
 
 
 def trace_rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
+    rectangle(x, y, largeur, hauteur, couleur, epaisseur)
+
+def rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
     """
     Trace un rectangle horizontal dans la fenetre graphique .
 
@@ -136,6 +150,9 @@ def trace_rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
 
 
 def trace_segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
+    segment(x1, y1, x2, y2, couleur, epaisseur)
+
+def segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
     """
     Trace un segment entre les points de coordonées ``(x1, y1)`` et ``(x2, y2)``.
 
@@ -153,6 +170,9 @@ def trace_segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
 
 
 def trace_vecteur(x, y, v, couleur='rouge', epaisseur=2):
+    vecteur(x, y, v, couleur, epaisseur)
+
+def vecteur(x, y, v, couleur='rouge', epaisseur=2):
     """
     Trace la représentation du vecteur ``v`` à partir du point d'origine ``(x, y)``.
 
@@ -185,6 +205,9 @@ def trace_vecteur(x, y, v, couleur='rouge', epaisseur=2):
     pygame.display.update()
 
 def trace_image(x, y, nom, largeur=50, hauteur=50):
+    image(x, y, nom, largeur, hauteur)
+
+def image(x, y, nom, largeur=50, hauteur=50):
     """
     Trace une image dans la fenetre graphique.
 
@@ -197,6 +220,9 @@ def trace_image(x, y, nom, largeur=50, hauteur=50):
     image = pygame.transform.scale(pygame.image.load(nom).convert_alpha(), (largeur, hauteur))
     fenetre.blit(image, (int(x-largeur/2),int(y-hauteur/2)))
     pygame.display.update()
+
+def trace_explosion(x,y,r=10,couleur='vert',c=0.5,n=10):
+    explosion(x,y,r,couleur,c,n)
 
 def explosion(x,y,r=10,couleur='vert',c=0.5,n=10):
     '''
@@ -217,6 +243,9 @@ def explosion(x,y,r=10,couleur='vert',c=0.5,n=10):
     pointlist.append((x+r,y))
     pygame.draw.polygon(fenetre, couleur, pointlist)
     pygame.display.update()
+
+def trace_axes(color='noir'):
+    axes(color)
 
 def axes(color='noir'):
     '''
