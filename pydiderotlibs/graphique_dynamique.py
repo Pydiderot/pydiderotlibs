@@ -47,13 +47,13 @@ def ecoute_evenements():
     alias de demande_evenements()
     '''
     demande_evenements()
-    
+
 def events():
     '''
     alias de demande_evenements()
     '''
     demande_evenements()
-    
+
 def demande_evenements():
     """
     Récupère les évenements pygame gère la fermeture de la fenetre et retourne les évenements formatés.
@@ -161,7 +161,7 @@ def trace_rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
     '''
     rectangle(x, y, largeur, hauteur,couleur, epaisseur)
 
-def rectangle(x, y, largeur, hauteur, couleur='bleu' epaisseur=1):
+def rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
     """
     Trace un rectangle horizontal dans la fenetre graphique .
 
@@ -283,7 +283,7 @@ def explosion(x,y,couleur='orange',r=10,c=0.5,n=10):
     et tel que le rayon intérieur est égal à c*r
     (pour c=0, le polygône est réduit à n rayons du cencle de rayon r
     pour c=1, c'est un polygône régulier à 2n côtés)
-    
+
     Arguments:
         x (int): Abscisse du centre de l'explosion
         y (int): Ordonnée du centre de l'explosion
