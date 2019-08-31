@@ -1,5 +1,7 @@
 # PyDiderotLibs
-Afin de faciliter l'apprentissage de python dans l'enseignement secondaire, les enseignants de mathématiques du lycée Diderot à Marseille construisent quelques librairies qui ont pour objectif de cacher certaines difficultés liées au langage de programmation afin de pouvoir cibler certains points pédagogiques. Vous pouvez télécharger nos librairies zippées [ici](_static/diderot.zip).
+Afin de faciliter l'apprentissage de python dans l'enseignement secondaire, les enseignants de mathématiques du lycée Diderot à Marseille construisent quelques librairies qui ont pour objectif de cacher certaines difficultés liées au langage de programmation afin de pouvoir cibler certains points pédagogiques. 
+
+La documentation est disponible sur [readthedocs](https://pydiderotlibs.readthedocs.io).
 
 - [repere](/graphique/): Permet l'affichage d'un repère du plan interactif (zoom, déplacer).
 - [entree](/entree/): Fonctions d'entrées utilisateur avec des fenêtres tkinter.
