@@ -73,7 +73,7 @@ affiche_fenetre()
 ## Documentation
 
 
-.. automodule:: repere
+.. automodule:: graphique_statique
     :members:
     :member-order: bysource
 
