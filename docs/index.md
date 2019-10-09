@@ -1,14 +1,12 @@
 # Python à Diderot
 ## A propos
-Ce site documente des librairies python utilisées par les enseignants du lycée Diderot à Marseille pour enseigner l'informatique. Il est hebergé sur ce dépot [github](https://github.com/cspaier/pydiderotlibs).
-
-Afin de faciliter l'apprentissage de python dans l'enseignement secondaire, les enseignants du lycée Diderot construisons quelques librairies qui ont pour objectif de cacher certaines difficultés liées au langage de programmation afin de pouvoir cibler certains points pédagogiques.
+Ce site documente des librairies python utilisées par les enseignants du lycée Diderot à Marseille pour enseigner l'informatique. Le code est disponible sur ce dépot [github](https://github.com/cspaier/pydiderotlibs) et hebergé sur [pypi](https://pypi.org/project/pydiderotlibs/).
 
 ## Installation
 Deux méthodes d'installations sont disponibles:
 - Avec pip: `pip install pididerotlibs`
 
-- manuellement: Télécharger nos librairies zippées avec ce lien, décompresser le dossier et le placer à un emplacement de `PYTHONPATH`.
+- manuellement: Télécharger nos librairies zippées avec ce [lien]((_static/diderot.zip), décompresser le dossier et le placer à un emplacement de `PYTHONPATH`.
 
 
 ## Librairies
@@ -21,4 +19,4 @@ Deux méthodes d'installations sont disponibles:
 
 
 ## Participez!
-Ce projet est un travail collaboratif initié par des enseignants du lycée Diderot à Marseille. Nous serions ravis de travailler avec vous et toute aide est la bienvenue. Si vous souhaitez participer, lisez notre [fichier contributing](https://github.com/cspaier/pydiderot/blob/dev/CONTRIBUTING.md).
+Ce projet est un travail collaboratif initié par des enseignants du lycée Diderot à Marseille. Nous serions ravis de travailler avec vous et toute aide est la bienvenue. Si vous souhaitez participer, lisez notre [fichier contributing](https://github.com/cspaier/pydiderotlibs/blob/master/CONTRIBUTING.md).
