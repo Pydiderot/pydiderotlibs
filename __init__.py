@@ -5,7 +5,7 @@
     Ce module contient les librairies utilisées par les enseignents du lycée Denis Diderot pour enseigner python.
 """
 
-__version__ = "0.0.6"
+__version__ = "0.0.7"
 
 #from .lycee import *
 #from .graphique import *
