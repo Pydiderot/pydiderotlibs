@@ -6,7 +6,7 @@ Ce site documente des librairies python utilisées par les enseignants du lycée
 Deux méthodes d'installations sont disponibles:
 - Avec pip: `pip install pididerotlibs`
 
-- manuellement: Télécharger nos librairies zippées avec ce [lien](_static/diderot.zip), décompresser le dossier et le placer à un emplacement de `PYTHONPATH`.
+- manuellement: Télécharger nos librairies zippées avec ce [lien](_static/pydiderotlibs.zip), décompresser le dossier et le placer à un emplacement de `PYTHONPATH`.
 
 
 ## Librairies

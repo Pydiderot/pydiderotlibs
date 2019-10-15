@@ -213,6 +213,8 @@ fichiers = [
     'chaines',
     'fonctions_usuelles',
     'couleurs',
+    'graphique_statique',
+    'graphique_dynamique',
 ]
 # On ajoute ".py" à la fin des fichiers
 fichiers = list(map(lambda x: x + ".py", fichiers))
@@ -225,11 +227,11 @@ chemin = os.path.join(os.path.dirname(__name__), '..', '..', '..', 'pydiderotlib
 os.chdir(html_static_path[0])
 
 # On test si le zip et présent et on le supprime éventuellement
-if os.path.isfile('diderot.zip'):
-    os.remove('diderot.zip')
+if os.path.isfile('pydiderotlibs.zip'):
+    os.remove('pydiderotlibs.zip')
 
 # On créé le zip
-zip = zipfile.ZipFile('diderot.zip', 'a')
+zip = zipfile.ZipFile('pydiderotlibs.zip', 'a')
 # On ajoute les fichiers
 for fichier in fichiers:
     zip.write(os.path.join(chemin, fichier), arcname=fichier)
