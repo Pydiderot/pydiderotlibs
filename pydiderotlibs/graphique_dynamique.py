@@ -25,6 +25,8 @@ def window(largeur=200, hauteur=300, titre="Fenetre graphique"):
 def fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
     """
     Crée et affiche une fenêtre graphique.
+    
+    Alias disponibles: `windows()`, `creer_fenetre()`
 
     Arguments:
         largeur (int, optionel): Largeur de la fenetre en pixels (``200`` par défaut)
@@ -57,6 +59,8 @@ def events():
 def demande_evenements():
     """
     Récupère les évenements pygame gère la fermeture de la fenetre et retourne les évenements formatés.
+    
+    Alias disponibles: `events`, `ecoute_evenements`
 
     Renvoie un dictionnaire d'évenements formaté comme suit:
     ``{'touche1': None, 'touche2':None, 'souris': [x,y], 'click': [x,y]}``
@@ -122,6 +126,8 @@ def circle(x, y, couleur='bleu', rayon=5, epaisseur=0):
 def cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
     """
     Trace un cercle dans la fenetre graphique.
+    
+    Alias disponibles: `circle`, `trace_cercle`
 
     Arguments:
         x (int): Abscisse du centre du cercle
@@ -144,6 +150,8 @@ def trace_point(x, y, couleur='bleu'):
 def point(x, y, couleur='bleu'):
     """
     Trace un point dans la fenetre graphique.
+    
+    Alias disponible: `trace_point()`
 
     Arguments:
         x (int): Abscisse du point
@@ -164,6 +172,8 @@ def trace_rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
 def rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
     """
     Trace un rectangle horizontal dans la fenetre graphique .
+    
+    Alias disponible: `trace_rectangle`
 
     Le sommet haut-gauche à pour coordonées ``(x,y)``, la ``largeur`` est la taille en abscisse
     et la ``hauteur`` la taille en ordonnée.
@@ -191,6 +201,8 @@ def trace_segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
 def segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
     """
     Trace un segment entre les points de coordonées ``(x1, y1)`` et ``(x2, y2)``.
+    
+    `Alias disponible: `trace_segment()`
 
     Arguments:
         x1 (int): abscisse de la première extremité du segment
@@ -220,6 +232,8 @@ def vector(x, y, v, couleur='rouge', epaisseur=2):
 def vecteur(x, y, v, couleur='rouge', epaisseur=2):
     """
     Trace la représentation du vecteur ``v`` à partir du point d'origine ``(x, y)``.
+
+    Alias disponibles: `vectore()`, `trace_vecteur()`
 
     Arguments:
         x (int): abscisse du point d'origine de la représentation du vecteur
@@ -258,6 +272,8 @@ def trace_image(x, y, nom, largeur=50, hauteur=50):
 def image(x, y, nom, largeur=50, hauteur=50):
     """
     Trace une image dans la fenetre graphique.
+    
+    Alias disponible:`trace_image()`
 
     Arguments:
         x (int): Abscisse du centre de l'image
@@ -274,15 +290,17 @@ def trace_explosion(x,y,couleur='orange',r=10,c=0.5,n=10):
     '''
     alias de explosion()
     '''
-    explosion(x,y,couleur,r,c,n)
+    explosion(x, y, couleur, r, c, n)
 
-def explosion(x,y,couleur='orange',r=10,c=0.5,n=10):
+def explosion(x, y, couleur='orange', r=10, c=0.5, n=10):
     '''
     trace un polygône régulier étoilé à 2n côté,
     de rayon extérieur r,
     et tel que le rayon intérieur est égal à c*r
     (pour c=0, le polygône est réduit à n rayons du cencle de rayon r
     pour c=1, c'est un polygône régulier à 2n côtés)
+    
+    Alias disponible:`trace_explosion()`
 
     Arguments:
         x (int): Abscisse du centre de l'explosion
@@ -310,7 +328,9 @@ def trace_axes(color='noir'):
 
 def axes(color='noir'):
     '''
-    dessine les axes de coordonnées pour une meilleure compréhension par les élèves
+    Dessine les axes de coordonnées pour une meilleure compréhension par les élèves.
+    
+    Alias disponible: `trace_axes()`
     '''
     couleur = rgb(color)
     ymax=pygame.display.Info().current_h
@@ -322,15 +342,15 @@ def axes(color='noir'):
     pygame.draw.lines(fenetre, couleur, False, [(0, 5), (xmax, 5)], epaisseur)
     pygame.draw.lines(fenetre, couleur, False, [(xmax-5, 0), (xmax, 5)], epaisseur)
     pygame.draw.lines(fenetre, couleur, False, [(xmax-5, 10), (xmax, 5)], epaisseur)
-    font=pygame.font.Font(None, 24,bold=False,italic=False)
-    text=font.render(str(ymax),1,couleur)
-    fenetre.blit(text, (15, ymax-30))
-    text=font.render("y",1,couleur)
-    fenetre.blit(text, (15, ymax-17))
-    text=font.render(str(xmax),1,couleur)
-    fenetre.blit(text, (xmax-35, 10))
+    font=pygame.font.Font(None, 24, bold=False, italic=False)
+    text=font.render(str(ymax), 1, couleur)
+    fenetre.blit(text, (15, ymax - 30))
+    text=font.render("y", 1, couleur)
+    fenetre.blit(text, (15, ymax - 17))
+    text=font.render(str(xmax), 1, couleur)
+    fenetre.blit(text, (xmax - 35, 10))
     text=font.render("x",1,couleur)
-    fenetre.blit(text, (xmax-15, 22))
-    text=font.render("0",1,couleur)
+    fenetre.blit(text, (xmax - 15, 22))
+    text=font.render("0", 1, couleur)
     fenetre.blit(text, (10, 10))
     pygame.display.update()
