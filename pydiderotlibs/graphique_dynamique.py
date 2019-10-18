@@ -11,9 +11,6 @@ from couleurs import rgb
 
 
 def creer_fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
-    '''
-    alias de fenetre()
-    '''
     fenetre(largeur, hauteur, titre)
 
 def window(largeur=200, hauteur=300, titre="Fenetre graphique"):
