@@ -32,3 +32,10 @@ from chaines import *
 from listes import *
 
 pi = math.pi
+
+def repeat(f,n):
+    for i in range(n):
+        f()
+
+def repeter(f,n):
+  repeat(f,n)
