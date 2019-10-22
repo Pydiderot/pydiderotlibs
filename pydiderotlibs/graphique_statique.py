@@ -275,14 +275,13 @@ class _Fenetre_graphique(Canvas):
 ################################## Fin de la classe _Fenetre_graphique ##############
 
 def trace_point(x,y, couleur='noir', taille=1, forme='rond'):
-    '''
-    alias de point()
-    '''
     point(x,y, couleur, taille, forme)
 
 def point(x,y, couleur='noir', taille=1, forme='rond'):
     """Ajoute un point dans la fenetre graphique aux coordonees ``(x, y)``.
-
+    
+    Alias : 'trace_point()'
+    
     Arguments:
         x (float): abscisse du point
         y (float): ordonnée du point
@@ -317,20 +316,16 @@ def point(x,y, couleur='noir', taille=1, forme='rond'):
     fenetre.objets.append(tab)
 
 def trace_texte(x, y, texte, couleur='noir'):
-    '''
-    alias de texte()
-    '''
     texte(x,y,texte,couleur)
 
 def text(x, y, texte, couleur='noir'):
-    '''
-    alias de texte()
-    '''
     texte(x,y,texte,couleur)
 
 def texte(x, y,texte, couleur='noir'):
     """Trace un texte dans la fenêtre graphique au coordonées ``x, y``.
-
+    
+    Alias : 'trace_texte()' et 'text()'
+    
     Arguments:
         x (float): abscisse du point
         y (float): ordonnée du point
@@ -351,14 +346,13 @@ def texte(x, y,texte, couleur='noir'):
     fenetre.objets.append(tab)
 
 def trace_segment(x1, y1, x2, y2, couleur='noir', taille=2):
-    '''
-    alias de segment()
-    '''
     segment(x1, y1, x2, y2, couleur, taille)
 
 def segment(x1, y1, x2, y2, couleur='noir', taille=2):
     """Trace un segment entre les points de coordonées ``(x1, y1)`` et ``(x2, y2)``.
-
+    
+    Alias : 'trace_segment()'
+    
     Arguments:
         x1,y1,x2,y2 (float): Coordonées des extrémités du segment.
         couleur (`couleur <#couleurs>`_, optionel): Couleur du segment (``noir`` par défaut).
@@ -380,14 +374,13 @@ def segment(x1, y1, x2, y2, couleur='noir', taille=2):
     fenetre.objets.append(tab)
 
 def trace_rectangle(x1, y1, largeur, hauteur, couleur='noir', taille=2, remplissage='jaune'):
-    '''
-    alias de rectangle()
-    '''
     rectangle(x1, y1, largeur, hauteur, couleur, taille, remplissage)
 
 def rectangle(x1, y1, largeur, hauteur, couleur='noir', taille=2, remplissage='jaune'):
     """Trace un rectangle dont le sommet en bas à gauche a pour coordonnées ``(x1, y1)``.
-
+    
+    Alias : 'trace_rectangle()'
+    
     Arguments:
         x1,y1 (float): Coordonnées du sommet en bas à gauche du rectangle.
         largeur,hauteur (float): Largeur et hauteur du rectangle
@@ -423,20 +416,16 @@ def affiche_fenetre():
 
 ### Fonction principale pour demarrer ####
 def creer_fenetre(xmin=-10, xmax=10, ymin=-10, ymax=10, fond = 'blanc',titre = "Repère mathematique", axes = True):
-    '''
-    alias de fenetre()
-    '''
     fenetre(xmin, xmax, ymin, ymax, fond,titre, axes)
 
 def window(xmin=-10, xmax=10, ymin=-10, ymax=10, fond = 'blanc',titre = "Repère mathematique", axes = True):
-    '''
-    alias de fenetre()
-    '''
     fenetre(xmin, xmax, ymin, ymax, fond,titre, axes)
 
 def fenetre(xmin=-10, xmax=10, ymin=-10, ymax=10, fond = 'blanc',titre = "Repère mathematique", axes = True):
     """Initialise l'object fenetre graphique sans l'afficher.
-
+    
+    Alias : 'trace_fenetre()' et 'window()'
+    
     Arguments:
         titre (str): Titre de la fenêtre. La valeur par défaut est ``Repère mathematique``.
         xmin,xmax,ymin,ymax (float) : Dimensions du repère. Les valeurs par défaut sont -10, 10, -10, 10
