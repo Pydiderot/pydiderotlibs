@@ -14,9 +14,6 @@ def creer_fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
     fenetre(largeur, hauteur, titre)
 
 def window(largeur=200, hauteur=300, titre="Fenetre graphique"):
-    '''
-    alias de fenetre()
-    '''
     fenetre(largeur, hauteur, titre)
 
 def fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
@@ -42,15 +39,9 @@ def fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
 
 
 def ecoute_evenements():
-    '''
-    alias de demande_evenements()
-    '''
     demande_evenements()
 
 def events():
-    '''
-    alias de demande_evenements()
-    '''
     demande_evenements()
 
 def demande_evenements():
@@ -109,15 +100,9 @@ def demande_evenements():
 
 
 def trace_cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
-    '''
-    alias de cercle()
-    '''
     cercle(x, y, couleur , rayon, epaisseur)
 
 def circle(x, y, couleur='bleu', rayon=5, epaisseur=0):
-    '''
-    alias de cercle()
-    '''
     cercle(x, y, couleur , rayon, epaisseur)
 
 def cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
@@ -139,9 +124,6 @@ def cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
 
 
 def trace_point(x, y, couleur='bleu'):
-    '''
-    alias de point()
-    '''
     point(x, y, couleur)
 
 def point(x, y, couleur='bleu'):
@@ -161,9 +143,6 @@ def point(x, y, couleur='bleu'):
 
 
 def trace_rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
-    '''
-    alias de rectangle()
-    '''
     rectangle(x, y, largeur, hauteur,couleur, epaisseur)
 
 def rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
@@ -190,9 +169,6 @@ def rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
 
 
 def trace_segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
-    '''
-    alias de segment()
-    '''
     segment(x1, y1, x2, y2, couleur, epaisseur)
 
 def segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
@@ -215,15 +191,9 @@ def segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
 
 
 def trace_vecteur(x, y, v, couleur='rouge', epaisseur=2):
-    '''
-    alias de vecteur()
-    '''
     vecteur(x, y, v, couleur, epaisseur)
 
 def vector(x, y, v, couleur='rouge', epaisseur=2):
-    '''
-    alias de vecteur()
-    '''
     vecteur(x, y, v, couleur, epaisseur)
 
 def vecteur(x, y, v, couleur='rouge', epaisseur=2):
@@ -261,9 +231,6 @@ def vecteur(x, y, v, couleur='rouge', epaisseur=2):
     pygame.display.update()
 
 def trace_image(x, y, nom, largeur=50, hauteur=50):
-    '''
-    alias de image()
-    '''
     image(x, y, nom, largeur, hauteur)
 
 def image(x, y, nom, largeur=50, hauteur=50):
@@ -284,9 +251,6 @@ def image(x, y, nom, largeur=50, hauteur=50):
     pygame.display.update()
 
 def trace_explosion(x,y,couleur='orange',r=10,c=0.5,n=10):
-    '''
-    alias de explosion()
-    '''
     explosion(x, y, couleur, r, c, n)
 
 def explosion(x, y, couleur='orange', r=10, c=0.5, n=10):
@@ -318,9 +282,6 @@ def explosion(x, y, couleur='orange', r=10, c=0.5, n=10):
     pygame.display.update()
 
 def trace_axes(color='noir'):
-    '''
-    alias de axes()
-    '''
     axes(color)
 
 def axes(color='noir'):
