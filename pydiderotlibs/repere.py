@@ -410,10 +410,6 @@ def rectangle(x1, y1, largeur, hauteur, couleur='noir', taille=2, remplissage='j
     fenetre.objets.append(tab)
 
 
-def affiche_fenetre():
-    """Affiche la fenêtre graphique."""
-    global fenetre
-    fenetre.loop
 
 ### Fonction principale pour demarrer ####
 def creer_fenetre(xmin=-10, xmax=10, ymin=-10, ymax=10, fond = 'blanc',titre = "Repère mathematique", axes = True):
