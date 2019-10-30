@@ -16,8 +16,8 @@ import os
 import sys
 import zipfile
 
+sys.path.insert(0, os.path.abspath('..'))
 
-sys.path.insert(0, os.path.join(os.path.dirname(__name__), '..', 'pydiderotlibs'))
 # -- Project information -----------------------------------------------------
 
 project = 'Librairies python du lycée Diderot (Marseille)'

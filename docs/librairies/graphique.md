@@ -103,7 +103,6 @@ while 1:
 ## Documentation
 
 
-
 .. automodule:: pydiderotlibs.graphique
     :members:
     :member-order: bysource
