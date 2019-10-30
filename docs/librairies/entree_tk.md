@@ -13,7 +13,7 @@ Cette librairie fournie également une fonction `demander_reel()` dont la sortie
 ## utilisation
 ```python
 # on importe la librairie
-from entree import *
+from pydiderotlibs.entree import *
 
 # On demande une chaîne de caractères à l'utilisateur que l'on stocke dans la variable x
 x = demander_texte()
@@ -26,7 +26,7 @@ y = demander_reel()
 
 ## Documentation
 
-.. automodule:: entree
+.. automodule:: pydiderotlibs.entree
     :members:
     :member-order: bysource
 

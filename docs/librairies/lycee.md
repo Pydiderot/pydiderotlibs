@@ -9,55 +9,55 @@ Grandement inspiré par le travail du groupe [AMIENS PYTHON](http://amienspython
 Pour l'utiliser, il suffit d'ajouter en début de programme
 
 ```python
-from lycee import *
+from pydiderotlibs.lycee import *
 ```
 
 ## Documentation
-.. automodule:: math_lycee
+.. automodule:: pydiderotlibs.math_lycee
     :members:
     :member-order: bysource
-    
+
 ### Trigonométrie
 
-.. automodule:: trigo
+.. automodule:: pydiderotlibs.trigo
     :members:
     :member-order: bysource
 
 
 ### Arithmétique
 
-.. automodule:: arithmetique
+.. automodule:: pydiderotlibs.arithmetique
     :members:
     :member-order: bysource
 
 ### Fonctions usuelles
 
-.. automodule:: fonctions_usuelles
+.. automodule:: pydiderotlibs.fonctions_usuelles
     :members:
     :member-order: bysource
 
 ### Vecteurs
-.. automodule:: vecteurs
+.. automodule:: pydiderotlibs.vecteurs
     :members:
     :member-order: bysource
 
 ### Listes
 
-.. automodule:: listes
+.. automodule:: pydiderotlibs.listes
     :members:
     :member-order: bysource
 
 
 ### Chaines de caractères
 
-.. automodule:: chaines
+.. automodule:: pydiderotlibs.chaines
     :members:
     :member-order: bysource
 
 
 ### Stats et Proba
 
-.. automodule:: stats_proba
+.. automodule:: pydiderotlibs.stats_proba
     :members:
     :member-order: bysource
 

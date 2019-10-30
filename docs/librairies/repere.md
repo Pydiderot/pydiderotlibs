@@ -1,5 +1,5 @@
 # Repere
-:download:`repere.py </../pydiderotlibs/repere.py>`
+
 ## A propos
 Cette [bibliothèque](https://github.com/cspaier/thonny/blob/diderot/Thonny/Lib/site-packages/repere.py) facilite l'affichage d'une fenêtre munie d'un repère interactif (zoom, déplacement). Des fonctions sont disponibles pour tracer des objets géométriques simples.
 
@@ -16,7 +16,7 @@ Par non dynamique, j’entends qu'on ne peut pas facilement utiliser cette libra
 ## Comment l'utiliser
 ```python
 # On importe la librairie
-from repere import *
+from pydiderotlibs.repere import *
 
 # On initialise la fenetre
 creer_fenetre()
@@ -41,9 +41,6 @@ On peut agir sur le repère grâce à la souris:
 - Un :guilabel:`double clic` rend le repère orthonormé en se basant sur l’axe des abscisses.
 
 
-.. note::
-    Il faut désactiver `l'affichage de variables </#affichage-des-variables>`_  dans thonny pour pouvoir utiliser cette librairie.
-
 .. mdinclude:: ../couleurs.md
 
 
@@ -67,13 +64,10 @@ trace_point(5,5,couleur='blue',taille=5)
 affiche_fenetre()
 ```
 
-.. note::
-    L'utilisation de cette librairie n'est pas limitée à une unique instance de l’objet `fenetre`. Voici un exemple avec  [2fenetresEnMemeTemps.py](https://gist.github.com/al-coloic/c158ed66dd2b627049f5ad2562355fa7).
-
 ## Documentation
 
 
-.. automodule:: graphique_statique
+.. automodule:: pydiderotlibs.repere
     :members:
     :member-order: bysource
 

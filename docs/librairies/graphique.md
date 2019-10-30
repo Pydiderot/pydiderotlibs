@@ -17,7 +17,7 @@ Voici un exemple qui affiche une fenêtre graphique traversée en diagonale par 
 
 ```python
 # On importe la librairie
-from graphique import *
+from pydiderotlibs.graphique import *
 # Nous aurons également de la librairie time
 from time import *
 
@@ -59,7 +59,7 @@ Elle retourne un dictionnaire contenant les touches pressées, les clics et dép
 Vous pouvez par exemple tester si les touches `'haut'` et `'a'` sont pressées :
 ```python
 # On importe la librairie graphique
-from graphique import *
+from pydiderotlibs.graphique import *
 # On créé la fenêtre graphique
 creer_fenetre()
 
@@ -80,7 +80,7 @@ while 1:
 Vous pouvez par exemple tester si un utilisateur bouge la souris ou clique et récupérer les coordonnées de la souris:
 ```python
 # On importe les librairie et time
-from graphique import *
+from pydiderotlibs.graphique import *
 # On créé la fenêtre graphique
 creer_fenetre()
 
@@ -104,7 +104,7 @@ while 1:
 
 
 
-.. automodule:: graphique
+.. automodule:: pydiderotlibs.graphique
     :members:
     :member-order: bysource
 
