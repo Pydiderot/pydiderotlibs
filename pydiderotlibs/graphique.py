@@ -119,7 +119,7 @@ def cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
         couleur (:ref:`couleur <couleur>`, optionnel): Couleur du cercle (bleu par défaut)
     """
     couleur = rgb(couleur)
-    pygame.draw.circle(fenetre, couleur, (x,y), rayon, epaisseur)
+    pygame.draw.circle(fenetre, couleur, (x, y), rayon, epaisseur)
     pygame.display.update()
 
 
@@ -138,7 +138,7 @@ def point(x, y, couleur='bleu'):
         couleur (:ref:`couleur <couleur>`, optionnel): Couleur du point (bleu par défaut)
     """
     couleur = rgb(couleur)
-    pygame.draw.circle(fenetre, couleur, (x,y), 1, 0)
+    pygame.draw.circle(fenetre, couleur, (x, y), 1, 0)
     pygame.display.update()
 
 
@@ -247,10 +247,10 @@ def image(x, y, nom, largeur=50, hauteur=50):
         hauteur (int, optionel): Hauteur de l'image (50 par défaut)
     """
     image = pygame.transform.scale(pygame.image.load(nom).convert_alpha(), (largeur, hauteur))
-    fenetre.blit(image, (int(x-largeur/2),int(y-hauteur/2)))
+    fenetre.blit(image, (int(x - largeur / 2), int(y - hauteur / 2)))
     pygame.display.update()
 
-def trace_explosion(x,y,couleur='orange',r=10,c=0.5,n=10):
+def trace_explosion(x, y, couleur='orange', r=10, c=0.5, n=10):
     explosion(x, y, couleur, r, c, n)
 
 def explosion(x, y, couleur='orange', r=10, c=0.5, n=10):
@@ -272,12 +272,18 @@ def explosion(x, y, couleur='orange', r=10, c=0.5, n=10):
         n (int): Nombre de sommets
     '''
     couleur = rgb(couleur)
-    pointlist=[]
-    theta=2*math.pi/n
+    pointlist = []
+    theta = 2 * math.pi / n
     for k in range(n):
-        pointlist.append((x+r*math.cos(k*theta),y+r*math.sin(k*theta)))
-        pointlist.append((x+c*r*math.cos((k+1/2)*theta),y+c*r*math.sin((k+1/2)*theta)))
-    pointlist.append((x+r,y))
+        pointlist.append((
+            x + r * math.cos(k * theta),
+            y + r * math.sin(k * theta)
+        ))
+        pointlist.append((
+            x + c * r * math.cos((k + 1 / 2) * theta),
+            y + c * r * math.sin((k + 1 / 2) * theta)
+        ))
+    pointlist.append((x + r, y))
     pygame.draw.polygon(fenetre, couleur, pointlist)
     pygame.display.update()
 
@@ -291,24 +297,24 @@ def axes(color='noir'):
     Alias: ``trace_axes()``
     '''
     couleur = rgb(color)
-    ymax=pygame.display.Info().current_h
-    xmax=pygame.display.Info().current_w
-    epaisseur=2
+    ymax = pygame.display.Info().current_h
+    xmax = pygame.display.Info().current_w
+    epaisseur = 2
     pygame.draw.lines(fenetre, couleur, False, [(5, 0), (5, ymax)], epaisseur)
     pygame.draw.lines(fenetre, couleur, False, [(0, ymax-5), (5, ymax)], epaisseur)
     pygame.draw.lines(fenetre, couleur, False, [(10, ymax-5), (5, ymax)], epaisseur)
     pygame.draw.lines(fenetre, couleur, False, [(0, 5), (xmax, 5)], epaisseur)
     pygame.draw.lines(fenetre, couleur, False, [(xmax-5, 0), (xmax, 5)], epaisseur)
     pygame.draw.lines(fenetre, couleur, False, [(xmax-5, 10), (xmax, 5)], epaisseur)
-    font=pygame.font.Font(None, 24, bold=False, italic=False)
-    text=font.render(str(ymax), 1, couleur)
+    font = pygame.font.Font(None, 24, bold=False, italic=False)
+    text = font.render(str(ymax), 1, couleur)
     fenetre.blit(text, (15, ymax - 30))
-    text=font.render("y", 1, couleur)
+    text = font.render("y", 1, couleur)
     fenetre.blit(text, (15, ymax - 17))
-    text=font.render(str(xmax), 1, couleur)
+    text = font.render(str(xmax), 1, couleur)
     fenetre.blit(text, (xmax - 35, 10))
-    text=font.render("x",1,couleur)
+    text = font.render("x",1,couleur)
     fenetre.blit(text, (xmax - 15, 22))
-    text=font.render("0", 1, couleur)
+    text = font.render("0", 1, couleur)
     fenetre.blit(text, (10, 10))
     pygame.display.update()

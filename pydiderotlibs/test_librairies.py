@@ -21,30 +21,30 @@ def test_lycee():
     """
     print('\n Les fonctions de lycee')
     # arithmetique
-    print('pgcd(12,4) =',pgcd(12,4))
-    print('pgcd(-4,12) = ',pgcd(-4,12))
+    print('pgcd(12,4) =', pgcd(12, 4))
+    print('pgcd(-4,12) = ', pgcd(-4, 12))
 
-    print('reste(15,4) = ',reste(15,4))
+    print('reste(15,4) = ', reste(15, 4))
 
-    print('quotient(15,4) = ',quotient(15,4))
+    print('quotient(15,4) = ', quotient(15, 4))
 
     # fonctions usuelles
 
-    print('4**1/2 = ',puissance(4,1/2))
-    print('2**-2 = ',puissance(2,-2))
+    print('4**1/2 = ', puissance(4, 1/2))
+    print('2**-2 = ', puissance(2, -2))
 
-    print('carre =  ',carre(-2))
+    print('carre =  ', carre(-2))
 
-    print('racine de 4 = ',racine(4))
+    print('racine de 4 = ', racine(4))
 
-    print('4! = ',factoriel(4))
+    print('4! = ', factoriel(4))
 
-    print('Partie entière de -2,5 = ',partie_entiere(-2.5))
-    print('Sans virgule = ',sans_virgule(-2.5))
+    print('Partie entière de -2,5 = ', partie_entiere(-2.5))
+    print('Sans virgule = ', sans_virgule(-2.5))
 
-    print('exp(1) = ',exp(1))
+    print('exp(1) = ', exp(1))
     print('ln(e) = ', ln(exp(1)))
-    print('log(10) = ',log(10))
+    print('log(10) = ', log(10))
 
 
 def test_chaines():

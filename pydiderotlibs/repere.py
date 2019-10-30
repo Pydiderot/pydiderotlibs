@@ -18,10 +18,10 @@ class _Fenetre_graphique(Canvas):
 
     def __init__(self, boss= None, largeur=400, hauteur=300,
                  xmin=-10, ymin=-10, xmax=10, ymax=10,
-                 background='white', axes = True):
+                 background='white', axes=True):
         Canvas.__init__(self,boss)
         self.configure(width=largeur, height=hauteur,
-                       bg = background, border =5, relief=RIDGE)
+                       bg=background, border=5, relief=RIDGE)
 
         self.axes = axes
         self.xmin, self.ymin, self.xmax, self.ymax = xmin, ymin, xmax, ymax
@@ -32,7 +32,7 @@ class _Fenetre_graphique(Canvas):
         self.flag = 0           # pas de déplacement d'objets au départ
         border_w = self.winfo_reqwidth()-self.largeur   # largeur intérieure
         border_h = self.winfo_reqheight()-self.hauteur  # hauteur intérieure
-        self.border=(border_w/2,border_h/2)             # taille du bord
+        self.border = (border_w / 2, border_h / 2)             # taille du bord
 
         self.objets = []    # où l'on stocke les différents objets dessinés pour la réactualisation:
                             # [ tag, nature, xmin, ymin, xmax, ymax, couleur, epaisseur, remplissage ]
@@ -46,53 +46,53 @@ class _Fenetre_graphique(Canvas):
         self.bind('<Button-4>', self.wheel)  # roulette pour linux
         self.bind('<Button-5>', self.wheel)  # roulette pour linux
         boss.bind('<MouseWheel>', self.wheel) # pour windows
-        self.master.protocol("WM_DELETE_WINDOW",self.fermeture)
+        self.master.protocol("WM_DELETE_WINDOW", self.fermeture)
 
 
-    def _initialize_matrix(self,xmin,ymin,xmax,ymax,larg,haut):
+    def _initialize_matrix(self, xmin, ymin, xmax, ymax, larg, haut):
         " initialise les matrices O2, P et inv_P "
 
-        o2=[xmin*larg/(xmin-xmax),ymax*haut/(ymax-ymin)]      # coordonnées de O2 dans R1
+        o2 = [xmin * larg / (xmin - xmax), ymax * haut / (ymax - ymin)]      # coordonnées de O2 dans R1
 
-        p = [[larg/(xmax-xmin),0],[0,haut/(ymin-ymax)]]        # matrice de passage de B1  à B2
-        inv_p = [[(xmax-xmin)/larg,0],[0,(ymin-ymax)/haut]]    # matrice de passage de B2 à B1
-        return o2,p,inv_p
+        p = [[larg / (xmax - xmin), 0], [0, haut / (ymin - ymax)]]        # matrice de passage de B1  à B2
+        inv_p = [[(xmax - xmin) / larg, 0], [0, (ymin - ymax) / haut]]    # matrice de passage de B2 à B1
+        return o2, p, inv_p
 
-    def _reglage_pas(self,pix=50,mult=2):
+    def _reglage_pas(self, pix=50, mult=2):
         # 50 pour environ tous les 50 pix, et 5 pour tous les k*5 unités
-        cx = mult*floor(pix/mult/self.p[0][0]+0.5)
+        cx = mult * floor(pix / mult / self.p[0][0] + 0.5)
         cx = max(1,cx)
-        cy = mult*floor(pix/mult/abs(self.p[1][1])+0.5)
-        cy = max(1,cy)
-        return (cx,cy)
+        cy = mult * floor(pix / mult / abs(self.p[1][1]) + 0.5)
+        cy = max(1, cy)
+        return (cx, cy)
 
     def inside(self, pt, zone):
         " décide si pt (2-tuple) est dans zone (4-tuple) "
-        xmin, xmax = min(zone[0],zone[2]), max(zone[0],zone[2])
-        ymin, ymax = min(zone[1],zone[3]), max(zone[1],zone[3])
-        if pt[0]>xmin and pt[0]<xmax and pt[1]>ymin and pt[1]<ymax :
+        xmin, xmax = min(zone[0], zone[2]), max(zone[0], zone[2])
+        ymin, ymax = min(zone[1], zone[3]), max(zone[1], zone[3])
+        if pt[0] > xmin and pt[0] < xmax and pt[1] > ymin and pt[1] < ymax :
             return 1
-        else :
+        else:
             return 0
 
     def mouseDown(self, event):
         "Op. à effectuer quand le bouton gauche de la souris est enfoncé"
         # event.x et event.y contiennent les coordonnées du clic effectué (avec le bord !):
-        self.x1, self.y1 = event.x-self.border[0], event.y-self.border[1] # on enlève le bord...
+        self.x1, self.y1 = event.x - self.border[0], event.y - self.border[1] # on enlève le bord...
 
-        zone_axeX = (0,self.o2[1]-20,self.largeur,self.o2[1]+20)
-        zone_axeY = (self.o2[0]-20,0,self.o2[0]+20,self.hauteur)
+        zone_axeX = (0, self.o2[1] - 20, self.largeur, self.o2[1] + 20)
+        zone_axeY = (self.o2[0] - 20, 0, self.o2[0] + 20, self.hauteur)
         if self.axes:
-            if self.inside((self.x1,self.y1),zone_axeX) :
+            if self.inside((self.x1, self.y1), zone_axeX):
                 self.flag = 1       # drapeau de déplacement de l'axe X
-            elif self.inside((self.x1,self.y1),zone_axeY):
+            elif self.inside((self.x1, self.y1), zone_axeY):
                 self.flag = 2       # drapeau de déplacement de l'ace Y
             else:
                 self.flag = 3       # on déplace tout le repère
         else:
             self.flag = 3
 
-    def dblclic(self,event):
+    def dblclic(self, event):
         "Rend le repère orthonormé en se basant sur l'axe des X"
         self.p[1][1] = -self.p[0][0]
         self.inv_p[1][1] = 1/self.p[1][1]
