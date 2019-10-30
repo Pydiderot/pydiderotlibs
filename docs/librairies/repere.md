@@ -66,7 +66,6 @@ affiche_fenetre()
 
 ## Documentation
 
-
 .. automodule:: pydiderotlibs.repere
     :members:
     :member-order: bysource

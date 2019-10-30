@@ -16,8 +16,8 @@ import os
 import sys
 import zipfile
 
-sys.path.append(os.path.join(os.path.dirname(__name__), '..', 'pydiderotlibs'))
 
+sys.path.insert(0, os.path.join(os.path.dirname(__name__), '..', 'pydiderotlibs'))
 # -- Project information -----------------------------------------------------
 
 project = 'Librairies python du lycée Diderot (Marseille)'
@@ -77,6 +77,7 @@ language = 'fr'
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
+
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'friendly'
@@ -143,8 +144,6 @@ latex_elements = {
 latex_documents = [
     (master_doc, 'pydiderot.tex', "Documentation de l'environement python du lycée Diderot",
      'Professeurs du lycée Diderot', 'manual'),
-     ("formation/enseignants", 'formation.tex', 'Formation enseignants',
-      'Professeurs du lycée Diderot', 'manual'),
 ]
 
 
