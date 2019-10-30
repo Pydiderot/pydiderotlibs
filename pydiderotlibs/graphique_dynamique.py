@@ -1,1 +1,1 @@
-from graphique import *
+from .graphique import *

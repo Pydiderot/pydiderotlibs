@@ -10,9 +10,9 @@ Licence CECILL http://www.cecill.info/
 
 import math
 import builtins
-from arithmetique import quotient
 import random
-from listes import transposer
+from .arithmetique import quotient
+from .listes import transposer
 
 # Loi Binomial
 def binomial(n, p):

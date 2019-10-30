@@ -7,7 +7,7 @@ Créé à partir d' Edupython: http://edupython.tuxfamily.org/
 Licence CECILL http://www.cecill.info/
 """
 
-from chaines import fich2chaine, chaine2fich
+from .chaines import fich2chaine, chaine2fich
 
 
 def CSV2liste(num, fichier='optionel'):

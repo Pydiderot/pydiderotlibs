@@ -1,1 +1,1 @@
-from math_lycee import *
+from .math_lycee import *

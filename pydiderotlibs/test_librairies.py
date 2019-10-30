@@ -5,14 +5,15 @@
 Fichier permettant de tester de façon systématique le bon fonctionnement des librairies
 """
 
-from entree import *
-from lycee import *
+from time import sleep
+from tkinter import *
+from .entree import *
+from .lycee import *
+import types
 import pydiderotlibs.repere as repere
 import pydiderotlibs.graphique as graphique
-from time import sleep
-import types
-from tkinter import *
-from couleurs import _couleurs, rgb, rgb2hex
+
+from .couleurs import _couleurs, rgb, rgb2hex
 
 def test_lycee():
     """

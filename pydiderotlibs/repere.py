@@ -6,7 +6,8 @@ On peut l'utiliser librement sous licence MIT
 
 from tkinter import *
 from math import floor
-from couleurs import rgb, rgb2hex
+from .couleurs import rgb, rgb2hex
+
 global fenetre
 
 class _Fenetre_graphique(Canvas):
@@ -315,13 +316,13 @@ def point(x,y, couleur='noir', taille=1, forme='rond'):
     tab[6] = forme
     fenetre.objets.append(tab)
 
-def trace_texte(x, y, texte, couleur='noir'):
-    texte(x,y,texte,couleur)
+def trace_texte(x, y, message, couleur='noir'):
+    texte(x, y, message, couleur)
 
-def text(x, y, texte, couleur='noir'):
-    texte(x,y,texte,couleur)
+def text(x, y, message, couleur='noir'):
+    texte(x, y, message, couleur)
 
-def texte(x, y,texte, couleur='noir'):
+def texte(x, y, message, couleur='noir'):
     """Trace un texte dans la fenêtre graphique au coordonées ``x, y``.
 
     Alias : 'trace_texte()' et 'text()'
@@ -329,7 +330,7 @@ def texte(x, y,texte, couleur='noir'):
     Arguments:
         x (float): abscisse du point
         y (float): ordonnée du point
-        texte (str): Texte à placer dans la fenêtre graphique
+        message (str): Texte à placer dans la fenêtre graphique
         couleur (`couleur <#couleurs>`_, optionel): Couleur du texte (``noir`` par défaut)
 
     """
@@ -341,7 +342,7 @@ def texte(x, y,texte, couleur='noir'):
     tab[1] = 'texte'
     tab[2] = x
     tab[3] = y
-    tab[4] = texte
+    tab[4] = message
     tab[5] = couleur
     fenetre.objets.append(tab)
 

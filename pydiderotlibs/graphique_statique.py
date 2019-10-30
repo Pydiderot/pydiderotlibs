@@ -1,1 +1,1 @@
-from repere import *
+from .repere import *
