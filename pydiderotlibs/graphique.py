@@ -288,7 +288,7 @@ def axes(color='noir'):
     '''
     Dessine les axes de coordonnées pour une meilleure compréhension par les élèves.
 
-    Alias: `trace_axes()`
+    Alias: ``trace_axes()``
     '''
     couleur = rgb(color)
     ymax=pygame.display.Info().current_h

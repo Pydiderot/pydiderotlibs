@@ -33,4 +33,4 @@ Nous utilisons [sphinx](http://www.sphinx-doc.org/) et l'extension [napoleon](ht
 ## Je veux aider à documenter
 La documentation de ce projet est construire avec [Sphinx](https://www.sphinx-doc.org/) à partir du dossier [doc](https://github.com/cspaier/pydiderot/tree/dev/docs) du dépôt github. N'hésitez pas à proposer des ajouts ou corrections!
 
-Si vous souhaitez tester la documentation sur votre ordinateur, jetez un œil à [ce document](https://pydiderotlibs.readthedocs.io/compiler_la_documentation/).
+Si vous souhaitez tester la documentation sur votre ordinateur, jetez un œil à [ce document](https://pydiderotlibs.readthedocs.io/compiler_la_documentation.html).

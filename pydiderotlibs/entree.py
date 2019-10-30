@@ -8,7 +8,7 @@ def demander_texte(titre="Entrez un texte", message=None):
 
     Arguments:
         titre (str, optionel): Le titre de la fenetre (``"Entrez un texte"`` par défaut).
-        message (str, optionel): Si présente, on ajoute un champ de texte contenant ``message``.
+        message (str, optionel): Si présent, on ajoute un champ de texte contenant ``message``.
 
     Returns:
         La chaine de caractère (type ``str``) entrée par l'utilisateur.
@@ -76,7 +76,7 @@ def demander_entier(titre="Entrez un nombre entier"):
         titre (str, optionel): Titre de la fenêtre (``"Entrez un nombre entier"`` par défaut).
 
     Returns:
-        Le nombre entier entré par l'utilisateur (type ``float``).
+        Le nombre entier entré par l'utilisateur (type ``int``).
     """
     message = None
     while True:
