@@ -2,6 +2,8 @@
 ## A propos
 Ce site documente des librairies python utilisées par les enseignants du lycée Diderot à Marseille pour enseigner l'informatique. Le code est disponible sur ce dépot [github](https://github.com/cspaier/pydiderotlibs) et hebergé sur [pypi](https://pypi.org/project/pydiderotlibs/).
 
+L'objectif général est de cacher certaines difficultés techniques liées au langage de programmation afin de pouvoir cibler certains points pédagogiques.
+
 ## Installation
 Deux méthodes d'installations sont disponibles:
 - Avec pip: `pip install pididerotlibs`
@@ -10,7 +12,7 @@ Deux méthodes d'installations sont disponibles:
 
 
 ## Librairies
- Vous pouvez télécharger nos librairies zippées [ici](_static/diderot.zip).
+ Vous pouvez télécharger nos librairies zippées [ici](_static/pydiderotlibs.zip).
 
 - [repere](/graphique/): Permet l'affichage d'un repère du plan interactif (zoom, déplacer).
 - [entree](/entree/): Fonctions d'entrées utilisateur avec des fenêtres tkinter.
@@ -19,4 +21,4 @@ Deux méthodes d'installations sont disponibles:
 
 
 ## Participez!
-Ce projet est un travail collaboratif initié par des enseignants du lycée Diderot à Marseille. Nous serions ravis de travailler avec vous et toute aide est la bienvenue. Si vous souhaitez participer, lisez notre [fichier contributing](https://github.com/cspaier/pydiderotlibs/blob/master/CONTRIBUTING.md).
+Ce projet est un travail collaboratif initié par des enseignants du lycée Diderot à Marseille. Nous serions ravis de travailler avec vous et toute aide est la bienvenue. Si vous souhaitez participer, [un guide](contributing.html) est a votre disposition.

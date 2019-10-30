@@ -20,7 +20,7 @@ def fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
     """
     Crée et affiche une fenêtre graphique.
 
-    Alias disponibles: `windows()`, `creer_fenetre()`
+    Alias: ``windows()``, ``creer_fenetre()``
 
     Arguments:
         largeur (int, optionel): Largeur de la fenetre en pixels (``200`` par défaut)
@@ -48,8 +48,6 @@ def demande_evenements():
     """
     Récupère les évenements pygame gère la fermeture de la fenetre et retourne les évenements formatés.
 
-    Alias disponibles: `events`, `ecoute_evenements`
-
     Renvoie un dictionnaire d'évenements formaté comme suit:
     ``{'touche1': None, 'touche2':None, 'souris': [x,y], 'click': [x,y]}``
 
@@ -60,6 +58,8 @@ def demande_evenements():
     - les touches spéciales ont les clefs ``'espace'``, ``'haut'``, ``'bas'``, ``'droite'``, ``'gauche'`` et, si présent, leur valeur est ``None``.
     - Un clic avec le bouton gauche de la souris ajoute une clef ``'clic'``. Sa valeur est une liste ``[x, y]`` des coordonnées de la souris.
     - Un déplacement de la souris ajoute une clef ``'souris'``. Sa valeur est une liste ``[x, y]`` des coordonnées de la souris.
+
+    Alias: ``events()``, ``ecoute_evenements()``
 
     """
 
@@ -109,7 +109,7 @@ def cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
     """
     Trace un cercle dans la fenetre graphique.
 
-    Alias disponibles: `circle`, `trace_cercle`
+    Alias: ``circle()``, ``trace_cercle()``
 
     Arguments:
         x (int): Abscisse du centre du cercle
@@ -130,7 +130,7 @@ def point(x, y, couleur='bleu'):
     """
     Trace un point dans la fenetre graphique.
 
-    Alias disponible: `trace_point()`
+    Alias: ``trace_point()``
 
     Arguments:
         x (int): Abscisse du point
@@ -149,10 +149,10 @@ def rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
     """
     Trace un rectangle horizontal dans la fenetre graphique .
 
-    Alias disponible: `trace_rectangle`
-
     Le sommet haut-gauche à pour coordonées ``(x,y)``, la ``largeur`` est la taille en abscisse
     et la ``hauteur`` la taille en ordonnée.
+
+    Alias: ``trace_rectangle()``
 
     Arguments:
         x (int): abscisse du sommet haut gauche du rectangle
@@ -175,7 +175,7 @@ def segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
     """
     Trace un segment entre les points de coordonées ``(x1, y1)`` et ``(x2, y2)``.
 
-    `Alias disponible: `trace_segment()`
+    Alias: ``trace_segment()``
 
     Arguments:
         x1 (int): abscisse de la première extremité du segment
@@ -200,7 +200,7 @@ def vecteur(x, y, v, couleur='rouge', epaisseur=2):
     """
     Trace la représentation du vecteur ``v`` à partir du point d'origine ``(x, y)``.
 
-    Alias disponibles: `vectore()`, `trace_vecteur()`
+    Alias: ``vector()``, ``trace_vecteur()``
 
     Arguments:
         x (int): abscisse du point d'origine de la représentation du vecteur
@@ -237,7 +237,7 @@ def image(x, y, nom, largeur=50, hauteur=50):
     """
     Trace une image dans la fenetre graphique.
 
-    Alias disponible:`trace_image()`
+    Alias:``trace_image()``
 
     Arguments:
         x (int): Abscisse du centre de l'image
@@ -255,20 +255,20 @@ def trace_explosion(x,y,couleur='orange',r=10,c=0.5,n=10):
 
 def explosion(x, y, couleur='orange', r=10, c=0.5, n=10):
     '''
-    trace un polygône régulier étoilé à 2n côté,
-    de rayon extérieur r,
-    et tel que le rayon intérieur est égal à c*r
-    (pour c=0, le polygône est réduit à n rayons du cencle de rayon r
-    pour c=1, c'est un polygône régulier à 2n côtés)
+    Trace un polygône régulier étoilé à ``2n`` côté,
+    de rayon extérieur ``r``,
+    et tel que le rayon intérieur est égal à ``c*r``
+    (pour ``c=0``, le polygône est réduit à ``n`` rayons du cencle de rayon ``r``
+    pour ``c=1``, c'est un polygône régulier à ``2n`` côtés)
 
-    Alias disponible:`trace_explosion()`
+    Alias: ``trace_explosion()``
 
     Arguments:
         x (int): Abscisse du centre de l'explosion
         y (int): Ordonnée du centre de l'explosion
         couleur (:ref:`couleur <couleur>`, optionel): Couleur (``orange`` par défaut)
         r (int): Rayon extérieur
-        c (float):Coefficient pour obtenir le rayon intérieur égal à c*r
+        c (float):Coefficient pour obtenir le rayon intérieur égal à ``c*r``
         n (int): Nombre de sommets
     '''
     couleur = rgb(couleur)
@@ -288,7 +288,7 @@ def axes(color='noir'):
     '''
     Dessine les axes de coordonnées pour une meilleure compréhension par les élèves.
 
-    Alias disponible: `trace_axes()`
+    Alias: `trace_axes()`
     '''
     couleur = rgb(color)
     ymax=pygame.display.Info().current_h

@@ -6,18 +6,6 @@ Module avec les fonctions de la classe de Seconde 2018 pour le lycée diderot (m
 On prend comme fichier de départ le module de l'irem d'Amiens
 http://download.tuxfamily.org/amienspython/lycee.py
 Licence http://www.cecill.info/
-
-Il y a des fonctions d'Amiens qui devaient être renommées / améliorées.
-On nomme les fonctions en FRANCAIS.
-
-Le module lycee est un module python réalisé par le groupe AMIENS PYTHON
-a pour objectif de simplifier un certain nombre de manipulations
-avec python au lycée (cosinus en degré, calcul d'une moyenne d'une liste,
-représentation statistiques variées, ...)
-
-Pour l'utiliser, il suffit d'ajouter en début de programme
-
-from lycee import *
 """
 
 
@@ -33,9 +21,13 @@ from listes import *
 
 pi = math.pi
 
-def repeat(f,n):
+def repeter(f,n):
+    """ Appelle `n` fois la fonction ``f``.
+
+    Alias disponible: ``repeat()``
+    """
     for i in range(n):
         f()
 
-def repeter(f,n):
-  repeat(f,n)
+def repeat(f,n):
+  repeter(f,n)

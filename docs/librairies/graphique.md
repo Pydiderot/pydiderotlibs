@@ -104,7 +104,7 @@ while 1:
 
 
 
-.. automodule:: graphique_dynamique
+.. automodule:: graphique
     :members:
     :member-order: bysource
 

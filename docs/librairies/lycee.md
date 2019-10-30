@@ -13,6 +13,10 @@ from lycee import *
 ```
 
 ## Documentation
+.. automodule:: math_lycee
+    :members:
+    :member-order: bysource
+    
 ### Trigonométrie
 
 .. automodule:: trigo

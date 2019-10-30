@@ -280,7 +280,7 @@ def trace_point(x,y, couleur='noir', taille=1, forme='rond'):
 def point(x,y, couleur='noir', taille=1, forme='rond'):
     """Ajoute un point dans la fenetre graphique aux coordonees ``(x, y)``.
 
-    Alias : 'trace_point()'
+    Alias disponible: ``trace_point()``
 
     Arguments:
         x (float): abscisse du point
@@ -351,7 +351,7 @@ def trace_segment(x1, y1, x2, y2, couleur='noir', taille=2):
 def segment(x1, y1, x2, y2, couleur='noir', taille=2):
     """Trace un segment entre les points de coordonées ``(x1, y1)`` et ``(x2, y2)``.
 
-    Alias : 'trace_segment()'
+    Alias: ``trace_segment()``
 
     Arguments:
         x1,y1,x2,y2 (float): Coordonées des extrémités du segment.
@@ -379,7 +379,7 @@ def trace_rectangle(x1, y1, largeur, hauteur, couleur='noir', taille=2, rempliss
 def rectangle(x1, y1, largeur, hauteur, couleur='noir', taille=2, remplissage='jaune'):
     """Trace un rectangle dont le sommet en bas à gauche a pour coordonnées ``(x1, y1)``.
 
-    Alias : 'trace_rectangle()'
+    Alias: ``trace_rectangle()``
 
     Arguments:
         x1,y1 (float): Coordonnées du sommet en bas à gauche du rectangle.
@@ -416,15 +416,15 @@ def affiche_fenetre():
 
 ### Fonction principale pour demarrer ####
 def creer_fenetre(xmin=-10, xmax=10, ymin=-10, ymax=10, fond = 'blanc',titre = "Repère mathematique", axes = True):
-    fenetre(xmin, xmax, ymin, ymax, fond,titre, axes)
+    fenetre(xmin, xmax, ymin, ymax, fond, titre, axes)
 
 def window(xmin=-10, xmax=10, ymin=-10, ymax=10, fond = 'blanc',titre = "Repère mathematique", axes = True):
-    fenetre(xmin, xmax, ymin, ymax, fond,titre, axes)
+    fenetre(xmin, xmax, ymin, ymax, fond, titre, axes)
 
 def fenetre(xmin=-10, xmax=10, ymin=-10, ymax=10, fond = 'blanc',titre = "Repère mathematique", axes = True):
     """Initialise l'object fenetre graphique sans l'afficher.
 
-    Alias : 'trace_fenetre()' et 'window()'
+    Alias: ``trace_fenetre()`` et ``window()``
 
     Arguments:
         titre (str): Titre de la fenêtre. La valeur par défaut est ``Repère mathematique``.
