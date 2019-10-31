@@ -2,6 +2,7 @@
 
 import tkinter as tk
 
+
 def demander_texte(titre="Entrez un texte", message=None):
     """
     Ouvre une fenêtre avec le titre "titre" et attend une chaine de caractères.
@@ -13,7 +14,7 @@ def demander_texte(titre="Entrez un texte", message=None):
     Returns:
         La chaine de caractère (type ``str``) entrée par l'utilisateur.
     """
-    def _sauver_valeur(event=None):#la fonction sauve la valeur dans value et ferme la fenetre
+    def _sauver_valeur(event=None):  # la fonction sauve la valeur dans value et ferme la fenetre
         value.set(entree.get())
         fenetre.destroy()
 
@@ -23,7 +24,7 @@ def demander_texte(titre="Entrez un texte", message=None):
     # Si message est entré, on ajoute un champ message.
     # permet par exemple l'affichage d'érreurs.
     if message is not None:
-        label = tk.Label(fenetre, text = message)
+        label = tk.Label(fenetre, text=message)
         label.pack()
 
     value = tk.StringVar()
@@ -38,11 +39,12 @@ def demander_texte(titre="Entrez un texte", message=None):
     # http://tkinter.fdex.eu/doc/uwm.html#focus_force
     entree.focus_force()
 
-    bouton=tk.Button(fenetre,text='Valider',command=_sauver_valeur)
+    bouton = tk.Button(fenetre, text='Valider', command=_sauver_valeur)
     bouton.pack()
 
     fenetre.mainloop()
     return value.get()
+
 
 def demander_reel(titre="Entrez un nombre réel"):
     """Ouvre une fenetre et attend un nombre réel.
@@ -66,6 +68,7 @@ def demander_reel(titre="Entrez un nombre réel"):
         else:
             break
     return reel
+
 
 def demander_entier(titre="Entrez un nombre entier"):
     """Ouvre une fenetre et attend un nombre entier.

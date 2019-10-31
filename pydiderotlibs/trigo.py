@@ -8,9 +8,10 @@ Créé à partir d' Edupython: http://edupython.tuxfamily.org/
 Licence CECILL http://www.cecill.info/
 """
 
+
+
+
 import math
-
-
 def cos_radian(angle):
     """
     Renvoie le cosinus de l'angle.
