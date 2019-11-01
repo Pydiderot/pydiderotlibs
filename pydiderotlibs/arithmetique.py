@@ -1,4 +1,3 @@
-
 def pgcd(a, b):
     """Renvoie le Plus Grand Diviseur Communs  des entiers ``a`` et ``b``.
 

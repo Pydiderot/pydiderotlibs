@@ -4,7 +4,7 @@ Ce module a ete ecrit par Olivier Brebant en aout 2011.
 On peut l'utiliser librement sous licence MIT
 """
 
-from tkinter import *
+from tkinter import Tk, Canvas, N, E, RIDGE, LEFT, BOTH, YES, NE, LAST
 from math import floor
 from .couleurs import rgb, rgb2hex
 
@@ -78,8 +78,7 @@ class _Fenetre_graphique(Canvas):
         ymin, ymax = min(zone[1], zone[3]), max(zone[1], zone[3])
         if pt[0] > xmin and pt[0] < xmax and pt[1] > ymin and pt[1] < ymax:
             return 1
-        else:
-            return 0
+        return 0
 
     def mouseDown(self, event):
         "Op. à effectuer quand le bouton gauche de la souris est enfoncé"
@@ -141,7 +140,7 @@ class _Fenetre_graphique(Canvas):
         else:
             zoom = 1.1
         zx = zy = zoom
-        if (event.state == 20):  # si on appuie sur "Control" avec la roulette
+        if event.state == 20:  # si on appuie sur "Control" avec la roulette
             x, y = self.o2[0], self.o2[1]
         elif self.axes:
             if self.inside((x, y), (self.o2[0] - 10, self.o2[1] - 10,
@@ -211,7 +210,7 @@ class _Fenetre_graphique(Canvas):
         self.create_line(
             self._conv(
                 self.xmin, 0, (10, 0)), self._conv(
-                self.xmax, 0, (-10, 0)), tag='axeX', arrow=LAST)
+                    self.xmax, 0, (-10, 0)), tag='axeX', arrow=LAST)
         self.create_text(
             self._conv(
                 self.xmax,

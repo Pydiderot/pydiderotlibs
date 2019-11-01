@@ -2,9 +2,10 @@
 #
 
 # import des librairies
-import pygame
 import sys
 import math
+import pygame
+
 
 from time import sleep  # pour rendre transparent côté élève l'utilisation de "sleep"
 from .couleurs import rgb
@@ -264,9 +265,9 @@ def image(x, y, nom, largeur=50, hauteur=50):
         largeur (int, optionel): Largeur de l'image (50 par défaut)
         hauteur (int, optionel): Hauteur de l'image (50 par défaut)
     """
-    image = pygame.transform.scale(pygame.image.load(
+    pygame_image = pygame.transform.scale(pygame.image.load(
         nom).convert_alpha(), (largeur, hauteur))
-    fenetre.blit(image, (int(x - largeur / 2), int(y - hauteur / 2)))
+    fenetre.blit(pygame_image, (int(x - largeur / 2), int(y - hauteur / 2)))
     pygame.display.update()
 
 

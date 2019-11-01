@@ -1,18 +1,14 @@
 """
 Partie chaines de caractères du module lycee.
-"""
-"""
 Créé à partir d' Edupython: http://edupython.tuxfamily.org/
 
 Licence CECILL http://www.cecill.info/
 """
-
-
-
-
 import tkinter as Tk
 import tkinter.filedialog as tkf
 import builtins
+
+
 def taille(objet):
     """
     Retourne la longueur de cette chaine ou de cettte liste.
@@ -49,8 +45,9 @@ def fich2chaine(fichier='optionel'):
             fichier = fich.name
     if fichier != 'optionel':
         filin = open(fichier, 'r')
-        return "\n".join([line.strip() for line in filin])
+        chaine = "\n".join([line.strip() for line in filin])
         filin.close()
+        return chaine
     else:
         return ""
 
