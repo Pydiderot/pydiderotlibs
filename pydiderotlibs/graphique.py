@@ -6,15 +6,17 @@ import pygame
 import sys
 import math
 
-from time import sleep #pour rendre transparent côté élève l'utilisation de "sleep"
+from time import sleep  # pour rendre transparent côté élève l'utilisation de "sleep"
 from .couleurs import rgb
 
 
 def creer_fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
     fenetre(largeur, hauteur, titre)
 
+
 def window(largeur=200, hauteur=300, titre="Fenetre graphique"):
     fenetre(largeur, hauteur, titre)
+
 
 def fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
     """
@@ -41,8 +43,10 @@ def fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
 def ecoute_evenements():
     demande_evenements()
 
+
 def events():
     demande_evenements()
+
 
 def demande_evenements():
     """
@@ -86,7 +90,8 @@ def demande_evenements():
                     # La valeur n'a pas d'importance et est donc None
                     evenements[c] = None
 
-            # Si l'unicode peut être convertit en ascii, on ajoute la clef au dictionnaire sous unicode
+            # Si l'unicode peut être convertit en ascii, on ajoute la clef au
+            # dictionnaire sous unicode
             if event.unicode.encode('ascii', 'ignore'):
                 evenements[event.unicode] = None
 
@@ -100,10 +105,12 @@ def demande_evenements():
 
 
 def trace_cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
-    cercle(x, y, couleur , rayon, epaisseur)
+    cercle(x, y, couleur, rayon, epaisseur)
+
 
 def circle(x, y, couleur='bleu', rayon=5, epaisseur=0):
-    cercle(x, y, couleur , rayon, epaisseur)
+    cercle(x, y, couleur, rayon, epaisseur)
+
 
 def cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
     """
@@ -126,6 +133,7 @@ def cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
 def trace_point(x, y, couleur='bleu'):
     point(x, y, couleur)
 
+
 def point(x, y, couleur='bleu'):
     """
     Trace un point dans la fenetre graphique.
@@ -143,7 +151,8 @@ def point(x, y, couleur='bleu'):
 
 
 def trace_rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
-    rectangle(x, y, largeur, hauteur,couleur, epaisseur)
+    rectangle(x, y, largeur, hauteur, couleur, epaisseur)
+
 
 def rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
     """
@@ -171,6 +180,7 @@ def rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
 def trace_segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
     segment(x1, y1, x2, y2, couleur, epaisseur)
 
+
 def segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
     """
     Trace un segment entre les points de coordonées ``(x1, y1)`` et ``(x2, y2)``.
@@ -193,8 +203,10 @@ def segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
 def trace_vecteur(x, y, v, couleur='rouge', epaisseur=2):
     vecteur(x, y, v, couleur, epaisseur)
 
+
 def vector(x, y, v, couleur='rouge', epaisseur=2):
     vecteur(x, y, v, couleur, epaisseur)
+
 
 def vecteur(x, y, v, couleur='rouge', epaisseur=2):
     """
@@ -212,11 +224,15 @@ def vecteur(x, y, v, couleur='rouge', epaisseur=2):
 
     couleur = rgb(couleur)
 
-    trace_segment(x, y, x+v[0], y+v[1], couleur, epaisseur)
-    w1[0] = -.3 * math.cos(15 * math.pi / 180) * v[0] + .3 * math.sin(15 * math.pi/180) * (-v[1])
-    w1[1] = -.3 * math.cos(15 * math.pi / 180) * v[1] + .3 * math.sin(15 * math.pi/180) * v[0]
-    w2[0] = -.3 * math.cos(15 * math.pi / 180) * v[0] - .3 * math.sin(15 * math.pi/180) * (-v[1])
-    w2[1] = -.3 * math.cos(15 * math.pi / 180) * v[1] - .3 * math.sin(15 * math.pi/180) * v[0]
+    trace_segment(x, y, x + v[0], y + v[1], couleur, epaisseur)
+    w1[0] = -.3 * math.cos(15 * math.pi / 180) * \
+        v[0] + .3 * math.sin(15 * math.pi / 180) * (-v[1])
+    w1[1] = -.3 * math.cos(15 * math.pi / 180) * \
+        v[1] + .3 * math.sin(15 * math.pi / 180) * v[0]
+    w2[0] = -.3 * math.cos(15 * math.pi / 180) * \
+        v[0] - .3 * math.sin(15 * math.pi / 180) * (-v[1])
+    w2[1] = -.3 * math.cos(15 * math.pi / 180) * \
+        v[1] - .3 * math.sin(15 * math.pi / 180) * v[0]
     pygame.draw.polygon(
         fenetre,
         couleur,
@@ -230,8 +246,10 @@ def vecteur(x, y, v, couleur='rouge', epaisseur=2):
     )
     pygame.display.update()
 
+
 def trace_image(x, y, nom, largeur=50, hauteur=50):
     image(x, y, nom, largeur, hauteur)
+
 
 def image(x, y, nom, largeur=50, hauteur=50):
     """
@@ -246,12 +264,15 @@ def image(x, y, nom, largeur=50, hauteur=50):
         largeur (int, optionel): Largeur de l'image (50 par défaut)
         hauteur (int, optionel): Hauteur de l'image (50 par défaut)
     """
-    image = pygame.transform.scale(pygame.image.load(nom).convert_alpha(), (largeur, hauteur))
+    image = pygame.transform.scale(pygame.image.load(
+        nom).convert_alpha(), (largeur, hauteur))
     fenetre.blit(image, (int(x - largeur / 2), int(y - hauteur / 2)))
     pygame.display.update()
 
+
 def trace_explosion(x, y, couleur='orange', r=10, c=0.5, n=10):
     explosion(x, y, couleur, r, c, n)
+
 
 def explosion(x, y, couleur='orange', r=10, c=0.5, n=10):
     '''
@@ -287,8 +308,10 @@ def explosion(x, y, couleur='orange', r=10, c=0.5, n=10):
     pygame.draw.polygon(fenetre, couleur, pointlist)
     pygame.display.update()
 
+
 def trace_axes(color='noir'):
     axes(color)
+
 
 def axes(color='noir'):
     '''
@@ -301,11 +324,19 @@ def axes(color='noir'):
     xmax = pygame.display.Info().current_w
     epaisseur = 2
     pygame.draw.lines(fenetre, couleur, False, [(5, 0), (5, ymax)], epaisseur)
-    pygame.draw.lines(fenetre, couleur, False, [(0, ymax-5), (5, ymax)], epaisseur)
-    pygame.draw.lines(fenetre, couleur, False, [(10, ymax-5), (5, ymax)], epaisseur)
+    pygame.draw.lines(
+        fenetre, couleur, False, [
+            (0, ymax - 5), (5, ymax)], epaisseur)
+    pygame.draw.lines(
+        fenetre, couleur, False, [
+            (10, ymax - 5), (5, ymax)], epaisseur)
     pygame.draw.lines(fenetre, couleur, False, [(0, 5), (xmax, 5)], epaisseur)
-    pygame.draw.lines(fenetre, couleur, False, [(xmax-5, 0), (xmax, 5)], epaisseur)
-    pygame.draw.lines(fenetre, couleur, False, [(xmax-5, 10), (xmax, 5)], epaisseur)
+    pygame.draw.lines(
+        fenetre, couleur, False, [
+            (xmax - 5, 0), (xmax, 5)], epaisseur)
+    pygame.draw.lines(
+        fenetre, couleur, False, [
+            (xmax - 5, 10), (xmax, 5)], epaisseur)
     font = pygame.font.Font(None, 24, bold=False, italic=False)
     text = font.render(str(ymax), 1, couleur)
     fenetre.blit(text, (15, ymax - 30))
@@ -313,7 +344,7 @@ def axes(color='noir'):
     fenetre.blit(text, (15, ymax - 17))
     text = font.render(str(xmax), 1, couleur)
     fenetre.blit(text, (xmax - 35, 10))
-    text = font.render("x",1,couleur)
+    text = font.render("x", 1, couleur)
     fenetre.blit(text, (xmax - 15, 22))
     text = font.render("0", 1, couleur)
     fenetre.blit(text, (10, 10))

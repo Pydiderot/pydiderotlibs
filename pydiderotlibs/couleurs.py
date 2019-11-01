@@ -21,10 +21,11 @@ _couleurs = {
     'vert': (0, 255, 0),
     'bleu': (0, 0, 255),
     'jaune': (255, 255, 0),
-    'cyan':  (0, 255, 255),
-    'magenta':(255, 0, 255),
+    'cyan': (0, 255, 255),
+    'magenta': (255, 0, 255),
     'orange': (255, 165, 0),
 }
+
 
 def rgb2hex(rgb):
     """
@@ -32,12 +33,14 @@ def rgb2hex(rgb):
     """
     return '#%02x%02x%02x' % rgb
 
+
 def hex2rgb(hex):
     """
     Convertit une coulur hexadécimale en tuple RGB
     """
     h = hex.lstrip("#")
-    return tuple(int(h[i:i+2], 16) for i in (0, 2 ,4))
+    return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
+
 
 def rgb(c):
     """

@@ -10,9 +10,10 @@ Créé à partir d' Edupython: http://edupython.tuxfamily.org/
 Licence CECILL http://www.cecill.info/
 """
 
+
+
+
 from math import sqrt
-
-
 def vecteur(x, y, z=None):
     """
     Renvoie un vecteur de coordonées ``(x,y)`` ou ``(x,y,z)``.
@@ -39,7 +40,7 @@ def norme(v):
 
     n = 0
     for i in v:
-        n = n + i*i
+        n = n + i * i
     return sqrt(n)
 
 

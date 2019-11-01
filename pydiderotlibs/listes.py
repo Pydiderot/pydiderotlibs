@@ -7,9 +7,10 @@ Créé à partir d' Edupython: http://edupython.tuxfamily.org/
 Licence CECILL http://www.cecill.info/
 """
 
+
+
+
 from .chaines import fich2chaine, chaine2fich
-
-
 def CSV2liste(num, fichier='optionel'):
     """
     Retourne une liste correspondant à la colonne ou la ligne nom du fichier ``fichier``.
@@ -22,17 +23,17 @@ def CSV2liste(num, fichier='optionel'):
         fichier (file,optionel): Le nom complet (avec le chemin) d'un fichier contenant des nombres.
     """
     ch = fich2chaine(fichier)
-    if type(num) == int:
+    if isinstance(num, int):
         L = ch.split("\n")
         if len(L) >= num:
             R = []
             for n in L[num - 1].split(";"):
                 try:
                     R.append(eval(n))
-                except:
+                except BaseException:
                     raise Exception("Problème lors de l'importation")
             return R
-    if type(num) == str:
+    if isinstance(num, str):
         num = num.upper()
         c = ord(num) - ord('A')
         R = []
@@ -41,9 +42,10 @@ def CSV2liste(num, fichier='optionel'):
             if len(m2) > c and m2[c] != '':
                 try:
                     R.append(eval(m2[c].replace(' ', '').replace(',', '.')))
-                except:
+                except BaseException:
                     raise Exception("Problème lors de l'importation")
         return R
+
 
 def liste2CSV(L, fichier='optionel'):
     """
@@ -58,9 +60,13 @@ def liste2CSV(L, fichier='optionel'):
     for i in range(len(L)):
         L[i] = str(L[i])
     chaine2fich("\n".join(L), fichier)
-liste2CSV([1,'a',3,'bonjour',10,'aurevoir'], fichier='TableurPourTest2.csv')
 
-def trier(liste1,liste2=[]):
+
+liste2CSV([1, 'a', 3, 'bonjour', 10, 'aurevoir'],
+          fichier='TableurPourTest2.csv')
+
+
+def trier(liste1, liste2=[]):
     """
     Retourne `liste1` triée.
     Si `liste2` est renseignée, elle est réorganisée de la même manière que `liste1`.
@@ -74,18 +80,19 @@ def trier(liste1,liste2=[]):
         liste2 (list,optionnel) : Une liste quelconque mais de même taille que `liste1`
     """
 
-    if liste2==[]:
+    if liste2 == []:
         return sorted(liste1)
-    elif len(liste1)!=len(liste2):
+    elif len(liste1) != len(liste2):
         print("Erreur : les 2 listes n'ont pas la même taille !")
     else:
-        #Il faut trier la liste selon l'ordre de liste_groupe
-        #On crée une matrice n x 2
-        L=[]
+        # Il faut trier la liste selon l'ordre de liste_groupe
+        # On crée une matrice n x 2
+        L = []
         for i in range(len(liste1)):
-            L.append([liste1[i],liste2[i]])
+            L.append([liste1[i], liste2[i]])
         L.sort()
-        return [i for i,j in L],[j for i,j in L]
+        return [i for i, j in L], [j for i, j in L]
+
 
 def transposer(L):
     """
@@ -95,14 +102,15 @@ def transposer(L):
     Arguments:
         L (list) : une liste de listes
     """
-    n=len(L[0])
+    n = len(L[0])
     for i in range(len(L)):
-        if n!=len(L[i]):
+        if n != len(L[i]):
             print("Les listes n'ont pas la même taille !")
 
     return list(map(list, zip(*L)))
 
-def serie(deb,fin,pas=1):
+
+def serie(deb, fin, pas=1):
     """
     Renvoie une liste de nombre (float) de `deb` à `fin` (inclu) avec un `pas`
 
@@ -111,10 +119,11 @@ def serie(deb,fin,pas=1):
         fin (float ou int) : fin de la série
         pas (float ou int, optionnel) : pas de la série
     """
-    l=[deb,fin,pas]
-    degmax=10**(-min([partie_entiere(log(abs(float(i)))) for i in l]))
-    ToutEntier=[int(i*degmax) for i in l]
-    return [float(i)/degmax for i in range(ToutEntier[0],ToutEntier[1]+ToutEntier[2],ToutEntier[2])]
+    l = [deb, fin, pas]
+    degmax = 10**(-min([partie_entiere(log(abs(float(i)))) for i in l]))
+    ToutEntier = [int(i * degmax) for i in l]
+    return [float(i) / degmax for i in range(ToutEntier[0],
+                                             ToutEntier[1] + ToutEntier[2], ToutEntier[2])]
 
 
 def affiche_poly(L):  # Pourquoi???
@@ -137,7 +146,7 @@ def affiche_poly(L):  # Pourquoi???
                     poly = poly + str(c)
             else:
                 poly = poly + str(c)
-            if i >0:
+            if i > 0:
                 poly = poly + 'X'
                 if i > 1:
                     poly = poly + '^' + str(i)

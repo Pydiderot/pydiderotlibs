@@ -21,7 +21,8 @@ from .listes import *
 
 pi = math.pi
 
-def repeter(f,n):
+
+def repeter(f, n):
     """ Appelle `n` fois la fonction ``f``.
 
     Alias disponible: ``repeat()``
@@ -29,5 +30,6 @@ def repeter(f,n):
     for i in range(n):
         f()
 
-def repeat(f,n):
-  repeter(f,n)
+
+def repeat(f, n):
+    repeter(f, n)

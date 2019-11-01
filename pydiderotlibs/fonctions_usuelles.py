@@ -10,9 +10,10 @@ Créé à partir d' Edupython: http://edupython.tuxfamily.org/
 Licence CECILL http://www.cecill.info/
 """
 
+
+
+
 import math
-
-
 def puissance(a, n):  # il faut ajouter la fonction carre -> vraiment? a*a est simple
     """
     Renvoie le nombre réel (float) \(a^n\).
@@ -24,7 +25,8 @@ def puissance(a, n):  # il faut ajouter la fonction carre -> vraiment? a*a est s
     """
     return a**n
 
-def carre(a): # parce que...
+
+def carre(a):  # parce que...
     """
     Renvoie le carre d'un nombre reel (float)
 
@@ -32,7 +34,7 @@ def carre(a): # parce que...
         a (float): un nombre décimal.
 
     """
-    return a*a
+    return a * a
 
 
 def racine(x):
@@ -66,6 +68,7 @@ def partie_entiere(x):  # Utilité ? Concept de la partie entière difficile au 
     """
     return math.floor(x)
 
+
 def sans_virgule(x):
     """
     Retourne la partie du nombre x sans sa partie décimale. Ex : -2.5 devient -2
@@ -95,6 +98,7 @@ def ln(x):
         x (float): Un nombre décimal strictement positif.
     """
     return math.log(x)
+
 
 def log(x):
     """

@@ -8,13 +8,15 @@ def pgcd(a, b):
     """
     if a < 0 or b < 0:
         return pgcd(abs(a), abs(b))
-    if b==0:
-        if a==0:
-            raise DivisionByZeroError("Le PGCD de deux nombres nuls n'existe pas")
+    if b == 0:
+        if a == 0:
+            raise DivisionByZeroError(
+                "Le PGCD de deux nombres nuls n'existe pas")
         else:
             return a
     else:
-        return pgcd(b, a%b)
+        return pgcd(b, a % b)
+
 
 def reste(a, b):
     """Renvoie le reste de la division de ``a`` par ``b``.
@@ -23,9 +25,11 @@ def reste(a, b):
         a (int): Un nombre entier.
         b (int): Un nombre entier non nul.
     """
-    r = a%b
-    if r < 0: r = r+abs(b)
+    r = a % b
+    if r < 0:
+        r = r + abs(b)
     return r
+
 
 def quotient(a, b):
     """Le quotient de la division de ``a`` par ``b``.
@@ -34,4 +38,4 @@ def quotient(a, b):
         a (int): Un nombre entier.
         b (int): Un nombre entier non nul.
     """
-    return a//b
+    return a // b
