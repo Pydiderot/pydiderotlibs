@@ -214,6 +214,7 @@ fichiers = [
     'couleurs',
     'graphique_statique',
     'graphique_dynamique',
+    '__init__'
 ]
 # On ajoute ".py" à la fin des fichiers
 fichiers = list(map(lambda x: x + ".py", fichiers))
