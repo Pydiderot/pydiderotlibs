@@ -104,6 +104,13 @@ def demande_evenements():
 
     return evenements
 
+def efface(couleur='blanc'):
+    """Efface l'écran.
+    Arguments:
+        couleur (:ref:`couleur <couleur>`, optionnel): Couleur de remplissage de l'écran (``'blanc'`` par défaut).
+    """
+    fenetre.fill(rgb(couleur))
+    pygame.display.update()
 
 def trace_cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
     cercle(x, y, couleur, rayon, epaisseur)
