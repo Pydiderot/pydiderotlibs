@@ -211,7 +211,7 @@ def test_couleurs():
     """
     MAX_ROWS = 12
     FONT_SIZE = 30  # (pixels)
-    root = Tk()
+    root = tk.Tk()
     root.title("Named colour chart")
     row = 0
     col = 0
