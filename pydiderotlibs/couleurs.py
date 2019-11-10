@@ -21,9 +21,20 @@ _couleurs = {
     'vert': (0, 255, 0),
     'bleu': (0, 0, 255),
     'jaune': (255, 255, 0),
+    'rose': (253, 108, 158),
+    'violet': (102, 0, 153),
     'cyan': (0, 255, 255),
     'magenta': (255, 0, 255),
     'orange': (255, 165, 0),
+    'black': (0, 0, 0),
+    'white': (255, 255, 255),
+    'grey': (128, 128, 128),
+    'red': (255, 0, 0),
+    'green': (0, 255, 0),
+    'blue': (0, 0, 255),
+    'yellow': (255, 255, 0),
+    'pink': (253, 108, 158),
+    'purple': (102, 0, 153)
 }
 
 
@@ -64,3 +75,4 @@ def rgb(c):
             return _couleurs[c]
     # Au pire, on retourne c et on récupérera une erreur tkinter ou pygame
     return c
+
