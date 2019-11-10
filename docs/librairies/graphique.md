@@ -2,8 +2,6 @@
 
 ## A propos
 
-:download:`graphique.py </../pydiderotlibs/graphique.py>`
-
 Cette librairie permet l'affichage d'une fenêtre graphique dynamique et fournie des fonctions permettant d'y afficher des objets géométriques simples (point, cercle, segment, vecteur, rectangle).
 
 Basée sur [pygame](https://www.pygame.org/wiki/about), vous pouvez également récupérer les événements clavier ou souris pour interagir avec l'utilisateur.

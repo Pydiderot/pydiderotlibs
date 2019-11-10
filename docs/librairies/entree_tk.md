@@ -1,14 +1,14 @@
 # Entree
-## A propos
-:download:`entree.py </../pydiderotlibs/entree.py>`
 
-Cette librairie fournie des fonctions d'entrées utilisateur affichant une fenêtre avec un champ de saisie texte. Le code est disponible [ici](https://github.com/cspaier/thonny/blob/diderot/Thonny/Lib/site-packages/entree.py).
+## A propos
+
+Cette librairie fournie des fonctions d'entrées utilisateur affichant une fenêtre avec un champ de saisie texte.
 
 Nous constatons qu'un utilisateur peu expérimenté peut être surpris par l'invite d'entrée peu interactive de la console python et proposons cette librairie comme solution.
 
 Concrètement cela peut remplacer avantageusement la fonction python `input()` dans un cadre pédagogique.
 
-Cette librairie fournie également une fonction `demander_reel()` dont la sortie est un nombre réel de type `float`.
+Cette librairie fournie également une fonction `demander_reel()` dont la sortie est un nombre réel de type `float` et une fonction `demander_entier()` dont la sortie est un nombre entier de type `int`.
 
 ## utilisation
 ```python

@@ -26,17 +26,19 @@ _couleurs = {
     'cyan': (0, 255, 255),
     'magenta': (255, 0, 255),
     'orange': (255, 165, 0),
-    'black': (0, 0, 0),
-    'white': (255, 255, 255),
-    'grey': (128, 128, 128),
-    'red': (255, 0, 0),
-    'green': (0, 255, 0),
-    'blue': (0, 0, 255),
-    'yellow': (255, 255, 0),
-    'pink': (253, 108, 158),
-    'purple': (102, 0, 153)
 }
 
+_colors = {
+    'black': 'noir',
+    'white': 'blanc',
+    'grey': 'gris',
+    'red': 'rouge',
+    'green': 'vert',
+    'blue': 'bleu',
+    'yellow': 'jaune',
+    'pink': 'rose',
+    'purple': 'violet'
+}
 
 def rgb2hex(rgb):
     """
@@ -67,12 +69,15 @@ def rgb(c):
     if isinstance(c, tuple):
         return c
     elif isinstance(c, str):
+        # on a un str
         if c.startswith("#"):
             # On a un format hexadécimal
             return hex2rgb(c)
         if c.lower() in _couleurs:
-            # on a un str
+            # on a une couleur
             return _couleurs[c]
+        if c.lower() in _colors:
+            # on a une couleur en anglais
+            return _couleurs[_colors[c]]
     # Au pire, on retourne c et on récupérera une erreur tkinter ou pygame
     return c
-
