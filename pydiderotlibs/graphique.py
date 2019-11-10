@@ -11,28 +11,29 @@ from time import sleep  # pour rendre transparent côté élève l'utilisation d
 from .couleurs import rgb
 
 
-def creer_fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
-    fenetre(largeur, hauteur, titre)
+def creer_fenetre(largeur=200, hauteur=300, orientation_axe_ordonnees=False, titre="Fenetre graphique"):
+    fenetre(largeur, hauteur, orientation_axe_ordonnees , titre)
 
 
-def window(largeur=200, hauteur=300, titre="Fenetre graphique"):
-    fenetre(largeur, hauteur, titre)
+def window(largeur=200, hauteur=300, orientation_axe_ordonnees=False, titre="Fenetre graphique"):
+    fenetre(largeur, hauteur, orientation_axe_ordonnees , titre)
 
 
-def fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
+def fenetre(largeur=200, hauteur=300, orientation_axe_ordonnees=False, titre="Fenetre graphique"):
     """
     Crée et affiche une fenêtre graphique.
-
     Alias: ``windows()``, ``creer_fenetre()``
-
     Arguments:
         largeur (int, optionel): Largeur de la fenetre en pixels (``200`` par défaut)
         hauteur (int, optionel): Hauteur de la fenetre en pixels (``300`` par défaut)
+        orientation_axe_ordonnees: Si on met cet argument à True, l'axe des ordonnées sera orienté de bas en haut comme en maths. Sinon il est orienté dans l'autre sens comme habituellement en informatique (``False`` par défaut) 
         titre (str, optionel): Titre de la fenetre (``Fenetre graphique`` par défaut)
     """
 
     pygame.init()
     global fenetre
+    global axeMath
+    axeMath = orientation_axe_ordonnees
     fenetre = pygame.display.set_mode((largeur, hauteur))
     pygame.display.set_caption(titre)
     # active la répétition des touches
@@ -40,6 +41,13 @@ def fenetre(largeur=200, hauteur=300, titre="Fenetre graphique"):
     fenetre.fill(rgb('blanc'))
     pygame.display.update()
 
+def ordo(y):
+    global axeMath
+    ymax = pygame.display.Info().current_h
+    if axeMath :
+        return ymax-y
+    else :
+        return y
 
 def ecoute_evenements():
     demande_evenements()
@@ -104,6 +112,7 @@ def demande_evenements():
 
     return evenements
 
+
 def efface(couleur='blanc'):
     """Efface l'écran.
     Arguments:
@@ -111,6 +120,7 @@ def efface(couleur='blanc'):
     """
     fenetre.fill(rgb(couleur))
     pygame.display.update()
+
 
 def trace_cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
     cercle(x, y, couleur, rayon, epaisseur)
@@ -134,7 +144,7 @@ def cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
         couleur (:ref:`couleur <couleur>`, optionnel): Couleur du cercle (bleu par défaut)
     """
     couleur = rgb(couleur)
-    pygame.draw.circle(fenetre, couleur, (x, y), rayon, epaisseur)
+    pygame.draw.circle(fenetre, couleur, (x, ordo(y)), rayon, epaisseur)
     pygame.display.update()
 
 
@@ -154,7 +164,7 @@ def point(x, y, couleur='bleu'):
         couleur (:ref:`couleur <couleur>`, optionnel): Couleur du point (bleu par défaut)
     """
     couleur = rgb(couleur)
-    pygame.draw.circle(fenetre, couleur, (x, y), 1, 0)
+    pygame.draw.circle(fenetre, couleur, (x, ordo(y)), 1, 0)
     pygame.display.update()
 
 
@@ -181,7 +191,7 @@ def rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
 
     """
     couleur = rgb(couleur)
-    pygame.draw.rect(fenetre, couleur, (x, y, largeur, hauteur), epaisseur)
+    pygame.draw.rect(fenetre, couleur, (x, ordo(y), largeur, hauteur), epaisseur)
     pygame.display.update()
 
 
@@ -204,7 +214,7 @@ def segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
         epaisseur (int, optionel): Epaisseur du segment (``1`` par défaut)
     """
     couleur = rgb(couleur)
-    pygame.draw.lines(fenetre, couleur, False, [(x1, y1), (x2, y2)], epaisseur)
+    pygame.draw.lines(fenetre, couleur, False, [(x1, ordo(y1)), (x2, ordo(y2))], epaisseur)
     pygame.display.update()
 
 
@@ -233,22 +243,20 @@ def vecteur(x, y, v, couleur='rouge', epaisseur=2):
     couleur = rgb(couleur)
 
     trace_segment(x, y, x + v[0], y + v[1], couleur, epaisseur)
-    w1[0] = -.3 * math.cos(15 * math.pi / 180) * \
-        v[0] + .3 * math.sin(15 * math.pi / 180) * (-v[1])
-    w1[1] = -.3 * math.cos(15 * math.pi / 180) * \
-        v[1] + .3 * math.sin(15 * math.pi / 180) * v[0]
-    w2[0] = -.3 * math.cos(15 * math.pi / 180) * \
-        v[0] - .3 * math.sin(15 * math.pi / 180) * (-v[1])
-    w2[1] = -.3 * math.cos(15 * math.pi / 180) * \
-        v[1] - .3 * math.sin(15 * math.pi / 180) * v[0]
+    w1 = [0, 0]
+    w2 = [0, 0]
+    w1[0] = -.3 * math.cos(15 * math.pi / 180) * v[0] + .3 * math.sin(15 * math.pi / 180) * (-v[1])
+    w1[1] = -.3 * math.cos(15 * math.pi / 180) * v[1] + .3 * math.sin(15 * math.pi / 180) * v[0]
+    w2[0] = -.3 * math.cos(15 * math.pi / 180) * v[0] - .3 * math.sin(15 * math.pi / 180) * (-v[1])
+    w2[1] = -.3 * math.cos(15 * math.pi / 180) * v[1] - .3 * math.sin(15 * math.pi / 180) * v[0]
     pygame.draw.polygon(
         fenetre,
         couleur,
         [
-            (x + v[0], y + v[1]),
-            (x + v[0] + w1[0], y + v[1] + w1[1]),
-            (x + v[0] + w2[0], y + v[1] + w2[1]),
-            (x + v[0], y + [1])
+            (x + v[0], ordo(y + v[1])),
+            (x + v[0] + w1[0], ordo(y + v[1] + w1[1])),
+            (x + v[0] + w2[0], ordo(y + v[1] + w2[1])),
+            (x + v[0], ordo(y + v[1]))
         ],
         0
     )
@@ -274,7 +282,7 @@ def image(x, y, nom, largeur=50, hauteur=50):
     """
     pygame_image = pygame.transform.scale(pygame.image.load(
         nom).convert_alpha(), (largeur, hauteur))
-    fenetre.blit(pygame_image, (int(x - largeur / 2), int(y - hauteur / 2)))
+    fenetre.blit(pygame_image, (int(x - largeur / 2), ordo(int(y - hauteur / 2))))
     pygame.display.update()
 
 
@@ -282,7 +290,7 @@ def trace_explosion(x, y, couleur='orange', r=10, c=0.5, n=10):
     explosion(x, y, couleur, r, c, n)
 
 
-def explosion(x, y, couleur='orange', r=10, c=0.5, n=10):
+def explosion(x, y, couleur='orange', r=30, c=0.5, n=10):
     '''
     Trace un polygône régulier étoilé à ``2n`` côté,
     de rayon extérieur ``r``,
@@ -306,13 +314,13 @@ def explosion(x, y, couleur='orange', r=10, c=0.5, n=10):
     for k in range(n):
         pointlist.append((
             x + r * math.cos(k * theta),
-            y + r * math.sin(k * theta)
+            ordo(y + r * math.sin(k * theta))
         ))
         pointlist.append((
             x + c * r * math.cos((k + 1 / 2) * theta),
-            y + c * r * math.sin((k + 1 / 2) * theta)
+            ordo(y + c * r * math.sin((k + 1 / 2) * theta))
         ))
-    pointlist.append((x + r, y))
+    pointlist.append((x + r, ordo(y)))
     pygame.draw.polygon(fenetre, couleur, pointlist)
     pygame.display.update()
 
@@ -331,29 +339,34 @@ def axes(color='noir'):
     ymax = pygame.display.Info().current_h
     xmax = pygame.display.Info().current_w
     epaisseur = 2
-    pygame.draw.lines(fenetre, couleur, False, [(5, 0), (5, ymax)], epaisseur)
+    correction = 0
+    if axeMath:
+        ## cette correction vient du fait que les textes continuent d'être définis par rapport à leur coin haut-gauche même si l'axe est à l'envers
+        correction = 12
+    pygame.draw.lines(fenetre, couleur, False, [(5, ordo(0)), (5, ordo(ymax))], epaisseur)
     pygame.draw.lines(
         fenetre, couleur, False, [
-            (0, ymax - 5), (5, ymax)], epaisseur)
+            (0, ordo(ymax - 5)), (5, ordo(ymax))], epaisseur)
     pygame.draw.lines(
         fenetre, couleur, False, [
-            (10, ymax - 5), (5, ymax)], epaisseur)
-    pygame.draw.lines(fenetre, couleur, False, [(0, 5), (xmax, 5)], epaisseur)
+            (10, ordo(ymax - 5)), (5, ordo(ymax))], epaisseur)
+    pygame.draw.lines(fenetre, couleur, False, [(0, ordo(5)), (xmax, ordo(5))], epaisseur)
     pygame.draw.lines(
         fenetre, couleur, False, [
-            (xmax - 5, 0), (xmax, 5)], epaisseur)
+            (xmax - 5, ordo(0)), (xmax, ordo(5))], epaisseur)
     pygame.draw.lines(
         fenetre, couleur, False, [
-            (xmax - 5, 10), (xmax, 5)], epaisseur)
+            (xmax - 5, ordo(10)), (xmax, ordo(5))], epaisseur)
     font = pygame.font.Font(None, 24, bold=False, italic=False)
     text = font.render(str(ymax), 1, couleur)
-    fenetre.blit(text, (15, ymax - 30))
+    fenetre.blit(text, (15, ordo(ymax - 35 + correction)))
     text = font.render("y", 1, couleur)
-    fenetre.blit(text, (15, ymax - 17))
+    fenetre.blit(text, (15, ordo(ymax - 17 + correction)))
     text = font.render(str(xmax), 1, couleur)
-    fenetre.blit(text, (xmax - 35, 10))
+    fenetre.blit(text, (xmax - 35, ordo(10 + correction)))
     text = font.render("x", 1, couleur)
-    fenetre.blit(text, (xmax - 15, 22))
+    fenetre.blit(text, (xmax - 15, ordo(25 + correction)))
     text = font.render("0", 1, couleur)
-    fenetre.blit(text, (10, 10))
+    fenetre.blit(text, (10, ordo(10 + correction)))
     pygame.display.update()
+
