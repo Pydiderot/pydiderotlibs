@@ -459,3 +459,4 @@ def axes(color='noir'):
     fenetre.blit(text, (10, ordo(10 + correction)))
     pygame.display.update()
 
+ 
