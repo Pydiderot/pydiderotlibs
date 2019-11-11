@@ -8,6 +8,8 @@ import pygame
 
 
 from time import sleep  # pour rendre transparent côté élève l'utilisation de "sleep"
+from random import randint #pour la fonction vecteur2
+
 from .couleurs import rgb
 
 
@@ -15,11 +17,11 @@ def creer_fenetre(largeur=200, hauteur=300, orientation_axe_ordonnees=False, tit
     fenetre(largeur, hauteur, orientation_axe_ordonnees , titre)
 
 
-def window(largeur=200, hauteur=300, orientation_axe_ordonnees=False, titre="Fenetre graphique"):
+def window(largeur=600, hauteur=500, orientation_axe_ordonnees=False, titre="Fenetre graphique"):
     fenetre(largeur, hauteur, orientation_axe_ordonnees , titre)
 
 
-def fenetre(largeur=200, hauteur=300, orientation_axe_ordonnees=False, titre="Fenetre graphique"):
+def fenetre(largeur=600, hauteur=500, orientation_axe_ordonnees=False, titre="Fenetre graphique"):
     """
     Crée et affiche une fenêtre graphique.
     Alias: ``windows()``, ``creer_fenetre()``
@@ -122,15 +124,19 @@ def efface(couleur='blanc'):
     pygame.display.update()
 
 
-def trace_cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
+def erase(couleur='blanc'):
+    efface(couleur)
+
+
+def trace_cercle(x, y, couleur='bleu', rayon=50, epaisseur=0):
     cercle(x, y, couleur, rayon, epaisseur)
 
 
-def circle(x, y, couleur='bleu', rayon=5, epaisseur=0):
+def circle(x, y, couleur='bleu', rayon=50, epaisseur=0):
     cercle(x, y, couleur, rayon, epaisseur)
 
 
-def cercle(x, y, couleur='bleu', rayon=5, epaisseur=0):
+def cercle(x, y, couleur='bleu', rayon=50, epaisseur=0):
     """
     Trace un cercle dans la fenetre graphique.
 
@@ -168,15 +174,15 @@ def point(x, y, couleur='bleu'):
     pygame.display.update()
 
 
-def trace_rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
+def trace_rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=0):
     rectangle(x, y, largeur, hauteur, couleur, epaisseur)
 
 
-def rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
+def rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=0):
     """
     Trace un rectangle horizontal dans la fenetre graphique .
 
-    Le sommet haut-gauche à pour coordonées ``(x,y)``, la ``largeur`` est la taille en abscisse
+    Le sommet haut-gauche à pour coordonnées ``(x,y)``, la ``largeur`` est la taille en abscisse
     et la ``hauteur`` la taille en ordonnée.
 
     Alias: ``trace_rectangle()``
@@ -195,11 +201,37 @@ def rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=1):
     pygame.display.update()
 
 
-def trace_segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
+def trace_triangle(x1, y1, x2, y2, x3, y3, couleur='bleu', epaisseur=0):
+    triangle(x1, y1, x2, y2, x3, y3, couleur, epaisseur)
+
+
+def triangle(x1, y1, x2, y2, x3, y3, couleur='bleu', epaisseur=0):
+    """
+    Trace un triangle dans la fenetre graphique .
+
+    Alias: ``trace_triangle()``
+
+    Arguments:
+        x1 (int): abscisse du premier sommet du triangle
+        y1 (int): ordonnée du premier sommet du triangle
+        x2 (int): abscisse du deuxième sommet du triangle
+        y2 (int): ordonnée du deuxième sommet du triangle
+        x3 (int): abscisse du troisième sommet du triangle
+        y3 (int): ordonnée du troisième sommet du triangle
+        couleur (:ref:`couleur <couleur>`, optionnel): Couleur du triangle (``bleu`` par défaut)
+        epaisseur (int, optionnel): Epaisseur des cotés du triangle (``0`` par défaut). Si ``0``, le triangle est rempli.
+
+    """
+    couleur = rgb(couleur)
+    pygame.draw.polygon(fenetre, couleur, [(x1, ordo(y1)), (x2, ordo(y2)), (x3, ordo(y3))], epaisseur)
+    pygame.display.update()
+
+
+def trace_segment(x1, y1, x2, y2, couleur='bleu', epaisseur=2):
     segment(x1, y1, x2, y2, couleur, epaisseur)
 
 
-def segment(x1, y1, x2, y2, couleur='bleu', epaisseur=1):
+def segment(x1, y1, x2, y2, couleur='bleu', epaisseur=2):
     """
     Trace un segment entre les points de coordonées ``(x1, y1)`` et ``(x2, y2)``.
 
@@ -262,12 +294,28 @@ def vecteur(x, y, v, couleur='rouge', epaisseur=2):
     )
     pygame.display.update()
 
+def vecteur2(xv,yv, couleur='rouge', epaisseur=2):
+    ymax = pygame.display.Info().current_h
+    xmax = pygame.display.Info().current_w
+    x = randint(xv, xmax - xv)
+    y = randint(yv , ymax - yv)
+    v = [xv,yv]
+    vector(x,y,v,couleur,epaisseur)
 
-def trace_image(x, y, nom, largeur=50, hauteur=50):
+
+def trace_vecteur2(xv,yv, couleur='rouge', epaisseur=2):
+    vecteur2(xv,yv, couleur, epaisseur)
+
+
+def vector2(xv,yv, couleur='rouge', epaisseur=2):
+    vecteur2(xv,yv, couleur, epaisseur)
+
+
+def trace_image(x, y, nom, largeur=100, hauteur=100):
     image(x, y, nom, largeur, hauteur)
 
 
-def image(x, y, nom, largeur=50, hauteur=50):
+def image(x, y, nom, largeur=100, hauteur=100):
     """
     Trace une image dans la fenetre graphique.
 
@@ -286,11 +334,11 @@ def image(x, y, nom, largeur=50, hauteur=50):
     pygame.display.update()
 
 
-def trace_explosion(x, y, couleur='orange', r=10, c=0.5, n=10):
+def trace_explosion(x, y, couleur='orange', r=50, c=0.5, n=10):
     explosion(x, y, couleur, r, c, n)
 
 
-def explosion(x, y, couleur='orange', r=30, c=0.5, n=10):
+def explosion(x, y, couleur='orange', r=50, c=0.5, n=10):
     '''
     Trace un polygône régulier étoilé à ``2n`` côté,
     de rayon extérieur ``r``,
