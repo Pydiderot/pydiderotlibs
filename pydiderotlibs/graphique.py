@@ -203,11 +203,11 @@ def point(x, y, couleur='bleu'):
     pygame.display.update()
 
 
-def trace_rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=0):
+def trace_rectangle(x, y, largeur=100, hauteur=50, couleur='bleu', epaisseur=0):
     rectangle(x, y, largeur, hauteur, couleur, epaisseur)
 
 
-def rectangle(x, y, largeur, hauteur, couleur='bleu', epaisseur=0):
+def rectangle(x, y, largeur=100, hauteur=50, couleur='bleu', epaisseur=0):
     """
     Trace un rectangle horizontal dans la fenetre graphique .
 
@@ -459,4 +459,3 @@ def axes(color='noir'):
     fenetre.blit(text, (10, ordo(10 + correction)))
     pygame.display.update()
 
- 
