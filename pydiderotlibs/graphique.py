@@ -10,6 +10,7 @@ import pygame
 from time import sleep  # pour rendre transparent côté élève l'utilisation de "sleep"
 from random import randint #pour la fonction vecteur2
 
+from .math_lycee import *
 from .couleurs import rgb
 
 
@@ -151,6 +152,34 @@ def cercle(x, y, couleur='bleu', rayon=25, epaisseur=0):
     """
     couleur = rgb(couleur)
     pygame.draw.circle(fenetre, couleur, (x, ordo(y)), rayon, epaisseur)
+    pygame.display.update()
+
+
+def trace_cercle_aleatoire(couleur='bleu', rayon=5, epaisseur=0):
+    cercle_aleatoire(couleur, rayon, epaisseur)
+
+
+def random_circle(couleur='bleu', rayon=5, epaisseur=0):
+    cercle_aleatoire(couleur, rayon, epaisseur)
+
+
+def cercle_aleatoire(couleur='bleu', rayon=5, epaisseur=0):
+    """
+    Trace un (petit) cercle dans la fenetre graphique, à un endroit choisit au hasard.
+    (Utile pour fairre de la neige par exemple.)
+
+    Alias: ``random_circle()``, ``trace_cercle_aleatoire()``
+
+    Arguments:
+        rayon (int, optionel): Rayon du cercle (5 par défaut)
+        epaisseur (int, optionel): Epaisseur du cercle (``0`` par défaut). Si ``0``, le cercle sera rempli et apparaitra comme un disque.
+        couleur (:ref:`couleur <couleur>`, optionnel): Couleur du cercle (bleu par défaut)
+    """
+    couleur = rgb(couleur)
+    ymax = pygame.display.Info().current_h
+    xmax = pygame.display.Info().current_w
+    centre = (randint(-rayon, xmax + rayon),randint(-rayon, ymax + rayon))
+    pygame.draw.circle(fenetre, couleur, centre, rayon, epaisseur)
     pygame.display.update()
 
 
