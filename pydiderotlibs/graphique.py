@@ -8,7 +8,7 @@ import pygame
 
 
 from time import sleep  # pour rendre transparent côté élève l'utilisation de "sleep"
-from random import randint #pour la fonction vecteur2
+from random import randint #pour la fonction vecteur2 et pour cercle_aleatoire
 
 from .math_lycee import *
 from .couleurs import rgb
