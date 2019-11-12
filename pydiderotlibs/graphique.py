@@ -10,8 +10,8 @@ import pygame
 from time import sleep  # pour rendre transparent côté élève l'utilisation de "sleep"
 from random import randint #pour la fonction vecteur2 et pour cercle_aleatoire
 
-from .math_lycee import *
 from .couleurs import rgb
+
 
 # On définit les variables globales.
 # Si quelqu'un veut s'amuser à sous-classer pygame.Surface pour faire plus propre il est bienvenue
@@ -31,7 +31,7 @@ def fenetre(largeur=600, hauteur=500, orientation_axe_ordonnees=False, titre="Fe
     Crée et affiche une fenêtre graphique.
 
     Alias: ``windows()``, ``creer_fenetre()``
-    
+
     Arguments:
         largeur (int, optionel): Largeur de la fenetre en pixels (``600`` par défaut)
         hauteur (int, optionel): Hauteur de la fenetre en pixels (``500`` par défaut)
