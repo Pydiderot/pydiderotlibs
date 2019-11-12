@@ -15,7 +15,8 @@ N'hésitez pas à consulter la documentation en ligne:\n
 https://pydiderotlibs.rtfd.io/librairies/repere.html
 """)
 
-global fenetre
+# On définit la variable globale _fenetre
+_fenetre = None
 
 
 class _Fenetre_graphique(Canvas):
@@ -343,21 +344,21 @@ def point(x, y, couleur='noir', taille=1, forme='rond'):
     """
 
     couleur = rgb2hex(rgb(couleur))
-    global fenetre
+    global _fenetre
     coef = 2
-    pt = fenetre._conv(x, y)
+    pt = _fenetre._conv(x, y)
     tab = [0] * 8
     if forme == 'rond':
-        tab[0] = fenetre.create_oval(pt[0] - coef * taille, pt[1] - coef * taille,
+        tab[0] = _fenetre.create_oval(pt[0] - coef * taille, pt[1] - coef * taille,
                                      pt[0] + coef * taille, pt[1] +
                                      coef * taille,
                                      outline='', fill=couleur)
     elif forme == 'croix':
-        tab[0] = fenetre.create_line(pt[0] - coef * taille, pt[1] - coef * taille,
+        tab[0] = _fenetre.create_line(pt[0] - coef * taille, pt[1] - coef * taille,
                                      pt[0] + coef * taille, pt[1] +
                                      coef * taille,
                                      fill=couleur)
-        tab[7] = fenetre.create_line(pt[0] - coef * taille, pt[1] + coef * taille,
+        tab[7] = _fenetre.create_line(pt[0] - coef * taille, pt[1] + coef * taille,
                                      pt[0] + coef * taille, pt[1] -
                                      coef * taille,
                                      fill=couleur)
@@ -368,7 +369,7 @@ def point(x, y, couleur='noir', taille=1, forme='rond'):
     tab[4] = couleur
     tab[5] = taille
     tab[6] = forme
-    fenetre.objets.append(tab)
+    _fenetre.objets.append(tab)
 
 
 def trace_texte(x, y, message, couleur='noir'):
@@ -393,15 +394,15 @@ def texte(x, y, message, couleur='noir'):
     """
     couleur = rgb2hex(rgb(couleur))
 
-    global fenetre
+    global _fenetre
     tab = [0] * 6
-    tab[0] = fenetre.create_text(x, y, text=texte, fill=couleur)
+    tab[0] = _fenetre.create_text(x, y, text=texte, fill=couleur)
     tab[1] = 'texte'
     tab[2] = x
     tab[3] = y
     tab[4] = message
     tab[5] = couleur
-    fenetre.objets.append(tab)
+    _fenetre.objets.append(tab)
 
 
 def trace_segment(x1, y1, x2, y2, couleur='noir', taille=2):
@@ -420,12 +421,12 @@ def segment(x1, y1, x2, y2, couleur='noir', taille=2):
         """
     couleur = rgb2hex(rgb(couleur))
 
-    global fenetre
+    global _fenetre
 
     tab = [0] * 8
-    tab[0] = fenetre.create_line(
-        fenetre._conv(
-            x1, y1), fenetre._conv(
+    tab[0] = _fenetre.create_line(
+        _fenetre._conv(
+            x1, y1), _fenetre._conv(
             x2, y2), width=taille, fill=couleur)
     tab[1] = 'segment'
     tab[2] = x1
@@ -434,7 +435,7 @@ def segment(x1, y1, x2, y2, couleur='noir', taille=2):
     tab[5] = y2
     tab[6] = couleur
     tab[7] = taille
-    fenetre.objets.append(tab)
+    _fenetre.objets.append(tab)
 
 
 def trace_rectangle(x1, y1, largeur, hauteur, couleur='noir',
@@ -459,10 +460,10 @@ def rectangle(x1, y1, largeur, hauteur, couleur='noir',
     couleur = rgb2hex(rgb(couleur))
     remplissage = rgb2hex(rgb(remplissage))
 
-    global fenetre
+    global _fenetre
 
     tab = [0] * 9
-    tab[0] = fenetre.create_rectangle(fenetre._conv(x1, y1), fenetre._conv(x1 + largeur, y1 + hauteur),
+    tab[0] = _fenetre.create_rectangle(_fenetre._conv(x1, y1), _fenetre._conv(x1 + largeur, y1 + hauteur),
                                       outline=couleur, width=taille, fill=remplissage)
     tab[1] = 'rectangle'
     tab[2] = x1
@@ -472,7 +473,7 @@ def rectangle(x1, y1, largeur, hauteur, couleur='noir',
     tab[6] = couleur
     tab[7] = taille
     tab[8] = remplissage
-    fenetre.objets.append(tab)
+    _fenetre.objets.append(tab)
 
 
 ### Fonction principale pour demarrer ####
@@ -506,6 +507,6 @@ def fenetre(xmin=-10, xmax=10, ymin=-10, ymax=10, fond='blanc',
     graph = _Fenetre_graphique(root, xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax,
                                background=fond, axes=axes)
     graph.pack(side=LEFT, fill=BOTH, expand=YES)
-    global fenetre
-    fenetre = graph
+    global _fenetre
+    _fenetre = graph
     return graph
