@@ -2,16 +2,20 @@
 #
 
 # import des librairies
-import sys
-import math
-import pygame
-
-
 from time import sleep  # pour rendre transparent côté élève l'utilisation de "sleep"
 from random import randint #pour la fonction vecteur2 et pour cercle_aleatoire
 
+import sys
+import math
+import pygame
 from .couleurs import rgb
 
+# Un petit message invitant a lire la doc
+print("""
+Merci d'utiliser la librairie graphique du module pydiderot.\n
+N'hésitez pas à consulter la documentation en ligne:\n
+https://pydiderotlibs.rtfd.io/librairies/graphique.html
+""")
 
 # On définit les variables globales.
 # Si quelqu'un veut s'amuser à sous-classer pygame.Surface pour faire plus propre il est bienvenue

@@ -19,6 +19,12 @@ from .vecteurs import *
 from .chaines import *
 from .listes import *
 
+print("""
+Merci d'utiliser la librairie lycee du module pydiderot.\n
+N'hésitez pas à consulter la documentation en ligne:\n
+https://pydiderotlibs.rtfd.io/librairies/lycee.html
+""")
+
 pi = math.pi
 
 

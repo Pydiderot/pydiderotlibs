@@ -8,6 +8,13 @@ from tkinter import Tk, Canvas, N, E, RIDGE, LEFT, BOTH, YES, NE, LAST
 from math import floor
 from .couleurs import rgb, rgb2hex
 
+# Un petit message invitant a lire la doc
+print("""
+Merci d'utiliser la librairie repere du module pydiderot.\n
+N'hésitez pas à consulter la documentation en ligne:\n
+https://pydiderotlibs.rtfd.io/librairies/repere.html
+""")
+
 global fenetre
 
 

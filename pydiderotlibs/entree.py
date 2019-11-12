@@ -2,6 +2,12 @@
 
 import tkinter as tk
 
+print("""
+Merci d'utiliser la librairie entree du module pydiderot.\n
+N'hésitez pas à consulter la documentation en ligne:\n
+https://pydiderotlibs.rtfd.io/librairies/entree.html
+""")
+
 
 def demander_texte(titre="Entrez un texte", message=None):
     """
