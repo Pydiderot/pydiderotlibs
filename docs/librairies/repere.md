@@ -61,7 +61,6 @@ fen.loop()
 ```python
 creer_fenetre()
 trace_point(5, 5, couleur='blue', taille=5)
-affiche_fenetre()
 ```
 
 ## Documentation

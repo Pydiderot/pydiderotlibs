@@ -483,7 +483,7 @@ def fenetre(xmin=-10, xmax=10, ymin=-10, ymax=10, fond='blanc',
             titre="Repère mathematique", axes=True):
     """Initialise l'object fenetre graphique sans l'afficher.
 
-    Alias: ``trace_fenetre()`` et ``window()``
+    Alias: ``creer_fenetre()`` et ``window()``
 
     Arguments:
         titre (str): Titre de la fenêtre. La valeur par défaut est ``Repère mathematique``.

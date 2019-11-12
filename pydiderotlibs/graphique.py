@@ -29,7 +29,9 @@ def window(largeur=600, hauteur=500, orientation_axe_ordonnees=False, titre="Fen
 def fenetre(largeur=600, hauteur=500, orientation_axe_ordonnees=False, titre="Fenetre graphique"):
     """
     Crée et affiche une fenêtre graphique.
+
     Alias: ``windows()``, ``creer_fenetre()``
+    
     Arguments:
         largeur (int, optionel): Largeur de la fenetre en pixels (``600`` par défaut)
         hauteur (int, optionel): Hauteur de la fenetre en pixels (``500`` par défaut)
