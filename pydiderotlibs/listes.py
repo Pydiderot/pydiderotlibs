@@ -7,8 +7,8 @@ Créé à partir d' Edupython: http://edupython.tuxfamily.org/
 Licence CECILL http://www.cecill.info/
 """
 
+from math import floor, log
 from .chaines import fich2chaine, chaine2fich
-from math import floor
 
 def CSV2liste(num, fichier='optionel'):
     """
