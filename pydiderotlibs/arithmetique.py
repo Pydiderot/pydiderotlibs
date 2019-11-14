@@ -9,7 +9,7 @@ def pgcd(a, b):
         return pgcd(abs(a), abs(b))
     if b == 0:
         if a == 0:
-            raise DivisionByZeroError(
+            raise ZeroDivisionError(
                 "Le PGCD de deux nombres nuls n'existe pas")
         else:
             return a
