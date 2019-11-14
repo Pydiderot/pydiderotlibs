@@ -1,4 +1,4 @@
-name: Python application
+name: Plake8 test
 
 on: [push]
 
