@@ -312,14 +312,6 @@ class _Fenetre_graphique(Canvas):
         # self.master.quit()
         self.master.destroy()
 
-    def _trace_point(self, tab):
-        pt = self._conv(self.objets[i][2], self.objets[i][3])
-
-        self.objets[i][0] = self.create_oval(pt[0] - coef * taille, pt[1] - coef * taille,
-                                             pt[0] + coef *
-                                             taille, pt[1] + coef * taille,
-                                             outline='', fill=self.objets[i][4])
-
     def loop(self):
         self.master.mainloop()
 
