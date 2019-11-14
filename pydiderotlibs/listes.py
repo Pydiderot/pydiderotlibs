@@ -7,10 +7,9 @@ Créé à partir d' Edupython: http://edupython.tuxfamily.org/
 Licence CECILL http://www.cecill.info/
 """
 
-
-
-
 from .chaines import fich2chaine, chaine2fich
+from math import floor
+
 def CSV2liste(num, fichier='optionel'):
     """
     Retourne une liste correspondant à la colonne ou la ligne nom du fichier ``fichier``.
@@ -120,7 +119,7 @@ def serie(deb, fin, pas=1):
         pas (float ou int, optionnel) : pas de la série
     """
     l = [deb, fin, pas]
-    degmax = 10**(-min([partie_entiere(log(abs(float(i)))) for i in l]))
+    degmax = 10**(-min([floor(log(abs(float(i)))) for i in l]))
     ToutEntier = [int(i * degmax) for i in l]
     return [float(i) / degmax for i in range(ToutEntier[0],
                                              ToutEntier[1] + ToutEntier[2], ToutEntier[2])]
