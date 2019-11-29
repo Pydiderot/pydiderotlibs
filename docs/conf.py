@@ -232,11 +232,11 @@ if os.path.isfile('pydiderotlibs.zip'):
     os.remove('pydiderotlibs.zip')
 
 # On créé le zip
-zip = zipfile.ZipFile('pydiderotlibs.zip', 'a')
+notre_zip = zipfile.ZipFile('pydiderotlibs.zip', 'a')
 # On ajoute les fichiers
 for fichier in fichiers:
-    zip.write(os.path.join(chemin, fichier), arcname=fichier)
+    notre_zip.write(os.path.join(chemin, fichier), arcname=fichier)
 # On ferme le zip
-zip.close()
+notre_zip.close()
 # On se replace dans le dossier courant
 os.chdir(chemin_courant)
