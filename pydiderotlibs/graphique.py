@@ -72,6 +72,10 @@ def _ordo(y):
     return y
 
 def rafraichir():
+    """
+    Rafraîchie la fenêtre graphique.
+    C'est uniquement utile si vous désactivez l'option :ref:`autorefresh <autorefresh>`.
+    """
     pygame.display.update()
 
 def ecoute_evenements():

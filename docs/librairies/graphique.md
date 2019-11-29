@@ -95,6 +95,47 @@ while 1:
         print('clic aux coordonées ' + str(evenements['clic']))
 ```
 
+.. _autorefresh:
+## Rafraîchissement automatique
+Par défaut, cette librairie rafraîchit automatiquement l'affichage a chaque modification de la fenêtre: création de point, de cercle, ...
+
+Cela simplifie l'utilisation dans des cas simples mais, si vous souhaitez créer un programme complexe qui modifie fréquemment la fenêtre graphique, cela va créer des scintillements désagréables et ralentir le programme.
+
+Vous pouvez désactiver ce rafraîchissement automatique en passant l'argument `autorefresh=fasle` à la fonction `fenetre()`. Il faudra alors appeler la fonction `rafraichir()` lorsque vous voulez rafraîchir l'affichage de la fenêtre graphique.
+
+Notre exemple de départ devient alors:
+
+```python
+# On importe la librairie
+from pydiderotlibs.graphique import *
+# Nous aurons également de la librairie time
+from time import *
+
+# On initialise les coordonnées du point au coin haut gauche de la fenêtre
+x = 0
+y = 0
+
+# On créé la fenêtre graphique en passant l'argument autorefresh=false
+creer_fenetre(autorefresh=False)
+
+# Boucle principale
+while 1:
+    # Il est important d’appeler la fonction demande_evenements() qui gère la fermeture de la fenêtre
+    demande_evenements()
+
+    # Trace un cercle au coordonnées (x,y)
+    trace_cercle(x, y)
+    # Attend un dixième de secondes
+    sleep(0.1)
+    # Efface le cercle
+    trace_cercle(x, y, couleur='blanc')
+    # Ajoute le vecteur vitesse aux coordonnées du point
+    x += 1
+    y += 1
+    # On actualise la fenêtre graphique
+    rafraichir()
+```
+
 .. _couleur:
 .. mdinclude:: ../couleurs.md
 
