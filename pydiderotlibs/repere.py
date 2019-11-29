@@ -19,7 +19,7 @@ https://pydiderotlibs.rtfd.io/librairies/repere.html
 _fenetre = None
 
 
-class _Fenetre_graphique(Canvas):
+class _FenetreGraphique(Canvas):
     " Un canvas redimensionnable, avec repère usuel, zoomable... "
     # les coordonnées en pixels sont à l'intérieur du canvas (sans le bord)
     # R1 : repère lié aux pixels, B1 sa base associée
@@ -107,7 +107,7 @@ class _Fenetre_graphique(Canvas):
         else:
             self.flag = 3
 
-    def dblclic(self, event):
+    def dblclic(self):
         "Rend le repère orthonormé en se basant sur l'axe des X"
         self.p[1][1] = -self.p[0][0]
         self.inv_p[1][1] = 1 / self.p[1][1]
@@ -132,7 +132,7 @@ class _Fenetre_graphique(Canvas):
         self.x1, self.y1 = x2, y2
         self.redraw()
 
-    def mouseUp(self, event):
+    def mouseUp(self):
         "Op. à effectuer quand le bouton gauche de la souris est relâché"
         self.flag = 0
 
@@ -315,7 +315,7 @@ class _Fenetre_graphique(Canvas):
     def loop(self):
         self.master.mainloop()
 
-################################## Fin de la classe _Fenetre_graphique ###
+################################## Fin de la classe _FenetreGraphique ###
 
 
 def trace_point(x, y, couleur='noir', taille=1, forme='rond'):
@@ -496,7 +496,7 @@ def fenetre(xmin=-10, xmax=10, ymin=-10, ymax=10, fond='blanc',
 
     root = Tk()       # on crée la fenêtre
     root.title(titre)  # on lui donne un titre
-    graph = _Fenetre_graphique(root, xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax,
+    graph = _FenetreGraphique(root, xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax,
                                background=fond, axes=axes)
     graph.pack(side=LEFT, fill=BOTH, expand=YES)
     global _fenetre

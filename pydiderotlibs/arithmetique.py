@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+#
+"""
+Partie arithmetique du module lycee.
+"""
+
+
 def pgcd(a, b):
     """Renvoie le Plus Grand Diviseur Communs  des entiers ``a`` et ``b``.
 
@@ -11,10 +18,8 @@ def pgcd(a, b):
         if a == 0:
             raise ZeroDivisionError(
                 "Le PGCD de deux nombres nuls n'existe pas")
-        else:
-            return a
-    else:
-        return pgcd(b, a % b)
+        return a
+    return pgcd(b, a % b)
 
 
 def reste(a, b):

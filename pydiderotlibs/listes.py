@@ -81,7 +81,7 @@ def trier(liste1, liste2=[]):
 
     if liste2 == []:
         return sorted(liste1)
-    elif len(liste1) != len(liste2):
+    if len(liste1) != len(liste2):
         print("Erreur : les 2 listes n'ont pas la même taille !")
     else:
         # Il faut trier la liste selon l'ordre de liste_groupe

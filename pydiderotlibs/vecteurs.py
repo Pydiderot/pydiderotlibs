@@ -1,19 +1,17 @@
 # -*- coding: utf-8 -*-
 #
-
 """
 Partie vecteurs du module lycee.
 """
+
+from math import sqrt
+
 """
 Créé à partir d' Edupython: http://edupython.tuxfamily.org/
 
 Licence CECILL http://www.cecill.info/
 """
 
-
-
-
-from math import sqrt
 def vecteur(x, y, z=None):
     """
     Renvoie un vecteur de coordonées ``(x,y)`` ou ``(x,y,z)``.
@@ -26,8 +24,7 @@ def vecteur(x, y, z=None):
     """
     if z is None:
         return [x, y]
-    else:
-        return [x, y, z]
+    return [x, y, z]
 
 
 def norme(v):
