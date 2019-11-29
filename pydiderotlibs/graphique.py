@@ -21,6 +21,7 @@ https://pydiderotlibs.rtfd.io/librairies/graphique.html
 # Si quelqu'un veut s'amuser à sous-classer pygame.Surface pour faire plus propre il est bienvenue
 _axeMath = False
 _fenetre = None
+_autorefresh = False
 
 def creer_fenetre(largeur=200, hauteur=300, orientation_axe_ordonnees=False, titre="Fenetre graphique"):
     fenetre(largeur, hauteur, orientation_axe_ordonnees, titre)
@@ -30,7 +31,13 @@ def window(largeur=600, hauteur=500, orientation_axe_ordonnees=False, titre="Fen
     fenetre(largeur, hauteur, orientation_axe_ordonnees, titre)
 
 
-def fenetre(largeur=600, hauteur=500, orientation_axe_ordonnees=False, titre="Fenetre graphique"):
+def fenetre(
+    largeur=600,
+    hauteur=500,
+    orientation_axe_ordonnees=False,
+    titre="Fenetre graphique",
+    autorefresh=False
+    ):
     """
     Crée et affiche une fenêtre graphique.
 
@@ -41,12 +48,15 @@ def fenetre(largeur=600, hauteur=500, orientation_axe_ordonnees=False, titre="Fe
         hauteur (int, optionel): Hauteur de la fenetre en pixels (``500`` par défaut)
         orientation_axe_ordonnees: Si on met cet argument à True, l'axe des ordonnées sera orienté de bas en haut comme en maths. Sinon il est orienté dans l'autre sens comme habituellement en informatique (``False`` par défaut)
         titre (str, optionel): Titre de la fenetre (``Fenetre graphique`` par défaut)
+        autorefresh(bool, optionel): Active le rafraichissement automatique de la fenetre graphique (`False` par défaut)
     """
 
     pygame.init()
     global _fenetre
     global _axeMath
+    global _autorefresh
     _axeMath = orientation_axe_ordonnees
+    _autorefresh = autorefresh
     _fenetre = pygame.display.set_mode((largeur, hauteur))
     pygame.display.set_caption(titre)
     # active la répétition des touches
@@ -61,12 +71,15 @@ def _ordo(y):
         return ymax-y
     return y
 
+def rafraichir():
+    pygame.display.update()
+
 def ecoute_evenements():
-    demande_evenements()
+    return demande_evenements()
 
 
 def events():
-    demande_evenements()
+    return demande_evenements()
 
 
 def demande_evenements():
@@ -131,7 +144,8 @@ def efface(couleur='blanc'):
         couleur (:ref:`couleur <couleur>`, optionnel): Couleur de remplissage de l'écran (``'blanc'`` par défaut).
     """
     _fenetre.fill(rgb(couleur))
-    pygame.display.update()
+    if _autorefresh:
+        pygame.display.update()
 
 
 def erase(couleur='blanc'):
@@ -161,7 +175,8 @@ def cercle(x, y, couleur='bleu', rayon=25, epaisseur=0):
     """
     couleur = rgb(couleur)
     pygame.draw.circle(_fenetre, couleur, (x, _ordo(y)), rayon, epaisseur)
-    pygame.display.update()
+    if _autorefresh:
+        pygame.display.update()
 
 
 def trace_cercle_aleatoire(couleur='bleu', rayon=5, epaisseur=0):
@@ -189,7 +204,8 @@ def cercle_aleatoire(couleur='bleu', rayon=5, epaisseur=0):
     xmax = pygame.display.Info().current_w
     centre = (randint(-rayon, xmax + rayon),randint(-rayon, ymax + rayon))
     pygame.draw.circle(_fenetre, couleur, centre, rayon, epaisseur)
-    pygame.display.update()
+    if _autorefresh:
+        pygame.display.update()
 
 
 def trace_point(x, y, couleur='bleu'):
@@ -209,7 +225,8 @@ def point(x, y, couleur='bleu'):
     """
     couleur = rgb(couleur)
     pygame.draw.circle(_fenetre, couleur, (x, _ordo(y)), 1, 0)
-    pygame.display.update()
+    if _autorefresh:
+        pygame.display.update()
 
 
 def trace_rectangle(x, y, largeur=100, hauteur=50, couleur='bleu', epaisseur=0):
@@ -236,7 +253,8 @@ def rectangle(x, y, largeur=100, hauteur=50, couleur='bleu', epaisseur=0):
     """
     couleur = rgb(couleur)
     pygame.draw.rect(_fenetre, couleur, (x, _ordo(y), largeur, hauteur), epaisseur)
-    pygame.display.update()
+    if _autorefresh:
+        pygame.display.update()
 
 
 def trace_triangle(x1, y1, x2, y2, x3, y3, couleur='bleu', epaisseur=0):
@@ -262,7 +280,8 @@ def triangle(x1, y1, x2, y2, x3, y3, couleur='bleu', epaisseur=0):
     """
     couleur = rgb(couleur)
     pygame.draw.polygon(_fenetre, couleur, [(x1, _ordo(y1)), (x2, _ordo(y2)), (x3, _ordo(y3))], epaisseur)
-    pygame.display.update()
+    if _autorefresh:
+        pygame.display.update()
 
 
 def trace_segment(x1, y1, x2, y2, couleur='bleu', epaisseur=2):
@@ -285,7 +304,8 @@ def segment(x1, y1, x2, y2, couleur='bleu', epaisseur=2):
     """
     couleur = rgb(couleur)
     pygame.draw.lines(_fenetre, couleur, False, [(x1, _ordo(y1)), (x2, _ordo(y2))], epaisseur)
-    pygame.display.update()
+    if _autorefresh:
+        pygame.display.update()
 
 
 def trace_vecteur(x, y, v, couleur='rouge', epaisseur=2):
@@ -330,7 +350,8 @@ def vecteur(x, y, v, couleur='rouge', epaisseur=2):
         ],
         0
     )
-    pygame.display.update()
+    if _autorefresh:
+        pygame.display.update()
 
 def vecteur2(xv, yv, couleur='rouge', epaisseur=2):
     """
@@ -381,7 +402,8 @@ def image(x, y, nom, largeur=100, hauteur=100):
     pygame_image = pygame.transform.scale(pygame.image.load(
         nom).convert_alpha(), (largeur, hauteur))
     _fenetre.blit(pygame_image, (int(x - largeur / 2), _ordo(int(y - hauteur / 2))))
-    pygame.display.update()
+    if _autorefresh:
+        pygame.display.update()
 
 
 def trace_explosion(x, y, couleur='orange', r=50, c=0.5, n=10):
@@ -420,7 +442,8 @@ def explosion(x, y, couleur='orange', r=25, c=0.5, n=10):
         ))
     pointlist.append((x + r, _ordo(y)))
     pygame.draw.polygon(_fenetre, couleur, pointlist)
-    pygame.display.update()
+    if _autorefresh:
+        pygame.display.update()
 
 
 def trace_axes(color='noir'):
@@ -466,4 +489,5 @@ def axes(color='noir'):
     _fenetre.blit(text, (xmax - 15, _ordo(25 + correction)))
     text = font.render("0", 1, couleur)
     _fenetre.blit(text, (10, _ordo(10 + correction)))
-    pygame.display.update()
+    if _autorefresh:
+        pygame.display.update()
