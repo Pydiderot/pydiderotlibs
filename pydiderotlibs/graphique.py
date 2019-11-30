@@ -495,3 +495,93 @@ def axes(color='noir'):
     _fenetre.blit(text, (10, _ordo(10 + correction)))
     if _autorefresh:
         pygame.display.update()
+
+# Gestion du texte.
+# voir https://nerdparadise.com/programming/pygame/part5
+
+# On stocke les polices dans une globale pour ne pas avoir à la regénérer à chaque affichage.
+_cached_fonts = {}
+# On stocke les textes sous forme d'images pour ne pas avoir à la regénérer à chaque affichage.
+# Un meme texte a de grande chance d'être affiché plusieurs fois.
+_cached_text = {}
+
+def _make_font(fonts, size):
+    """
+    Initialise une police de caractères à partir d'une liste.
+    On retourne la première police de la liste installée sur la machine.
+    Si aucune police n'est installée, on retourne la police systeme par défaut.
+
+    Arguments:
+        fonts(list): Liste de polices de caractères
+        size(int): Taille de la police de caractère
+
+    Returns:
+        la première police de la liste installée sur la machine de taille ``size``.
+    """
+    available = pygame.font.get_fonts()
+    # get_fonts() returns a list of lowercase spaceless font names
+    choices = map(lambda x:x.lower().replace(' ', ''), fonts)
+    for choice in choices:
+        if choice in available:
+            return pygame.font.SysFont(choice, size)
+    return pygame.font.Font(None, size)
+
+
+def _get_font(font_preferences, size):
+    """
+    Retourne une police de caractère dans la liste ``font_preferences`` de taille ``size``
+    Si la police a déja été utilisée on utilise la cache ``_cached_fonts``.
+    """
+    global _cached_fonts
+    key = str(font_preferences) + '|' + str(size)
+    font = _cached_fonts.get(key, None)
+    if font is None:
+        font = _make_font(font_preferences, size)
+        _cached_fonts[key] = font
+    return font
+
+def _create_text(text, fonts, size, color):
+    global _cached_text
+    key = '|'.join(map(str, (fonts, size, color, text)))
+    text_image = _cached_text.get(key, None)
+    if text_image is None:
+        font = _get_font(fonts, size)
+        text_image = font.render(text, True, color)
+        _cached_text[key] = text_image
+    return text_image
+
+
+def texte(message, x, y, police='', taille=12, couleur="noir"):
+    """
+    Affiche un texte dans la fenetre graphique.
+
+    Arguments:
+        message(str): le texte à afficher
+        x(int): abscisse du début du texte
+        y(int): ordonnée du haut du début du texte
+        police(str, optionnel): la police de caractère à utiliser. Si non renseigné ou si la police n'est pas installée, on utilise la police de caractère défaut du system
+        taille(int, optionnel): taille du texte
+        couleur(:ref:`couleur <couleur>`, optionnel): couleur du texte
+    """
+    texte_image = _create_text(message, [police], taille, rgb(couleur))
+    pygame.display.get_surface().blit(texte_image, (x, y))
+    if _autorefresh:
+        pygame.display.update()
+
+def polices_disponibles():
+    """
+    Retourne les polices caractères disponibles
+    """
+    return pygame.font.get_fonts()
+
+def test_police(police):
+    """
+    Test si une police de caractère est installée.
+
+    Arguments:
+        police(str): police de caractère à tester
+
+    Returns:
+        True si la police est installée, False sinon
+    """
+    return police.lower().replace(' ', '') in polices_disponibles()
