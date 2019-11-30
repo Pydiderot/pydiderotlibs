@@ -44,11 +44,11 @@ def fenetre(
     Alias: ``windows()``, ``creer_fenetre()``
 
     Arguments:
-        largeur (int, optionel): Largeur de la fenetre en pixels (``600`` par défaut)
-        hauteur (int, optionel): Hauteur de la fenetre en pixels (``500`` par défaut)
+        largeur (int, optionnel): Largeur de la fenetre en pixels (``600`` par défaut)
+        hauteur (int, optionnel): Hauteur de la fenetre en pixels (``500`` par défaut)
         orientation_axe_ordonnees: Si on met cet argument à True, l'axe des ordonnées sera orienté de bas en haut comme en maths. Sinon il est orienté dans l'autre sens comme habituellement en informatique (``False`` par défaut)
-        titre (str, optionel): Titre de la fenetre (``Fenetre graphique`` par défaut)
-        autorefresh(bool, optionel): Active le rafraichissement automatique de la fenetre graphique (`False` par défaut)
+        titre (str, optionnel): Titre de la fenetre (``Fenetre graphique`` par défaut)
+        autorefresh(bool, optionnel): Active le rafraichissement automatique de la fenetre graphique (`False` par défaut)
     """
 
     pygame.init()
@@ -173,8 +173,8 @@ def cercle(x, y, couleur='bleu', rayon=25, epaisseur=0):
     Arguments:
         x (int): Abscisse du centre du cercle
         y (int): Ordonnée du centre du cercle
-        rayon (int, optionel): Rayon du cercle (25 par défaut)
-        epaisseur (int, optionel): Epaisseur du cercle (``0`` par défaut). Si ``0``, le cercle sera rempli et apparaitra comme un disque.
+        rayon (int, optionnel): Rayon du cercle (25 par défaut)
+        epaisseur (int, optionnel): Epaisseur du cercle (``0`` par défaut). Si ``0``, le cercle sera rempli et apparaitra comme un disque.
         couleur (:ref:`couleur <couleur>`, optionnel): Couleur du cercle (bleu par défaut)
     """
     couleur = rgb(couleur)
@@ -199,8 +199,8 @@ def cercle_aleatoire(couleur='bleu', rayon=5, epaisseur=0):
     Alias: ``random_circle()``, ``trace_cercle_aleatoire()``
 
     Arguments:
-        rayon (int, optionel): Rayon du cercle (5 par défaut)
-        epaisseur (int, optionel): Epaisseur du cercle (``0`` par défaut). Si ``0``, le cercle sera rempli et apparaitra comme un disque.
+        rayon (int, optionnel): Rayon du cercle (5 par défaut)
+        epaisseur (int, optionnel): Epaisseur du cercle (``0`` par défaut). Si ``0``, le cercle sera rempli et apparaitra comme un disque.
         couleur (:ref:`couleur <couleur>`, optionnel): Couleur du cercle (bleu par défaut)
     """
     couleur = rgb(couleur)
@@ -303,8 +303,8 @@ def segment(x1, y1, x2, y2, couleur='bleu', epaisseur=2):
         y1 (int): ordonnée de la première extremité du segment
         x2 (int): abscisse de la deuxieme extrémité du segment
         y2 (int): ordonnée de la deuxieme extrémité du segment
-        couleur (:ref:`couleur <couleur>`, optionel): Couleur du segment (``bleu`` par défaut)
-        epaisseur (int, optionel): Epaisseur du segment (``2`` par défaut)
+        couleur (:ref:`couleur <couleur>`, optionnel): Couleur du segment (``bleu`` par défaut)
+        epaisseur (int, optionnel): Epaisseur du segment (``2`` par défaut)
     """
     couleur = rgb(couleur)
     pygame.draw.lines(_fenetre, couleur, False, [(x1, _ordo(y1)), (x2, _ordo(y2))], epaisseur)
@@ -330,8 +330,8 @@ def vecteur(x, y, v, couleur='rouge', epaisseur=2):
         x (int): abscisse du point d'origine de la représentation du vecteur
         y (int): ordonnée du point d'origine de la représentation du vecteur
         v (list): Coordonnées de la deuxieme extrémité du segment
-        couleur (:ref:`couleur <couleur>`, optionel): Couleur du segment (``rouge`` par défaut)
-        epaisseur (int, optionel): Epaisseur du segment (``2`` par défaut)
+        couleur (:ref:`couleur <couleur>`, optionnel): Couleur du segment (``rouge`` par défaut)
+        epaisseur (int, optionnel): Epaisseur du segment (``2`` par défaut)
     """
 
     couleur = rgb(couleur)
@@ -366,8 +366,8 @@ def vecteur2(xv, yv, couleur='rouge', epaisseur=2):
     Arguments:
         xv (int): abscisse du vecteur
         yv (int): ordonnée du vecteur
-        couleur (:ref:`couleur <couleur>`, optionel): Couleur du segment (``rouge`` par défaut)
-        epaisseur (int, optionel): Epaisseur du segment (``2`` par défaut)
+        couleur (:ref:`couleur <couleur>`, optionnel): Couleur du segment (``rouge`` par défaut)
+        epaisseur (int, optionnel): Epaisseur du segment (``2`` par défaut)
     """
 
     ymax = pygame.display.Info().current_h
@@ -400,8 +400,8 @@ def image(x, y, nom, largeur=100, hauteur=100):
         x (int): Abscisse du centre de l'image
         y (int): Ordonnée du centre de l'image
         nom (str) : nom du fichier image (qui doit être dans le répertoire du script)
-        largeur (int, optionel): Largeur de l'image (100 par défaut)
-        hauteur (int, optionel): Hauteur de l'image (100 par défaut)
+        largeur (int, optionnel): Largeur de l'image (100 par défaut)
+        hauteur (int, optionnel): Hauteur de l'image (100 par défaut)
     """
     pygame_image = pygame.transform.scale(pygame.image.load(
         nom).convert_alpha(), (largeur, hauteur))
@@ -427,7 +427,7 @@ def explosion(x, y, couleur='orange', r=25, c=0.5, n=10):
     Arguments:
         x (int): Abscisse du centre de l'explosion
         y (int): Ordonnée du centre de l'explosion
-        couleur (:ref:`couleur <couleur>`, optionel): Couleur (``orange`` par défaut)
+        couleur (:ref:`couleur <couleur>`, optionnel): Couleur (``orange`` par défaut)
         r (int): Rayon extérieur
         c (float):Coefficient pour obtenir le rayon intérieur égal à ``c*r``
         n (int): Nombre de sommets

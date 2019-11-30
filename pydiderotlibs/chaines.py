@@ -19,17 +19,17 @@ def taille(objet):
     return builtins.len(objet)
 
 
-def fich2chaine(fichier='optionel'):
+def fich2chaine(fichier='optionnel'):
     """
     Retourne chaine formée du contenu du fichier ``fichier``.
 
     Si ``fichier`` n'est pas précisé, ouvre une boite de dialogue pour le sélectionner.
 
     Arguments:
-        fichier (file, optionel): Nom complet (avec le chemin) d'un fichier contenant du texte brut.
+        fichier (file, optionnel): Nom complet (avec le chemin) d'un fichier contenant du texte brut.
 
     """
-    if fichier == 'optionel':
+    if fichier == 'optionnel':
         fen = Tk.Tk()
         tex1 = Tk.Label(fen, text='Vous n''avez pas précisé de fichier')
         tex1.pack()
@@ -43,7 +43,7 @@ def fich2chaine(fichier='optionel'):
             pass
         if fich is not None:
             fichier = fich.name
-    if fichier != 'optionel':
+    if fichier != 'optionnel':
         filin = open(fichier, 'r')
         chaine = "\n".join([line.strip() for line in filin])
         filin.close()
@@ -52,7 +52,7 @@ def fich2chaine(fichier='optionel'):
         return ""
 
 
-def chaine2fich(ch, fichier='optionel'):
+def chaine2fich(ch, fichier='optionnel'):
     """
     Enregistre sous le nom ``fichier`` la chaine ``ch``.
 
@@ -60,9 +60,9 @@ def chaine2fich(ch, fichier='optionel'):
 
     Arguments:
         ch (str): Une chaine de caractères
-        fichier (file, optionel): Le nom complet (avec le chemnin) d'un fichier contenant du texte brut.
+        fichier (file, optionnel): Le nom complet (avec le chemnin) d'un fichier contenant du texte brut.
     """
-    if fichier == 'optionel':
+    if fichier == 'optionnel':
         fen = Tk.Tk()
         tex1 = Tk.Label(fen, text='Vous n''avez pas précisé de fichier')
         tex1.pack()
@@ -76,7 +76,7 @@ def chaine2fich(ch, fichier='optionel'):
             pass
         if fich is not None:
             fichier = fich.name
-    if fichier != 'optionel':
+    if fichier != 'optionnel':
         filout = open(fichier, 'w')
         filout.write(ch)
         filout.close()

@@ -14,8 +14,8 @@ def demander_texte(titre="Entrez un texte", message=None):
     Ouvre une fenêtre avec le titre "titre" et attend une chaine de caractères.
 
     Arguments:
-        titre (str, optionel): Le titre de la fenetre (``"Entrez un texte"`` par défaut).
-        message (str, optionel): Si présent, on ajoute un champ de texte contenant ``message``.
+        titre (str, optionnel): Le titre de la fenetre (``"Entrez un texte"`` par défaut).
+        message (str, optionnel): Si présent, on ajoute un champ de texte contenant ``message``.
 
     Returns:
         La chaine de caractère (type ``str``) entrée par l'utilisateur.
@@ -58,7 +58,7 @@ def demander_reel(titre="Entrez un nombre réel"):
     Si ce n'est pas un nombre réel, on repose la question en ajoutant un message d'erreur.
 
     Arguments:
-        titre (str, optionel): Titre de la fenetre (``"Entrez un nombre réel"`` par défaut).
+        titre (str, optionnel): Titre de la fenetre (``"Entrez un nombre réel"`` par défaut).
 
     Returns:
         Le nombre réel entré par l'utilisateur (type ``float``).
@@ -82,7 +82,7 @@ def demander_entier(titre="Entrez un nombre entier"):
     Si ce n'est pas un nombre entier, on repose la question en ajoutant un message d'erreur.
 
     Arguments:
-        titre (str, optionel): Titre de la fenêtre (``"Entrez un nombre entier"`` par défaut).
+        titre (str, optionnel): Titre de la fenêtre (``"Entrez un nombre entier"`` par défaut).
 
     Returns:
         Le nombre entier entré par l'utilisateur (type ``int``).

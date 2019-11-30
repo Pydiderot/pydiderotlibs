@@ -10,7 +10,7 @@ Licence CECILL http://www.cecill.info/
 from math import floor, log
 from .chaines import fich2chaine, chaine2fich
 
-def CSV2liste(num, fichier='optionel'):
+def CSV2liste(num, fichier='optionnel'):
     """
     Retourne une liste correspondant à la colonne ou la ligne nom du fichier ``fichier``.
 
@@ -19,7 +19,7 @@ def CSV2liste(num, fichier='optionel'):
 
     Arguments:
         num (str ou int): Un numéro de ligne ou un nom de colonne (``A`` à ``Z`` ).
-        fichier (file,optionel): Le nom complet (avec le chemin) d'un fichier contenant des nombres.
+        fichier (file,optionnel): Le nom complet (avec le chemin) d'un fichier contenant des nombres.
     """
     ch = fich2chaine(fichier)
     if isinstance(num, int):
@@ -46,7 +46,7 @@ def CSV2liste(num, fichier='optionel'):
         return R
 
 
-def liste2CSV(L, fichier='optionel'):
+def liste2CSV(L, fichier='optionnel'):
     """
     Enregistre sous le nom ``fichier`` la liste ``L``.
 
@@ -54,7 +54,7 @@ def liste2CSV(L, fichier='optionel'):
 
     Arguments:
         L (list): Une liste
-        fichier (file, optionel): Le nom complet (avec le chemin) d'un fichier contenant du texte brut.
+        fichier (file, optionnel): Le nom complet (avec le chemin) d'un fichier contenant du texte brut.
     """
     for i in range(len(L)):
         L[i] = str(L[i])

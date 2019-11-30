@@ -330,9 +330,9 @@ def point(x, y, couleur='noir', taille=1, forme='rond'):
     Arguments:
         x (float): abscisse du point
         y (float): ordonnée du point
-        couleur (`couleur <#couleurs>`_, optionel): couleur du point (``noir`` par défaut)
-        taille (int, optionel): taille du point (``1`` par défaut)
-        forme (str, optionel): forme du point: rond/croix (``'rond'`` par défaut)
+        couleur (`couleur <#couleurs>`_, optionnel): couleur du point (``noir`` par défaut)
+        taille (int, optionnel): taille du point (``1`` par défaut)
+        forme (str, optionnel): forme du point: rond/croix (``'rond'`` par défaut)
     """
 
     couleur = rgb2hex(rgb(couleur))
@@ -381,7 +381,7 @@ def texte(x, y, message, couleur='noir'):
         x (float): abscisse du point
         y (float): ordonnée du point
         message (str): Texte à placer dans la fenêtre graphique
-        couleur (`couleur <#couleurs>`_, optionel): Couleur du texte (``noir`` par défaut)
+        couleur (`couleur <#couleurs>`_, optionnel): Couleur du texte (``noir`` par défaut)
 
     """
     couleur = rgb2hex(rgb(couleur))
@@ -408,7 +408,7 @@ def segment(x1, y1, x2, y2, couleur='noir', taille=2):
 
     Arguments:
         x1,y1,x2,y2 (float): Coordonées des extrémités du segment.
-        couleur (`couleur <#couleurs>`_, optionel): Couleur du segment (``noir`` par défaut).
+        couleur (`couleur <#couleurs>`_, optionnel): Couleur du segment (``noir`` par défaut).
         taille (int, optionl): Epaisseur du segment (``2`` par défaut).
         """
     couleur = rgb2hex(rgb(couleur))
@@ -444,9 +444,9 @@ def rectangle(x1, y1, largeur, hauteur, couleur='noir',
     Arguments:
         x1,y1 (float): Coordonnées du sommet en bas à gauche du rectangle.
         largeur,hauteur (float): Largeur et hauteur du rectangle
-        couleur (`couleur <#couleurs>`_, optionel): Couleur des cotés du rectangle (``noir`` par défaut).
-        taille (int, optionel): épaisseur des cotés du rectangle. ( ``2`` par défaut).
-        remplissage (str, optionel): Couleur de l'intérieur du rectangle (``yellow`` par default)
+        couleur (`couleur <#couleurs>`_, optionnel): Couleur des cotés du rectangle (``noir`` par défaut).
+        taille (int, optionnel): épaisseur des cotés du rectangle. ( ``2`` par défaut).
+        remplissage (str, optionnel): Couleur de l'intérieur du rectangle (``yellow`` par default)
     """
 
     couleur = rgb2hex(rgb(couleur))
@@ -488,8 +488,8 @@ def fenetre(xmin=-10, xmax=10, ymin=-10, ymax=10, fond='blanc',
     Arguments:
         titre (str): Titre de la fenêtre. La valeur par défaut est ``Repère mathematique``.
         xmin,xmax,ymin,ymax (float) : Dimensions du repère. Les valeurs par défaut sont -10, 10, -10, 10
-        fond (`couleur <#couleurs>`_, optionel): Couleur de fond de la fenêtre (``blanc`` par défaut).
-        axes (bool, optionel): Affiche les axes du repère si ``True`` (``True`` par défaut).
+        fond (`couleur <#couleurs>`_, optionnel): Couleur de fond de la fenêtre (``blanc`` par défaut).
+        axes (bool, optionnel): Affiche les axes du repère si ``True`` (``True`` par défaut).
     """
 
     fond = rgb2hex(rgb(fond))
