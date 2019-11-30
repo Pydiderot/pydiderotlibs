@@ -143,7 +143,9 @@ def demande_evenements():
 
 
 def efface(couleur='blanc'):
-    """Efface l'écran.
+    """
+    Efface l'écran.
+
     Arguments:
         couleur (:ref:`couleur <couleur>`, optionnel): Couleur de remplissage de l'écran (``'blanc'`` par défaut).
     """
