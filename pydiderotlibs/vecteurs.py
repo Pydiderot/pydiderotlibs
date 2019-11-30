@@ -19,7 +19,7 @@ def vecteur(x, y, z=None):
     Arguments:
         x (float): Abscisse du vecteur
         y (float): Ordonnée du vecteur
-        z (float, optionel): Cote du vecteur.
+        z (float, optionnel): Cote du vecteur.
 
     """
     if z is None:
