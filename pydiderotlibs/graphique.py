@@ -21,13 +21,13 @@ https://pydiderotlibs.rtfd.io/librairies/graphique.html
 # Si quelqu'un veut s'amuser à sous-classer pygame.Surface pour faire plus propre il est bienvenue
 _axeMath = False
 _fenetre = None
-_autorefresh = False
+_autorefresh = True
 
-def creer_fenetre(largeur=200, hauteur=300, orientation_axe_ordonnees=False, titre="Fenetre graphique"):
+def creer_fenetre(largeur=200, hauteur=300, orientation_axe_ordonnees=False, titre="Fenetre graphique", autorefresh=True):
     fenetre(largeur, hauteur, orientation_axe_ordonnees, titre)
 
 
-def window(largeur=600, hauteur=500, orientation_axe_ordonnees=False, titre="Fenetre graphique"):
+def window(largeur=600, hauteur=500, orientation_axe_ordonnees=False, titre="Fenetre graphique", autorefresh=True):
     fenetre(largeur, hauteur, orientation_axe_ordonnees, titre)
 
 
@@ -36,7 +36,7 @@ def fenetre(
     hauteur=500,
     orientation_axe_ordonnees=False,
     titre="Fenetre graphique",
-    autorefresh=False
+    autorefresh=True
     ):
     """
     Crée et affiche une fenêtre graphique.
