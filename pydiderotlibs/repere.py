@@ -31,7 +31,8 @@ class _FenetreGraphique(Canvas):
         Canvas.__init__(self, boss)
         self.configure(width=largeur, height=hauteur,
                        bg=background, border=5, relief=RIDGE)
-
+        self.x1 = 0
+        self.y2 = 0
         self.axes = axes
         self.xmin, self.ymin, self.xmax, self.ymax = xmin, ymin, xmax, ymax
         self.largeur = largeur  # int(self.cget('width'))
