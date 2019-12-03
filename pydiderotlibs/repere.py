@@ -107,7 +107,7 @@ class _FenetreGraphique(Canvas):
         else:
             self.flag = 3
 
-    def dblclic(self):
+    def dblclic(self, event):
         "Rend le repère orthonormé en se basant sur l'axe des X"
         self.p[1][1] = -self.p[0][0]
         self.inv_p[1][1] = 1 / self.p[1][1]
@@ -132,7 +132,7 @@ class _FenetreGraphique(Canvas):
         self.x1, self.y1 = x2, y2
         self.redraw()
 
-    def mouseUp(self):
+    def mouseUp(self, event):
         "Op. à effectuer quand le bouton gauche de la souris est relâché"
         self.flag = 0
 
