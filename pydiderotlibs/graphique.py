@@ -23,6 +23,7 @@ _axeMath = False
 _fenetre = None
 _autorefresh = True
 
+
 def creer_fenetre(largeur=200, hauteur=300, orientation_axe_ordonnees=False, titre="Fenetre graphique", autorefresh=True):
     fenetre(largeur, hauteur, orientation_axe_ordonnees, titre)
 
@@ -107,37 +108,33 @@ def demande_evenements():
 
     # Initialisation du dictionnaire de sortie
     evenements = {}
-
     touches_speciales = {
-        'haut': pygame.K_UP,
-        'bas': pygame.K_DOWN,
-        'gauche': pygame.K_LEFT,
-        'droite': pygame.K_RIGHT,
-        'espace': pygame.K_SPACE
+        'up': 'haut',
+        'down': 'bas',
+        'left': 'gauche',
+        'right': 'droite',
+        'space': 'espace'
     }
 
     for event in pygame.event.get():
+        # Gestion de la fermeture de la fenetre
         if event.type == pygame.QUIT:
             sys.exit()
-        elif event.type == pygame.KEYDOWN:
-            for c, v in touches_speciales.items():
-                # On parcourt le dictionnaire par clef, valeur
-                # Par exmple c = 'haut' et v = pygame.K_UP
-                if event.key == v:
-                    # L'important est simplement d'avoir la clef dans le dictionnaire.
-                    # La valeur n'a pas d'importance et est donc None
-                    evenements[c] = None
-
-            # Si l'unicode peut être convertit en ascii, on ajoute la clef au
-            # dictionnaire sous unicode
-            if event.unicode.encode('ascii', 'ignore'):
-                evenements[event.unicode] = None
-
         # Gestion des evenements souris
         elif event.type == pygame.MOUSEMOTION:
             evenements['souris'] = list(event.pos)
         elif event.type == pygame.MOUSEBUTTONDOWN:
             evenements['clic'] = list(event.pos)
+    # Gestion des touches. pygame.KeyDown ne va pas gérer plusieurs touches enfoncées
+    # https://www.pygame.org/docs/ref/key.html#pygame.key.get_pressed
+    for index, enfoncee in enumerate(pygame.key.get_pressed()):
+        if enfoncee:
+            # On traduit les touches speciales
+            if pygame.key.name(index) in touches_speciales:
+                touche = touches_speciales[pygame.key.name(index)]
+            else:
+                touche = pygame.key.name(index)
+            evenements[touche] = None
 
     return evenements
 
