@@ -4,6 +4,7 @@
 # import des librairies
 from time import sleep  # pour rendre transparent côté élève l'utilisation de "sleep"
 from random import randint #pour la fonction vecteur2 et pour cercle_aleatoire
+from .detection_collision import *
 
 import sys
 import math
