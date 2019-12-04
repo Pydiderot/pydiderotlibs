@@ -42,7 +42,7 @@ def fenetre(
     """
     Crée et affiche une fenêtre graphique.
 
-    Alias: ``windows()``, ``creer_fenetre()``
+    Alias: ``window()``, ``creer_fenetre()``
 
     Arguments:
         largeur (int, optionnel): Largeur de la fenetre en pixels (``600`` par défaut)
