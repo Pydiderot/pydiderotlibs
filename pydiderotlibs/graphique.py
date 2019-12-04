@@ -188,14 +188,16 @@ def trace_cercle_aleatoire(couleur='bleu', rayon=5, epaisseur=0):
 
 def random_circle(couleur='bleu', rayon=5, epaisseur=0):
     cercle_aleatoire(couleur, rayon, epaisseur)
-
+    
+def randcircle(couleur='bleu', rayon=5, epaisseur=0):
+    cercle_aleatoire(couleur, rayon, epaisseur)
 
 def cercle_aleatoire(couleur='bleu', rayon=5, epaisseur=0):
     """
     Trace un (petit) cercle dans la fenetre graphique, à un endroit choisit au hasard.
     (Utile pour fairre de la neige par exemple.)
 
-    Alias: ``random_circle()``, ``trace_cercle_aleatoire()``
+    Alias: ``random_circle()``, ``randcircle()``, ``trace_cercle_aleatoire()``
 
     Arguments:
         rayon (int, optionnel): Rayon du cercle (5 par défaut)
