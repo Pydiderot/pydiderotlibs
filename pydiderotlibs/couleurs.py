@@ -12,6 +12,8 @@ L'utilisateur peut ensuite choisir de le convertir en hexadécimal avec rgb2hex 
 
 Licence MIT.
 """
+#pour randcolor :
+from random import randint
 
 _couleurs = {
     'noir': (0, 0, 0),
@@ -81,3 +83,15 @@ def rgb(c):
             return _couleurs[_colors[c]]
     # Au pire, on retourne c et on récupérera une erreur tkinter ou pygame
     return c
+
+def randcolor():
+    """
+    Choix aléatoire d'une couleur en RGB.
+    Returns:
+        Tuple RGB.
+    """
+    r = randint(0,255)
+    g = randint(0,255)
+    b = randint(0,255)
+    
+    return (r,g,b)
