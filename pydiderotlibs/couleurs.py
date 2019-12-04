@@ -89,9 +89,15 @@ def randcolor():
     Choix aléatoire d'une couleur en RGB.
     Returns:
         Tuple RGB.
+        
+    Alias: ``alea_couleur()``
+
     """
     r = randint(0,255)
     g = randint(0,255)
     b = randint(0,255)
     
     return (r,g,b)
+
+def alea_couleur():
+    randcolor()
