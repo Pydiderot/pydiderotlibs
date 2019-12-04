@@ -90,7 +90,7 @@ def randcolor():
     Returns:
         Tuple RGB.
         
-    Alias: ``alea_couleur()``
+    Alias: ``alea_couleur()``, ``random_color()``
 
     """
     r = randint(0,255)
@@ -100,4 +100,7 @@ def randcolor():
     return (r,g,b)
 
 def alea_couleur():
+    randcolor()
+    
+def random_color():
     randcolor()
