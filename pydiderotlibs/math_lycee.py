@@ -39,3 +39,20 @@ def repeter(f, n):
 
 def repeat(f, n):
     repeter(f, n)
+    
+def intersect(a1,b1,a2,b2):
+    """ Détection d'intersection entre deux intervalles : renvoie `false` si l'intersection de [a1;a2] et [b1;b2] est vide.
+    
+    """
+    if b1<a2 or b2<a1:
+        return False
+    else:
+        return True
+    
+def collision(x1,y1,w1,h1,x2,y2,w2,h2):
+    """renvoie "true" si les deux rectangles se rencontrent
+    """
+    if( intersect(x1-w1/2,x1+w1/2,x2-w2/2,x2+w2/2) and intersect(y1-h1/2,y1+h1/2,y2-h2/2,y2+h2/2) ):
+        return True
+    else:
+        return False
