@@ -215,6 +215,7 @@ fichiers = [
     'graphique_statique',
     'graphique_dynamique',
     'math_lycee',
+    'detection_collision',
     '__init__'
 ]
 # On ajoute ".py" à la fin des fichiers
