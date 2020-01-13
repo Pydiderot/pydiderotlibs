@@ -93,11 +93,11 @@ def randcolor():
     Alias: ``alea_couleur()``, ``random_color()``
 
     """
-    r = randint(0,255)
-    g = randint(0,255)
-    b = randint(0,255)
+    r = randint(0, 255)
+    g = randint(0, 255)
+    b = randint(0, 255)
     
-    return (r,g,b)
+    return (r, g, b)
 
 def alea_couleur():
     randcolor()
