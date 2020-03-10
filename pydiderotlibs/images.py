@@ -36,6 +36,14 @@ def vert(pixel):
 def bleu(pixel):
     return pixel[2]
 
+def pixel_voisin(coord, image):
+    x,y=coord
+    xmax,ymax=image.size
+    if x<xmax-1 :
+        return x+1,y
+    else :
+        return x,y
+
 def copier_pixel(image,coord):
     image.getpixel(coord)
 
