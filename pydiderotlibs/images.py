@@ -27,6 +27,15 @@ def afficher_image(image):
 def afficher_pixel(pixel):
     Image.new('RGB', (10,10), pixel).show()
 
+def rouge(pixel):
+    return pixel[0]
+
+def vert(pixel):
+    return pixel[1]
+
+def bleu(pixel):
+    return pixel[2]
+
 def copier_pixel(image,coord):
     image.getpixel(coord)
 
@@ -42,5 +51,18 @@ def enregistrer_image(image,nom):
 #pixel=rgb('orange')
 #afficher_pixel(pixel)
 #enregistrer_image(img,'essai')
+    
+
+    
+def changer_les_pixels(image, fonction, x0=0, x1=0, y0=0, y1=0):
+    if x1==0:
+        x1=image.size[0]
+    if y1==0:
+        y1=image.size[1]
+    for x in range(x0,x1):
+        for y in range(y0,y1):
+            pixel=copier_pixel(image,[x,y])
+            pixel=fonction(pixel)
+            coller_pixel(image,[x,y])
     
 
