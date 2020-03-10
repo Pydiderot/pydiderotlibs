@@ -1,20 +1,19 @@
 from PIL import Image
 from pydiderotlibs.couleurs import *
 
-def creer_image(fichier,nom):
+def creer_image(fichier):
     """
     Crée, à partir d'une image enregistrée sur l'ordinateur,
     une image manipulable dans le langage python (avec la librairie PIL)
     
     Arguments :
         fichier : nom du fichier enregistré sur l'ordinateur (avec le suffixe : par exemple "monimage.png")
-        nom : le nom qu'aura l'image manipulable sous Python
         
     """
-    nm=nom.split('.')
+    nm=fichier.split('.')
     if len(nm)==1:
-        nom+='.png'
-    nom = Image.open(fichier)
+        fichier+='.png'
+    return Image.open(fichier)
     
 def definition_image(image):
     """
@@ -22,7 +21,7 @@ def definition_image(image):
     C'est une liste de deux nombres.
     Le premier est la largeur (en pixels), le second la hauteur (en pixels).
     
-    Par exemple : [200,300]
+    Par exemple : (200,300)
         
     """
     return image.size
@@ -86,17 +85,17 @@ def pixel_voisin(coord, image):
     """
     x,y=coord
     xmax,ymax=image.size
-    if x<xmax-1 :
+    if x < xmax-1 :
         return x+1,y
     else :
-        return x,y
+        return (x,y)
 
 def copier_pixel(image,coord):
     """
     Retourne le pixel de l'image ``image``, situé aux coordonnées ``coord``.
         
     """
-    image.getpixel(coord)
+    return image.getpixel(coord)
 
 def coller_pixel(image,coord,pixel):
     """
@@ -142,8 +141,8 @@ def changer_les_pixels(image, fonction, x0=0, x1=0, y0=0, y1=0):
         y1=image.size[1]
     for x in range(x0,x1):
         for y in range(y0,y1):
-            pixel=copier_pixel(image,[x,y])
+            pixel=copier_pixel(image,(x,y))
             pixel=fonction(pixel)
-            coller_pixel(image,[x,y])
+            coller_pixel(image,(x,y),pixel)
     
 
