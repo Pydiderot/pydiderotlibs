@@ -1,4 +1,4 @@
-# Python à Diderot
+# Python à Diderot : les librairies pydiderotlibs
 ## A propos
 Ce site documente des librairies python utilisées par les enseignants regroupées sous le paquet pydiderotlibs du lycée Diderot à Marseille pour enseigner l'informatique. Le code est disponible sur ce dépot [github](https://github.com/cspaier/pydiderotlibs) et hebergé sur [pypi](https://pypi.org/project/pydiderotlibs/).
 
