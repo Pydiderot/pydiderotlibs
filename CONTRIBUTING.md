@@ -6,13 +6,13 @@ C'est un travail collaboratif sous licence MIT initié par des enseignants du ly
 
 Toute participation est la bienvenue tant sur le code que le coté pédagogique : remarques, retours de tests, codes, documentation...
 
-Si vous considérez participer nous vous en remercions et fournissons ce guide pour vous aider.
+Si vous pensez participer nous vous en remercions et fournissons ce guide pour vous aider.
 
 ## Les volets du projet
 
 - [pydiderot]( https://github.com/cspaier/pydiderot)
 - la librairie python [pydiderotlibs](https://github.com/cspaier/pydiderotlibs)
-- un volet pédagogique en développant. On cherche encore le nom...
+- un volet pédagogique en développement. On cherche encore le nom...
 
 
 ## J'ai un problème, une idée, une remarque
