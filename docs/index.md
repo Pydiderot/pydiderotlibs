@@ -6,9 +6,13 @@ L'objectif général est de cacher certaines difficultés techniques liées au l
 
 ## Installation
 Deux méthodes d'installations sont disponibles:
-- Avec pip: `pip3 install pydiderotlibs`. Attention la commande `pip install pydiderotlibs` semble ne pas fonctionner. 
+- Avec pip: `pip3 install pydiderotlibs`.
 
 - manuellement: Télécharger nos librairies zippées avec ce [lien](_static/pydiderotlibs.zip), décompresser le dossier et le placer à un emplacement de `PYTHONPATH`.
+
+## Problèmes rencontrés à l'installation
+- La commande `pip install pydiderotlibs` semble ne pas fonctionner.
+- Avec Python 3.8 : la librairie [graphique](/librairies/graphique.html) utilise Pygame 1.9 qui utilise  SDL 1.2 et non le nouveau SDL2. Solutions possibles : utiliser Python 3.7 ou Pygame 2.0. avec `python3 -m pip install pygame==2.0.0.dev10`
 
 
 ## Librairies
