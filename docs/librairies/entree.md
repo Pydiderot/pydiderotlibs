@@ -24,7 +24,7 @@ y = demander_reel()
 # y est un nombre réel: float
 ```
 ## Exemple
-```
+```python
 # on importe la librairie
 from pydiderotlibs.entree import *
 
