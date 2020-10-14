@@ -29,7 +29,7 @@ y = demander_reel()
 from pydiderotlibs.entree import *
 
 # On demande un entier à l'utilisateur que l'on stocke dans la variable n
- = demander_entier()
+ n= demander_entier()
 ```
 .. figure:: /docs/source/_static/demander_entier.png
     :align: center
