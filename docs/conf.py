@@ -47,7 +47,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx.ext.napoleon',
     'sphinx.ext.autosummary',
-    'm2r'
+    'm2r2'
 ]
 
 
