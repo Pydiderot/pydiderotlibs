@@ -9,6 +9,7 @@ Cette étape décrit la mise en place de l’environnement de travail sous UNIX.
 - Se placer dans le dossier: `cd pydiderotlibs`
 - Installer les dépendances: `pip install -r requirements.txt`
 - Installer `twine`: `pip install --upgrade twine`
+- Installer `wheel` : `pip install wheel`
 
 
 ## 1. Mettre à jour le numéro de version
