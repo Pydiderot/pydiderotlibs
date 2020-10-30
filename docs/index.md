@@ -38,5 +38,5 @@ Notons que venv-3.7 est le nom du venv. On peut choisir ce qu'on veut.
 - [graphique](/librairies/graphique.html): Permet l'affichage d'une fenêtre graphique dynamique et une gestion simplifiée des entrées clavier et souris.
 
 
-## Participez!
+## Participez !
 Ce projet est un travail collaboratif initié par des enseignants du lycée Diderot à Marseille. Nous serions ravis de travailler avec vous et toute aide est la bienvenue. Si vous souhaitez participer, [un guide](contributing.html) est a votre disposition.
