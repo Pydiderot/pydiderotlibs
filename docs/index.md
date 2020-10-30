@@ -12,7 +12,21 @@ Deux méthodes d'installations sont disponibles:
 
 ## Problèmes rencontrés à l'installation
 - La commande `pip install pydiderotlibs` semble ne pas fonctionner.
-- Avec Python 3.8 : la librairie [graphique](/librairies/graphique.html) utilise Pygame 1.9 qui utilise  SDL 1.2 et non le nouveau SDL2. Solutions possibles : utiliser Python 3.7 ou Pygame 2.0. avec `python3 -m pip install pygame==2.0.0.dev10`
+- Avec Python 3.8, l'installation plante : la librairie [graphique](/librairies/graphique.html) utilise Pygame 1.9 qui utilise  SDL 1.2 et non le nouveau SDL2.
+### Solutions possibles 
+- utiliser Python 3.7 avec un environnement de travail dédier :
+``` 
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.7 python3.7-dev python3.7-venv
+python3.7 -m venv venv-3.7
+source venv-3.7/bin/activate
+```
+Pour le désactiver: `deactivate`
+
+Notons que venv-3.7 est le nom du venv. On peut choisir ce qu'on veut.
+
+- ou utiliser Python 3.8 et Pygame 2.0. avec `python3 -m pip install pygame==2.0.0.dev10`
 
 
 ## Librairies
