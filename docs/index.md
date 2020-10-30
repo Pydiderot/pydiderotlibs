@@ -18,7 +18,7 @@ Deux méthodes d'installations sont disponibles:
 ``` 
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
-sudo apt install python3.7 python3.7-dev python3.7-venv
+sudo apt install python3.7 python3.7-dev python3.7-venv python3.7-tk
 python3.7 -m venv venv-3.7
 source venv-3.7/bin/activate
 ```
