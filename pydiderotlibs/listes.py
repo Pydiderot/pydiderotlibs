@@ -10,6 +10,36 @@ Licence CECILL http://www.cecill.info/
 from math import floor, log
 from .chaines import fich2chaine, chaine2fich
 
+
+def CSV_ligne(num,fichier='optionnel'):
+    """
+    Retourne une liste de nombres (float) correspondant à la ligne du fichier ``fichier``.
+
+    Si fichier n'est pas précisé, ouvre une boite de dialogue pour le choisir
+    Le fichier ne doit contenir que des nombres et le séparateur doit être ``;``
+
+    Arguments:
+        num (int): Un numéro de ligne.
+        fichier (file,optionnel): Le nom complet (avec le chemin) d'un fichier contenant des nombres.
+    """
+    ch = fich2chaine(fichier)
+    L=ch.split("\n") # on separe les lignes en une liste
+    return [float(i) for i in L[num-1].split(";")]
+
+def CSV_colonne(num,fichier='optionnel'):
+    """
+    Retourne une liste de nombres (float) correspondant à la colonne du fichier ``fichier``.
+
+    Si fichier n'est pas précisé, ouvre une boite de dialogue pour le choisir
+    Le fichier ne doit contenir que des nombres et le séparateur doit être ``;``
+
+    Arguments:
+        num (int): Un numéro de colonne.
+        fichier (file,optionnel): Le nom complet (avec le chemin) d'un fichier contenant des nombres.
+    """
+    ch = fich2chaine(fichier)
+    return([float(i.split(';')[num-1]) for i in ch.split("\n")]) #on decoupe par saut de ligne et ';', puis on recolle
+
 def CSV2liste(num, fichier='optionnel'):
     """
     Retourne une liste correspondant à la colonne ou la ligne nom du fichier ``fichier``.
@@ -59,10 +89,6 @@ def liste2CSV(L, fichier='optionnel'):
     for i in range(len(L)):
         L[i] = str(L[i])
     chaine2fich("\n".join(L), fichier)
-
-
-liste2CSV([1, 'a', 3, 'bonjour', 10, 'aurevoir'],
-          fichier='TableurPourTest2.csv')
 
 
 def trier(liste1, liste2=[]):
