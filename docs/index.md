@@ -12,7 +12,7 @@ Deux méthodes d'installations sont disponibles:
 
 ## Problèmes rencontrés à l'installation
 - La commande `pip install pydiderotlibs` semble ne pas fonctionner.
-- Il semble que, en l'état, pydiderotlibs est compatible avec python entre 3.0 et 3.7. Avec Python 3.8, l'installation plante : la librairie [graphique](/librairies/graphique.html) utilise Pygame 1.9 qui utilise  SDL 1.2 et non le nouveau SDL2.
+- Il semble que, en l'état, pydiderotlibs soit compatible avec python entre 3.0 et 3.7. Avec Python 3.8, l'installation plante : la librairie [graphique](/librairies/graphique.html) utilise Pygame 1.9 qui utilise  SDL 1.2 et non le nouveau SDL2.
 ### Solutions possibles 
 - utiliser Python 3.7 avec un environnement de travail dédier :
 ``` 
