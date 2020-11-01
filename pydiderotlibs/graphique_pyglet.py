@@ -72,7 +72,7 @@ def cercle(x, y, couleur='bleu', rayon=25, epaisseur=0):
         couleur (:ref:`couleur <couleur>`, optionnel): Couleur du cercle (bleu par défaut)
     """
     global fenetre
-    fenetre.elements.append(shapes.Circle(700, 150, 100, color=(50, 225, 30), batch=fenetre.batch))
+    fenetre.elements.append(shapes.Circle(x, y, rayon, color=(50, 225, 30), batch=fenetre.batch))
 
 
 cercle(700,410)
