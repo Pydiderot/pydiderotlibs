@@ -23,8 +23,14 @@ def CSV_ligne(num,fichier='optionnel'):
         fichier (file,optionnel): Le nom complet (avec le chemin) d'un fichier contenant des nombres.
     """
     ch = fich2chaine(fichier)
-    L=ch.split("\n") # on separe les lignes en une liste
-    return [float(i) for i in L[num-1].split(";")]
+    L = ch.split("\n") # on separe les lignes en une liste
+    ligne = []
+    for i in L[num-1].split(";"):
+        if isinstance(i,str):
+            ligne.append(float(i.replace(",","."))) #gestion de la virgule avec un tableau de nombres en convention française
+        else:
+            ligne.append(float(i))
+    return(ligne)
 
 def CSV_colonne(num,fichier='optionnel'):
     """
@@ -38,7 +44,14 @@ def CSV_colonne(num,fichier='optionnel'):
         fichier (file,optionnel): Le nom complet (avec le chemin) d'un fichier contenant des nombres.
     """
     ch = fich2chaine(fichier)
-    return([float(i.split(';')[num-1]) for i in ch.split("\n")]) #on decoupe par saut de ligne et ';', puis on recolle
+    colonne = []
+    for i in ch.split("\n")]: #on parcourt les lignes
+        contenu=i.split(';')[num-1] #dans chaque ligne on récupère le contenu de la bonne colonne
+        if isinstance(contenu,str):
+            colonne.append(float(contenu.replace(",","."))) #gestion de la virgule avec un tableau de nombres en convention française
+        else:
+            colonne.append(float(contenu))
+    return(colonne)
 
 def CSV2liste(num, fichier='optionnel'):
     """
