@@ -18,6 +18,7 @@ from .fonctions_usuelles import *
 from .vecteurs import *
 from .chaines import *
 from .listes import *
+from random import random
 
 print("""
 Merci d'utiliser la librairie lycee du module pydiderot.\n
@@ -39,3 +40,21 @@ def repeter(f, n):
 def repeat(f, n):
     repeter(f, n)
     
+def alea_entre_bornes(a,b,p=15):
+    """Choisit un nombre (pseudo) aléatoire entre ``a`` et ``b`` avec ``p`` décimales.
+    
+    Arguments:
+        a (float): valeur minimale   
+        b (float): valeur maximale    
+        p (integer, optionnel): nombre de décimales s'il est compris entre 0 et 15. (``15`` par défaut)    
+        
+    Alias disponible : ``random_between()``
+    """
+    c=random()*(b-a)+a
+    if p>=0 and p<15 :
+        p=int(p)
+        c=int(c*10**p)/10**p
+    return c
+    
+def random_between(a,b,p=0):
+    alea_entre_bornes(a,b,p)
