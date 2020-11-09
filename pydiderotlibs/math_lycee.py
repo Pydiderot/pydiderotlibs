@@ -29,8 +29,7 @@ pi = math.pi
 
 
 def repeter(f, n):
-    """ 
-    Appelle `n` fois la fonction ``f``.
+    """Appelle `n` fois la fonction ``f``.
 
     Alias disponible: ``repeat()``
     """
