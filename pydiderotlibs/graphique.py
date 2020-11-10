@@ -26,11 +26,11 @@ _autorefresh = True
 
 
 def creer_fenetre(largeur=600, hauteur=600, orientation_axe_ordonnees=False, titre="Fenetre graphique", autorefresh=True):
-    fenetre(largeur, hauteur, orientation_axe_ordonnees, titre)
+    fenetre(largeur, hauteur, orientation_axe_ordonnees, titre, autorefresh)
 
 
 def window(largeur=600, hauteur=500, orientation_axe_ordonnees=False, titre="Fenetre graphique", autorefresh=True):
-    fenetre(largeur, hauteur, orientation_axe_ordonnees, titre)
+    fenetre(largeur, hauteur, orientation_axe_ordonnees, titre, autorefresh)
 
 
 def fenetre(
