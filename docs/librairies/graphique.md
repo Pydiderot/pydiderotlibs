@@ -133,6 +133,8 @@ while 1:
 
     # Trace un cercle au coordonnées (x,y)
     trace_cercle(x, y)
+    # On actualise la fenêtre graphique
+    rafraichir()
     # Attend un dixième de secondes
     sleep(0.1)
     # Efface le cercle
@@ -140,8 +142,6 @@ while 1:
     # Ajoute le vecteur vitesse aux coordonnées du point
     x += 1
     y += 1
-    # On actualise la fenêtre graphique
-    rafraichir()
 ```
 
 .. _couleur:
