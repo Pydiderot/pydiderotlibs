@@ -45,7 +45,7 @@ def CSV_colonne(num,fichier='optionnel'):
     """
     ch = fich2chaine(fichier)
     colonne = []
-    for i in ch.split("\n")]: #on parcourt les lignes
+    for i in ch.split("\n"): #on parcourt les lignes
         contenu=i.split(';')[num-1] #dans chaque ligne on récupère le contenu de la bonne colonne
         if isinstance(contenu,str):
             colonne.append(float(contenu.replace(",","."))) #gestion de la virgule avec un tableau de nombres en convention française
