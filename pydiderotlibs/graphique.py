@@ -25,7 +25,7 @@ _fenetre = None
 _autorefresh = True
 
 
-def creer_fenetre(largeur=200, hauteur=300, orientation_axe_ordonnees=False, titre="Fenetre graphique", autorefresh=True):
+def creer_fenetre(largeur=600, hauteur=600, orientation_axe_ordonnees=False, titre="Fenetre graphique", autorefresh=True):
     fenetre(largeur, hauteur, orientation_axe_ordonnees, titre)
 
 
@@ -156,11 +156,11 @@ def erase(couleur='blanc'):
     efface(couleur)
 
 
-def trace_cercle(x, y, couleur='bleu', rayon=50, epaisseur=0):
+def trace_cercle(x, y, couleur='bleu', rayon=25, epaisseur=0):
     cercle(x, y, couleur, rayon, epaisseur)
 
 
-def circle(x, y, couleur='bleu', rayon=50, epaisseur=0):
+def circle(x, y, couleur='bleu', rayon=25, epaisseur=0):
     cercle(x, y, couleur, rayon, epaisseur)
 
 
@@ -189,7 +189,7 @@ def trace_cercle_aleatoire(couleur='bleu', rayon=5, epaisseur=0):
 
 def random_circle(couleur='bleu', rayon=5, epaisseur=0):
     cercle_aleatoire(couleur, rayon, epaisseur)
-    
+
 def randcircle(couleur='bleu', rayon=5, epaisseur=0):
     cercle_aleatoire(couleur, rayon, epaisseur)
 
