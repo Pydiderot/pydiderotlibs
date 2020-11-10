@@ -25,7 +25,7 @@ def demander_texte(titre="Entrez un texte", message=None):
         """
         Si entree est non vide, la fonction sauve sa valeur dans value et ferme la fenetre
         """
-        if entree.get() != "":
+        if entree.get():
             value.set(entree.get())
             fenetre.destroy()
 
@@ -68,10 +68,12 @@ def demander_reel(titre="Entrez un nombre réel"):
         Le nombre réel entré par l'utilisateur (type ``float``).
     """
     message = None
-    texte = None
-    reel = None
-    while texte != "":
+    while True:
         texte = demander_texte(titre, message)
+        # Si texte est vide, l'utilisateur à fermé la fenetre
+        if not texte:
+            return
+        # Tente de convertir en float
         try:
             reel = float(texte)
         except ValueError:
@@ -94,10 +96,12 @@ def demander_entier(titre="Entrez un nombre entier"):
         Le nombre entier entré par l'utilisateur (type ``int``).
     """
     message = None
-    texte = None
-    entier = None
-    while texte != "":
+    while True:
         texte = demander_texte(titre, message)
+        # si texte est vide, cela veut dire que l'utilisateur à fermé la fenêtre
+        if not texte
+            return
+        # on essaye de convertir en int
         try:
             entier = int(texte)
         except ValueError:
