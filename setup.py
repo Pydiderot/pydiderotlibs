@@ -18,7 +18,7 @@ for line in open(os.path.join(SETUPDIR, 'requirements.txt'), encoding="UTF-8"):
 
 setup(
     name='pydiderotlibs',
-    version='0.0.15',
+    version='0.0.16',
     packages=find_packages(),
     packages_dir={'' : 'pydiderotlibs'},
     author='Professeurs de Mathématiques du lycée Denis Diderot (Marseille)',
@@ -39,5 +39,5 @@ setup(
     long_description_content_type="text/markdown",
     # Active la prise en compte du fichier MANIFEST.in
     include_package_data=True,
-    python_requires='>=3.0, <3.8',
+    python_requires='>=3.0',
     )
