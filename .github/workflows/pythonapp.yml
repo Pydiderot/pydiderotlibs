@@ -1,4 +1,4 @@
-name: Plake8 test
+name: Flake8 test
 
 on: [push]
 
