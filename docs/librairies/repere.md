@@ -29,6 +29,8 @@ trace_point(5, 5, couleur='bleu', taille=5)
 trace_point(6, 7, couleur='bleu', taille=5, forme='croix')
 trace_texte(-3, 3, "Un texte", couleur='bleu')
 ```
+.. image:: /source/_static/repere.png
+  :align: center
 
 On peut agir sur le repère grâce à la souris:
 

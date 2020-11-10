@@ -32,17 +32,25 @@ while 1:
     demande_evenements()
 
     # Trace un cercle au coordonnées (x,y)
-    trace_cercle(x, y)
+    cercle(x, y)
     # Attend un dixième de secondes
     sleep(0.1)
     # Efface le cercle
-    trace_cercle(x, y, couleur='blanc')
+    cercle(x, y, couleur='blanc')
     # Ajoute le vecteur vitesse aux coordonnées du point
     x += 1
     y += 1
 ```
 .. note::
   Il est important d’appeler la fonction `demande_evenements() <#graphique.demande_evenements>`_ qui gère la fermeture de la fenêtre
+
+.. raw:: html
+
+    <video width="604" height="525" autoplay loop>
+    <source src="../_static/graphique.webm" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+
 
 ## Événements
 La fonction [demande_evenements()](#graphique.demande_evenements) permet une gestion simplifiée des entrées clavier et souris de l'utilisateur.
