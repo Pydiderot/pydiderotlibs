@@ -20,9 +20,14 @@ def demander_texte(titre="Entrez un texte", message=None):
     Returns:
         La chaine de caractère (type ``str``) entrée par l'utilisateur.
     """
-    def _sauver_valeur(event=None):  # la fonction sauve la valeur dans value et ferme la fenetre
-        value.set(entree.get())
-        fenetre.destroy()
+
+    def _sauver_valeur(event=None):
+        """
+        Si entree est non vide, la fonction sauve sa valeur dans value et ferme la fenetre
+        """
+        if entree.get() != "":
+            value.set(entree.get())
+            fenetre.destroy()
 
     fenetre = tk.Tk()
     fenetre.title(titre)
@@ -47,7 +52,6 @@ def demander_texte(titre="Entrez un texte", message=None):
 
     bouton = tk.Button(fenetre, text='Valider', command=_sauver_valeur)
     bouton.pack()
-
     fenetre.mainloop()
     return value.get()
 
@@ -64,7 +68,9 @@ def demander_reel(titre="Entrez un nombre réel"):
         Le nombre réel entré par l'utilisateur (type ``float``).
     """
     message = None
-    while True:
+    texte = None
+    reel = None
+    while texte != "":
         texte = demander_texte(titre, message)
         try:
             reel = float(texte)
@@ -88,7 +94,9 @@ def demander_entier(titre="Entrez un nombre entier"):
         Le nombre entier entré par l'utilisateur (type ``int``).
     """
     message = None
-    while True:
+    texte = None
+    entier = None
+    while texte != "":
         texte = demander_texte(titre, message)
         try:
             entier = int(texte)
