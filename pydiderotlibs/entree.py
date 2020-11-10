@@ -99,7 +99,7 @@ def demander_entier(titre="Entrez un nombre entier"):
     while True:
         texte = demander_texte(titre, message)
         # si texte est vide, cela veut dire que l'utilisateur à fermé la fenêtre
-        if not texte
+        if not texte:
             return
         # on essaye de convertir en int
         try:
