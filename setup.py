@@ -23,7 +23,7 @@ setup(
     packages_dir={'' : 'pydiderotlibs'},
     author='Professeurs de Mathématiques du lycée Denis Diderot (Marseille)',
     description="Librairies utilisées dans l'enseignement de l'informatique",
-    url='https://github.com/cspaier/pydiderotlibs',
+    url='https://github.com/Pydiderot/pydiderotlibs',
     license='MIT',
     keywords=["python", "teaching"],
     classifiers=[
