@@ -5,7 +5,10 @@ Ce site documente des librairies python utilisées par les enseignants regroupé
 L'objectif général est de cacher certaines difficultés techniques liées au langage de programmation afin de pouvoir cibler certains points pédagogiques. Ces librairies ont été écrites pour fonctionner avec l'environnement de travail [pydiderot](https://pydiderot.readthedocs.io)
 
 ## Installation
-Deux méthodes d'installations sont disponibles:
+
+Sous windows vous pouvez installer facilement un environnement de dévellopement (IDE) python contenant déja les librairies pydiderotlibs en grace au projet [PydiderotIDE](https://pydiderot.readthedocs.io/).
+
+Si vous avez déja un IDE python, deux méthodes d'installations sont disponibles:
 - Avec pip: `pip3 install pydiderotlibs`.
 
 - manuellement: Télécharger nos librairies zippées avec ce [lien](_static/pydiderotlibs.zip), décompresser le dossier et le placer à un emplacement de `PYTHONPATH`.
