@@ -1,6 +1,7 @@
 # Participer à ce projet
 
-L'objectif de ce projet est de construire des librairies adaptées à l'enseignement du langage python dans l'enseignement secondaire.
+## Pydiderot
+L'objectif de ce projet est de construire des outils adaptées à l'enseignement et l'apprentissage du langage python dans l'enseignement secondaire.
 
 C'est un travail collaboratif sous licence MIT initié par des enseignants du lycée Denis Diderot à Marseille.
 
@@ -10,9 +11,9 @@ Si vous pensez participer nous vous en remercions et fournissons ce guide pour v
 
 ## Les volets du projet
 
-- l'environnement [pydiderot]( https://github.com/cspaier/pydiderot)
-- la librairie python [pydiderotlibs](https://github.com/cspaier/pydiderotlibs)
-- un volet pédagogique en développement. On cherche encore le nom... pydago ?
+- l'environnement [pydiderotIDE]( https://github.com/Pydiderot/pydiderotIDE)
+- la librairie python [pydiderotlibs](https://github.com/Pydidert/pydiderotlibs)
+- un volet pédagogique en développement [pydago](https://github.com/Pydiderot/pydago)
 
 
 ## J'ai un problème, une idée, une remarque
@@ -20,7 +21,6 @@ Nous utilisons les issues github pour gérer cela. Vérifiez si votre cas est d�
 
 
 ## J'ai codé un truc, fixé un bug
-Il n'y à ce jour qu'une branche github créée et maintenue. Nous acceptons les Pull sur cette branche.
 Merci de commenter le code python en utilisant la [convention google](http://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings):
 ```python
 def trace_texte(x, y, texte, couleur='black'):
@@ -37,6 +37,6 @@ def trace_texte(x, y, texte, couleur='black'):
 Nous utilisons [sphinx](http://www.sphinx-doc.org/) et l'extension [napoleon](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/) pour construire la documentation à partir de ces doc-strings.
 
 ## Je veux aider à documenter
-La documentation de ce projet est construire avec [Sphinx] à partir du dossier [doc](https://github.com/cspaier/pydiderotlibs/tree/master/docs) du dépôt github. N'hésitez pas à proposer des ajouts ou corrections!
+La documentation de ce projet est construire avec [Sphinx](http://www.sphinx-doc.org/) à partir du dossier [doc](https://github.com/Pydiderot/pydiderotlibs/tree/master/docs) du dépôt github. N'hésitez pas à proposer des ajouts ou corrections!
 
 Si vous souhaitez tester la documentation sur votre ordinateur, jetez un œil à [ce document](https://pydiderotlibs.readthedocs.io/compiler_la_documentation.html).
