@@ -2,7 +2,7 @@
 ## A propos
 Ce site documente des librairies python utilisées par les enseignants regroupées sous le paquet pydiderotlibs du lycée Diderot à Marseille pour enseigner l'informatique. Le code est disponible sur ce dépot [github](https://github.com/Pydiderot/pydiderotlibs) et hebergé sur [pypi](https://pypi.org/project/pydiderotlibs/).
 
-L'objectif général est de cacher certaines difficultés techniques liées au langage de programmation afin de pouvoir cibler certains points pédagogiques. Ces librairies ont été écrites pour fonctionner avec l'environnement de travail [pydiderot](https://pydiderot.readthedocs.io)
+L'objectif général est de cacher certaines difficultés techniques liées au langage de programmation afin de pouvoir cibler certains points pédagogiques. Ces librairies ont été écrites pour fonctionner avec l'environnement de travail [pydiderotIDE](https://pydiderotide.readthedocs.io)
 
 ## Installation
 
