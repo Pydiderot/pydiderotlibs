@@ -6,7 +6,7 @@ L'objectif général est de cacher certaines difficultés techniques liées au l
 
 ## Installation
 
-Sous windows vous pouvez installer facilement un environnement de dévellopement (IDE) python contenant déja les librairies pydiderotlibs en grace au projet [PydiderotIDE](https://pydiderot.readthedocs.io/).
+Sous windows vous pouvez installer facilement un environnement de dévellopement (IDE) python contenant déja les librairies pydiderotlibs en grace au projet [PydiderotIDE](https://pydiderotide.readthedocs.io/).
 
 Si vous avez déja un IDE python, deux méthodes d'installations sont disponibles:
 - Avec pip: `pip3 install pydiderotlibs`.
