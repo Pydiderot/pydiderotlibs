@@ -130,7 +130,7 @@ def repartition_normale(x, mu=0, sigma=1):
     return (1 + ferx) / 2
 
 
-def tirage_normale(mu, sigma):
+def tirage_normale(mu, sigma, precision=15):
     """
     Renvoie un nombre décimal (float) choisi de manière aléatoire
     selon une loi nomale d'espérance ``mu`` et d'écart type ``sigma``.
@@ -159,12 +159,11 @@ def tirage_normale(mu, sigma):
     while repartition_normale(b, mu, sigma) < cible:
         a, b = b, b + sigma     
 
-    #On fixe une précision pour la recherche ici, mais ça pourrait être un 
-    #paramètre de la fonction.
-    precision = 1/2**15
+    #On calcule la précision ici
+    epsilon = 1/2**precision
     
     #On applique l'algorithme de dichotomie
-    while repartition_normale(b,mu,sigma) - cible > precision:
+    while repartition_normale(b,mu,sigma) - cible > epsilon:
         milieu = (a+b)/2
         if repartition_normale(milieu, mu, sigma) > cible:
             b = milieu
