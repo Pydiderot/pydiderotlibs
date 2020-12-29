@@ -15,6 +15,10 @@ import pydiderotlibs.graphique as graphique
 
 from .couleurs import _couleurs, rgb, rgb2hex
 
+"""
+La fonction test_listes doit être appelée dans un répertoire de travail du dépôt githib qui contient le sous dossier exemples.
+Cette fonction demande des noms de fichiers qui sont absents du dépôt pip. L'appeler en dehors du dossier github crée des erreurs.
+"""
 
 def test_lycee():
     """
@@ -91,7 +95,7 @@ def test_stats_proba():
     print("Un nombre au hasard entre -5 et 5 avec la loi uniforme : ",
           tirage_uniforme(-5, 5))
     contenu=range(0,11)
-    print(contenu)
+    print("une liste pour tester : ", contenu)
     print("Un nombre au hasard dans la liste précédente : ", choix(contenu))
 
     print("Renvoie au hasard un décimal de l'intervalle [0 , 1[ : ", alea())
