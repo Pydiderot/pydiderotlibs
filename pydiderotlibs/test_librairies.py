@@ -62,9 +62,9 @@ def test_listes():
     print('\n Les fonctions sur les listes à partir de fichier')
 
     print('On doit avoir une liste de 0 à 9 : ',
-          CSV2liste('A', 'exemples/TableurPourTest.csv'))
+          CSV_colonne(1, 'exemples/TableurPourTest.csv'))
     print('On doit avoir une liste de 10 en 10 : ',
-          CSV2liste(1, 'exemples/TableurPourTest.csv'))
+          CSV_ligne(1, 'exemples/TableurPourTest.csv'))
 
     liste2CSV([1, 'a', 3, 'bonjour', 10, 'aurevoir'],
               fichier='exemples/TableurPourTest2.csv')
@@ -237,4 +237,6 @@ print("\n" * 10)
 message = "Vous pouvez tester les différents modules avec les fonctions suivantes:\n"
 fonctions = [f + "()" for f in dir() if f.startswith("test")]
 message += "\n".join(fonctions)
+message += "La fonction test_listes doit être appelée dans un répertoire de travail du dépôt githib qui contient le sous dossier exemples.\n
+Cette fonction demande des noms de fichiers qui sont absents du dépôt pip. L'appeler en dehors du dossier github crée des erreurs."
 print(message)

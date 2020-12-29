@@ -53,40 +53,41 @@ def CSV_colonne(num,fichier='optionnel'):
             colonne.append(float(contenu))
     return(colonne)
 
-def CSV2liste(num, fichier='optionnel'):
-    """
-    Retourne une liste correspondant à la colonne ou la ligne nom du fichier ``fichier``.
-
-    Si fichier n'est pas précisé, ouvre une boite de dialogue pour le choisir
-    Le fichier ne doit contenir que des nombres et le séparateur doit être ``;``
-
-    Arguments:
-        num (str ou int): Un numéro de ligne ou un nom de colonne (``A`` à ``Z`` ).
-        fichier (file,optionnel): Le nom complet (avec le chemin) d'un fichier contenant des nombres.
-    """
-    ch = fich2chaine(fichier)
-    if isinstance(num, int):
-        L = ch.split("\n")
-        if len(L) >= num:
-            R = []
-            for n in L[num - 1].split(";"):
-                try:
-                    R.append(eval(n))
-                except BaseException:
-                    raise Exception("Problème lors de l'importation")
-            return R
-    if isinstance(num, str):
-        num = num.upper()
-        c = ord(num) - ord('A')
-        R = []
-        for m1 in ch.split("\n"):
-            m2 = m1.split(";")
-            if len(m2) > c and m2[c] != '':
-                try:
-                    R.append(eval(m2[c].replace(' ', '').replace(',', '.')))
-                except BaseException:
-                    raise Exception("Problème lors de l'importation")
-        return R
+# Obsolète
+# def CSV2liste(num, fichier='optionnel'):
+#     """
+#     Retourne une liste correspondant à la colonne ou la ligne nom du fichier ``fichier``.
+#
+#     Si fichier n'est pas précisé, ouvre une boite de dialogue pour le choisir
+#     Le fichier ne doit contenir que des nombres et le séparateur doit être ``;``
+#
+#     Arguments:
+#         num (str ou int): Un numéro de ligne ou un nom de colonne (``A`` à ``Z`` ).
+#         fichier (file,optionnel): Le nom complet (avec le chemin) d'un fichier contenant des nombres.
+#     """
+#     ch = fich2chaine(fichier)
+#     if isinstance(num, int):
+#         L = ch.split("\n")
+#         if len(L) >= num:
+#             R = []
+#             for n in L[num - 1].split(";"):
+#                 try:
+#                     R.append(eval(n))
+#                 except BaseException:
+#                     raise Exception("Problème lors de l'importation")
+#             return R
+#     if isinstance(num, str):
+#         num = num.upper()
+#         c = ord(num) - ord('A')
+#         R = []
+#         for m1 in ch.split("\n"):
+#             m2 = m1.split(";")
+#             if len(m2) > c and m2[c] != '':
+#                 try:
+#                     R.append(eval(m2[c].replace(' ', '').replace(',', '.')))
+#                 except BaseException:
+#                     raise Exception("Problème lors de l'importation")
+#         return R
 
 
 def liste2CSV(L, fichier='optionnel'):
