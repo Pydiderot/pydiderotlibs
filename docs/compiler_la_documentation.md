@@ -14,10 +14,10 @@ Ce qui suit explique comment compiler la documentation sur votre ordinateur pers
 ### 1. Installer Sphinx et m2r
 Vous allez avoir besoin d'installer sphinx dans votre environnement python.
 
-Il est conseillé de créer un environnement (nommé ici `venv`) python dédié à cela: `python3 -m venv venv`
-Vous pouvez ensuite activer l’environnement avec `source venv/bin/activate` et le désactiver avec `deactivate`. Activons le.
+Il est conseillé de créer un environnement (nommé ici `env_pydiderot`) python dédié à cela: `python3 -m venv env_pydiderot`
+Vous pouvez ensuite activer l’environnement avec `source env_pydiderot/bin/activate` et le désactiver avec `deactivate`. Activons le.
 
-Installez ensuite [Sphinx](https://www.sphinx-doc.org/), le [theme readthedocs](https://sphinx-rtd-theme.readthedocs.io/) et l'extension [m2r](https://github.com/miyakogi/m2r) qui nous permet d'écrire en markdown: `pip install sphinx sphinx_rtd_theme m2r`
+Installez ensuite [Sphinx](https://www.sphinx-doc.org/), le [theme readthedocs](https://sphinx-rtd-theme.readthedocs.io/) et l'extension [m2r](https://github.com/miyakogi/m2r) qui nous permet d'écrire en markdown: `pip install sphinx sphinx_rtd_theme m2r2`
 
 
 ### 2. Cloner le dépôt
@@ -28,7 +28,7 @@ Il faut commencer par cloner le dépôt ou votre fork:
 
 Le téléchargement peut être long car le projet est un peu lourd.
 
-Placez vous ensuite dans le dossier `pydiderotlibs/` créé. Tous les chemins suivants seront relatifs à ce dossier.
+Placez vous ensuite dans le dossier `pydiderotlibs/docs` créé. Tous les chemins suivants seront relatifs à ce dossier.
 
 
 ### 3. Compilez
