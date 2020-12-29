@@ -26,7 +26,7 @@ def test_lycee():
     print('pgcd(-4,12) = ', pgcd(-4, 12))
     print('reste(15,4) = ', reste(15, 4))
     print('quotient(15,4) = ', quotient(15, 4))
-    
+
     # fonctions usuelles
     print('4**1/2 = ', puissance(4, 1 / 2))
     print('2**-2 = ', puissance(2, -2))
@@ -58,13 +58,13 @@ def test_listes():
     print('\n Les fonctions sur les listes à partir de fichier')
 
     print('On doit avoir une liste de 0 à 9 : ',
-          CSV2liste('A', 'TableurPourTest.csv'))
+          CSV2liste('A', 'exemples/TableurPourTest.csv'))
     print('On doit avoir une liste de 10 en 10 : ',
-          CSV2liste(1, 'TableurPourTest.csv'))
+          CSV2liste(1, 'exemples/TableurPourTest.csv'))
 
     liste2CSV([1, 'a', 3, 'bonjour', 10, 'aurevoir'],
-              fichier='TableurPourTest2.csv')
-    print('Votre répertoire courant doit contenir un fichier TableurPourTest2.csv')
+              fichier='exemples/TableurPourTest2.csv')
+    print('Votre répertoire courant/exemples doit contenir un fichier TableurPourTest2.csv')
 
     x = [[1, 2, 'a'], [3, 4, 'b'], [5, 6, 'c'], [7, 8, 'd']]
     print(x)
@@ -90,8 +90,8 @@ def test_stats_proba():
 
     print("Un nombre au hasard entre -5 et 5 avec la loi uniforme : ",
           tirage_uniforme(-5, 5))
-
-    print(range(0, 11))
+    contenu=range(0,11)
+    print(contenu)
     print("Un nombre au hasard dans la liste précédente : ", choix(contenu))
 
     print("Renvoie au hasard un décimal de l'intervalle [0 , 1[ : ", alea())
