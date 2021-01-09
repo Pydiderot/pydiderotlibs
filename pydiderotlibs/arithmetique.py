@@ -59,7 +59,6 @@ def bezout(a,b):
     u0, v0 = 1, 0
     u1, v1 = 0, 1
     while r1:
-        print(u0 * a + v0 * b)
         q = r0 // r1
         u0, u1 = u1, u0 - q*u1
         v0, v1 = v1, v0 - q*v1
