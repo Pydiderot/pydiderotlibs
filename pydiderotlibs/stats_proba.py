@@ -19,6 +19,8 @@ import builtins
 import random
 from .arithmetique import quotient
 from .listes import transposer
+
+
 def binomial(n, p):
     """
     Renvoie un entier (int) représentant le coefficient binomial ``p`` parmi ``n``.
@@ -112,7 +114,23 @@ def tirage_expo(x):
 # Loi normale
 
 
-def tirage_normale(mu, sigma):
+def repartition_normale(x, mu=0, sigma=1):
+    """
+    Renvoie la probabilité P(y < x) pour P loi normale de moyenne mu et 
+    d'écart type sigma.
+    
+    Arguments:
+        x (float)
+        mu (float): Un nombre décimal. L'éspérance de la loi normale
+        sigma (float): Un nombre décimal. L'écart type de la loi normale        
+    """
+    if sigma <= 0:
+        raise ValueError("Veuillez entrer un écart type strictement positif")
+    ferx = math.erf((x - mu)/(sigma * 2 ** 0.5))
+    return (1 + ferx) / 2
+
+
+def tirage_normale(mu, sigma, precision=15):
     """
     Renvoie un nombre décimal (float) choisi de manière aléatoire
     selon une loi nomale d'espérance ``mu`` et d'écart type ``sigma``.
@@ -121,14 +139,47 @@ def tirage_normale(mu, sigma):
         mu (float): Un nombre décimal. L'éspérance de la loi normale
         sigma (float): Un nombre décimal. L'écart type de la loi normale
     """
-    return random.gauss(mu, sigma)
 
+    cible = random.random() 
+    a = mu 
+    
+    
+    #On symétrise le problème de recherche d'inverse, car si on procède par 
+    #dichotomie, les valeurs très inférieures à la moyenne s'envoient sur des
+    #point très proches et on a un souci de précision.
+    sym = False
+    if cible < 0.5:
+        cible = 1 - cible
+        sym = True
+    
+    #On commence par chercher un intervalle qui contient l'inverse de 'cible'
+    #pour la fonction de répartition. On prends des intervalles de longueur
+    # l'écart-type pour être sûr de trouver en très peu d'itérations
+    b = sigma
+    while repartition_normale(b, mu, sigma) < cible:
+        a, b = b, b + sigma     
 
+    #On calcule la précision ici
+    epsilon = 1/2**precision
+    
+    #On applique l'algorithme de dichotomie
+    while repartition_normale(b,mu,sigma) - cible > epsilon:
+        milieu = (a+b)/2
+        if repartition_normale(milieu, mu, sigma) > cible:
+            b = milieu
+        else:
+            a = milieu
+    
+    #Au besoin, on symétrise autour de la moyenne
+    if sym:
+        return - b + 2 * mu
+    else:
+        return b
+    
 def tirage_gauss(mu, sigma):
     """
     Renvoie un nombre décimal (float) choisi de manière aléatoire
     selon une loi nomale d'espérance ``mu`` et d'écart type ``sigma``.
-
     Arguments:
         mu (float): Un nombre décimal. L'éspérance de la loi normale
         sigma (float): Un nombre décimal. L'écart type de la loi normale
