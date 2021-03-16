@@ -321,8 +321,7 @@ class _FenetreGraphique(Canvas):
 
 def trace_point(x, y, couleur='noir', taille=1, forme='rond'):
     point(x, y, couleur, taille, forme)
-
-
+    
 def point(x, y, couleur='noir', taille=1, forme='rond'):
     """Ajoute un point dans la fenetre graphique aux coordonees ``(x, y)``.
 
@@ -364,7 +363,25 @@ def point(x, y, couleur='noir', taille=1, forme='rond'):
     tab[6] = forme
     _fenetre.objets.append(tab)
 
+def cercle(x, y, couleur='noir', taille=5):
+     """Trace un disque dont le centre a pour coordonnées ``(x, y)`` et dont le rayon est 2 fois ``taille`` (en pixels).
 
+    Alias: ``trace_cercle()``, ``circle()``
+
+    Arguments:
+        x,y (float): Coordonnées du centre.
+        couleur (`couleur <#couleurs>`_, optionnel): Couleur du disque (``noir`` par défaut).
+        taille (int, optionl): demi rayon (``2`` par défaut).
+        """
+    point(x, y, couleur, taille, 'rond')
+
+def circle(x, y, couleur='noir', taille=5):
+    point(x, y, couleur, taille, 'rond')
+
+def trace_cercle(x, y, couleur='noir', taille=5):
+    point(x, y, couleur, taille, 'rond')
+    
+    
 def trace_texte(x, y, message, couleur='noir'):
     texte(x, y, message, couleur)
 
