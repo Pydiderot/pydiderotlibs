@@ -391,7 +391,7 @@ def text(x, y, message, couleur='noir'):
 
 
 def texte(x, y, message, couleur='noir'):
-    """Trace un texte dans la fenêtre graphique au coordonées ``x, y``.
+    """Trace un texte dans la fenêtre graphique au coordonnées ``x, y``.
 
     Alias : 'trace_texte()' et 'text()'
 
@@ -420,12 +420,12 @@ def trace_segment(x1, y1, x2, y2, couleur='noir', taille=2):
 
 
 def segment(x1, y1, x2, y2, couleur='noir', taille=2):
-    """Trace un segment entre les points de coordonées ``(x1, y1)`` et ``(x2, y2)``.
+    """Trace un segment entre les points de coordonnées ``(x1, y1)`` et ``(x2, y2)``.
 
     Alias: ``trace_segment()``
 
     Arguments:
-        x1,y1,x2,y2 (float): Coordonées des extrémités du segment.
+        x1,y1,x2,y2 (float): Coordonnées des extrémités du segment.
         couleur (`couleur <#couleurs>`_, optionnel): Couleur du segment (``noir`` par défaut).
         taille (int, optionl): Epaisseur du segment (``2`` par défaut).
         """
