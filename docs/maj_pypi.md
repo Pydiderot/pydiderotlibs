@@ -14,10 +14,11 @@ Cette étape décrit la mise en place de l’environnement de travail sous UNIX.
 
 ## 1. Mettre à jour le numéro de version
 
-Augmenter de `0.1` le numéro de version dans `__init__.py` et dans `setup.py`
+Augmenter de `0.1` le numéro de version dans `__init__.py` et dans `setup.py`.
+Modifier de même le nom du fichier qui correspond au numéro de version.
 
 ## 2. Pousser sur github
-- `git add __init__.py setup.py`
+- `git add __init__.py setup.py 0.0.18` (modifier le nom de ce dernier fichier avec le numéro de version)
 - `git commit -m 'maj version 0.?'`
 
 ## 3. Installer et nettoyer
