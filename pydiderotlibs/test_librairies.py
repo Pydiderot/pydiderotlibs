@@ -237,6 +237,5 @@ print("\n" * 10)
 message = "Vous pouvez tester les différents modules avec les fonctions suivantes:\n"
 fonctions = [f + "()" for f in dir() if f.startswith("test")]
 message += "\n".join(fonctions)
-message += "La fonction test_listes doit être appelée dans un répertoire de travail du dépôt githib qui contient le sous dossier exemples.\n
-Cette fonction demande des noms de fichiers qui sont absents du dépôt pip. L'appeler en dehors du dossier github crée des erreurs."
+message += "La fonction test_listes doit être appelée dans un répertoire de travail du dépôt githib qui contient le sous dossier exemples. Cette fonction demande des noms de fichiers qui sont absents du dépôt pip. L'appeler en dehors du dossier github crée des erreurs."
 print(message)
