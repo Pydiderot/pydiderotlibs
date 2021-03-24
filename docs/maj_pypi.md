@@ -20,6 +20,7 @@ Modifier de même le nom du fichier qui correspond au numéro de version `versio
 ## 2. Pousser sur github
 - `git add __init__.py setup.py version_x.x.xx.txt` (modifier le nom de ce dernier fichier avec le numéro de version)
 - `git commit -m 'maj version 0.?'`
+- `git push`
 
 ## 3. Installer et nettoyer
 - `python3 setup.py sdist bdist_wheel`
