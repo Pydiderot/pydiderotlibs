@@ -1,6 +1,14 @@
 from PIL import Image
 from pydiderotlibs.couleurs import *
 
+
+# Un petit message invitant a lire la doc
+print("""
+Merci d'utiliser la librairie images du module pydiderotlibs.\n
+N'hésitez pas à consulter la documentation en ligne:\n
+https://pydiderotlibs.rtfd.io/librairies/images.html
+""")
+
 def creer_image(fichier):
     """
     Crée, à partir d'une image enregistrée sur l'ordinateur,
