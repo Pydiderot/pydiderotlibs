@@ -45,7 +45,7 @@ afficher_pixel((100, 100, 100))
 
 # On affiche les trois composantes RVB du pixel situé juste à droite du pixel de coordonnées (100,100). 
 # Ce pixel voisin à pour coordonnées (101,100)
-print(pixel_voisin((100, 100), img))
+print(pixel_voisin(img, (100, 100)))
 
 # On affiche les 3 composantes RVB du pixel de coordonnées (10,10)
 print(copier_pixel(img, (10, 10)))
