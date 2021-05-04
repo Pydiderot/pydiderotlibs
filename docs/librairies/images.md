@@ -14,7 +14,7 @@ dans la section suivante.
 
 Vous pouvez, par exemple, l'utiliser pour créer un script convertissant une image couleurs en niveaux de gris ou encore un script générant le négatif d'une image donnée.
 
-
+ 
 .. _couleur:
 .. mdinclude:: ../couleurs.md
 
