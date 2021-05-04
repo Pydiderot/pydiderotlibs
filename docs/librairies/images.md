@@ -21,3 +21,12 @@ Vous pouvez, par exemple, l'utiliser pour créer un script convertissant une ima
 ## Utilisation
 
 Voici quelques exemples ...à compléter !... 
+
+
+## Documentation
+
+.. automodule:: pydiderotlibs.images
+    :members:
+    :member-order: bysource
+
+.. eof
