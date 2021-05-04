@@ -20,8 +20,8 @@ def creer_image(fichier):
         
     """
     nm=fichier.split('.')
-    if len(nm)==1:
-        fichier+='.png'
+    if len(nm) == 1:
+        fichier += '.png'
     return Image.open(fichier)
     
 def definition_image(image):
@@ -72,7 +72,7 @@ def afficher_pixel(pixel):
     Arguments :
         pixel : un pixel, c'est à dire un triplet de trois nombres entiers entre 0 et 255. Par exemple : (0,0,0) (pixel noir) ou : (255,255,255) (pixel blanc)    
     """
-    Image.new('RGB', (10,10), pixel).show()
+    Image.new('RGB', (10, 10), pixel).show()
 
 def rouge(pixel):
     """
@@ -115,12 +115,12 @@ def pixel_voisin(image, coord):
         image : nom de la variable Python contenant l'image
 
     """
-    x,y=coord
-    xmax,ymax=image.size
-    if x < xmax - 1 :
-        return x+1,y
+    x, y = coord
+    xmax, ymax = image.size
+    if x < xmax - 1:
+        return x + 1, y
     else :
-        return (x,y)
+        return (x, y)
 
 def copier_pixel(image,coord):
     """
@@ -154,11 +154,11 @@ def enregistrer_image(image,nom):
         
     """
     nm=nom.split('.')
-    if len(nm)==1:
-        nom+='.png'
+    if len(nm) == 1:
+        nom += '.png'
     image.save(nom) 
     
-def changer_les_pixels(image, fonction, x0=0, x1=0, y0=0, y1=0):
+def changer_les_pixels(image, fonction, x0 = 0, x1 = 0, y0 = 0, y1 = 0):
     """
     Modifie les pixels de l'image ``image``, en leur appliquant la fonction ``fonction``.
     
@@ -171,14 +171,14 @@ def changer_les_pixels(image, fonction, x0=0, x1=0, y0=0, y1=0):
         y1 (optionnel) : valeur maximale de la deuxième coordonnée des pixels à modifier (0 par défaut, ce qui signifie que les pixels seront modifiés jusqu'à ymax)
     
     """
-    if x1==0:
+    if x1 == 0:
         x1=image.size[0]
-    if y1==0:
+    if y1 == 0:
         y1=image.size[1]
-    for x in range(x0,x1):
-        for y in range(y0,y1):
-            pixel=copier_pixel(image,(x,y))
+    for x in range(x0, x1):
+        for y in range(y0, y1):
+            pixel=copier_pixel(image, (x, y))
             pixel=fonction(pixel)
-            coller_pixel(image,(x,y),pixel)
+            coller_pixel(image, (x, y), pixel)
     
 
