@@ -17,12 +17,36 @@ def creer_image(fichier):
     Arguments :
         fichier : nom du fichier enregistré sur l'ordinateur (avec le suffixe : par exemple "monimage.png")
         Le plus simple est d'avoir le fichier de l'image dans le même dossier que le fichier python sur lequel on travaille
+        Si python l'image n'est pas trouvée dans ce dossier, les dossiers 'téléchargement' et 'images' de Windows sont essayés.
+        Si aucune extension de fichier n'est indiquée, une série d'extension pour les principaux formats d'images est essayée.
         
     """
-    nm=fichier.split('.')
-    if len(nm) == 1:
-        fichier += '.png'
-    return Image.open(fichier)
+    pathlist = ["", "U:\\Downloads\\", "U:\\Pictures\\"]
+    pathchecked = 'fichier'
+    ok = False
+    for path in pathlist :
+        if ok :
+            break
+        if check(path+fichier):
+            pathchecked=path+fichier
+            ok = True
+        nm=fichier.split('.')
+        if len(nm) == 1:
+            extlist = ['.jpg', '.jpeg', '.png', '.jfif', '.gif', '.bmp', '.svg', '.tiff', '.tiff', '.webp']
+            for ext in extlist :
+                if ok :
+                    break
+                if check(path+fichier+ext):
+                    pathchecked=path+fichier+ext
+                    ok = True
+    try:
+        return Image.open(pathchecked)
+    except FileNotFoundError :
+        print("Votre fichier n'a pas été trouvé. Vérifiez son nom et son emplacement.")
+        
+def importer_image(fichier):
+    return creer_image(fichier)
+
     
 def definition_image(image):
     """
