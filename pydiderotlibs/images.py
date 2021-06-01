@@ -20,6 +20,9 @@ def creer_image(fichier):
         Si python l'image n'est pas trouvée dans ce dossier, les dossiers 'téléchargement' et 'images' de Windows sont essayés.
         Si aucune extension de fichier n'est indiquée, une série d'extension pour les principaux formats d'images est essayée.
         
+    Alias :
+        importer_image()
+        
     """
     pathlist = ["", "U:\\Downloads\\", "U:\\Pictures\\"]
     pathchecked = 'fichier'
