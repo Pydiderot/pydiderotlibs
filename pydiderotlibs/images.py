@@ -9,7 +9,38 @@ N'hésitez pas à consulter la documentation en ligne:\n
 https://pydiderotlibs.rtfd.io/librairies/images.html
 """)
 
+def importer_image(fichier):
+    """
+    Crée, à partir d'une image enregistrée sur l'ordinateur (dans le même dossier que le fichier python sur lequel on travaille),
+    une image manipulable dans le langage python (avec la librairie PIL)
+    
+    Arguments :
+        fichier : nom du fichier enregistré sur l'ordinateur (avec le suffixe : par exemple "monimage.png")
+        Le plus simple est d'avoir le fichier de l'image dans le même dossier que le fichier python sur lequel on travaille, sinon il faut mettre le chemin comme par exemple "U:\\Documents\\monimage.jpg"
+        
+    Alias :
+        creer_image()
+        
+    """
+    try:
+        return Image.open(fichier)
+    except FileNotFoundError :
+        print("Votre fichier n'a pas été trouvé. Vérifiez son nom et son emplacement.")
+   
 def creer_image(fichier):
+    return importer_image(fichier)
+
+def check(filePath):
+    #fonction non documentée, uniquement utile pour la fonction suivante importer_image_auto
+    try:
+        with open(filePath, 'r') as f:
+            return True
+    except FileNotFoundError:
+        return False
+    except IOError:
+        return False
+
+def importer_image_auto(fichier):
     """
     Crée, à partir d'une image enregistrée sur l'ordinateur (dans le même dossier que le fichier python sur lequel on travaille),
     une image manipulable dans le langage python (avec la librairie PIL)
@@ -17,11 +48,12 @@ def creer_image(fichier):
     Arguments :
         fichier : nom du fichier enregistré sur l'ordinateur (avec le suffixe : par exemple "monimage.png")
         Le plus simple est d'avoir le fichier de l'image dans le même dossier que le fichier python sur lequel on travaille
-        Si python l'image n'est pas trouvée dans ce dossier, les dossiers 'téléchargement' et 'images' de Windows sont essayés.
-        Si aucune extension de fichier n'est indiquée, une série d'extension pour les principaux formats d'images est essayée.
-        
+        Si l'image n'est pas trouvée dans ce dossier, les dossiers 'téléchargement' et 'images' de Windows sont explorés.
+        Si aucune extension de fichier n'est indiquée, une série d'extensions correspondants aux principaux formats d'images est essayée.        
     Alias :
-        importer_image()
+        importer_image_panic()
+        creer_image_auto()
+        creer_image_panic()
         
     """
     pathlist = ["", "U:\\Downloads\\", "U:\\Pictures\\"]
@@ -43,12 +75,21 @@ def creer_image(fichier):
                     pathchecked=path+fichier+ext
                     ok = True
     try:
+        print("Vous avez utilisé la fonction 'importer_image_auto()', mais c'est de la triche !")
+        print("Votre fichier devrait plutôt être importé correctement de la façon suivante : ")
+        print("importer_image('"+pathchecked+"')")
         return Image.open(pathchecked)
     except FileNotFoundError :
         print("Votre fichier n'a pas été trouvé. Vérifiez son nom et son emplacement.")
         
-def importer_image(fichier):
-    return creer_image(fichier)
+def creer_image_auto(fichier):
+    return importer_image_auto(fichier)
+
+def creer_image_panic(fichier):
+    return importer_image_auto(fichier)
+
+def importer_image_panic(fichier):
+    return importer_image_auto(fichier)
 
     
 def definition_image(image):
