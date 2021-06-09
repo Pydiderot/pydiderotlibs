@@ -18,7 +18,7 @@ for line in open(os.path.join(SETUPDIR, 'requirements.txt'), encoding="UTF-8"):
 
 setup(
     name='pydiderotlibs',
-    version='0.0.20',
+    version='0.0.21',
     packages=find_packages(),
     packages_dir={'' : 'pydiderotlibs'},
     author='Professeurs de Mathématiques du lycée Denis Diderot (Marseille)',
