@@ -21,7 +21,7 @@ from .listes import *
 from random import random
 
 print("""
-Merci d'utiliser la librairie lycee du module pydiderot.\n
+Merci d'utiliser la librairie lycee du module pydiderotlibs.\n
 N'hésitez pas à consulter la documentation en ligne:\n
 https://pydiderotlibs.rtfd.io/librairies/lycee.html
 """)

@@ -10,7 +10,7 @@ from .couleurs import rgb, rgb2hex
 
 # Un petit message invitant a lire la doc
 print("""
-Merci d'utiliser la librairie repere du module pydiderot.\n
+Merci d'utiliser la librairie repere du module pydiderotlibs.\n
 N'hésitez pas à consulter la documentation en ligne:\n
 https://pydiderotlibs.rtfd.io/librairies/repere.html
 """)

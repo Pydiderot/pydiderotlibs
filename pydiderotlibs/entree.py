@@ -3,7 +3,7 @@
 import tkinter as tk
 
 print("""
-Merci d'utiliser la librairie entree du module pydiderot.\n
+Merci d'utiliser la librairie entree du module pydiderotlibs.\n
 N'hésitez pas à consulter la documentation en ligne:\n
 https://pydiderotlibs.rtfd.io/librairies/entree.html
 """)
