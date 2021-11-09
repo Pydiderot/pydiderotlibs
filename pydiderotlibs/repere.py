@@ -520,3 +520,22 @@ def fenetre(xmin=-10, xmax=10, ymin=-10, ymax=10, fond='blanc',
     global _fenetre
     _fenetre = graph
     return graph
+
+def courbe(valeurs: list[tuple[int]]= [(1,1),(2,2)], couleur="noir", type="courbe", taille=2):
+    """Crée automatiquement une courbe en fonction des points donnés.
+
+    Arguments:
+        valeurs (list[tuple[int]]): Les points par lesquelles passe la courbe. La valeur par défaut est ``[(1,1), (2,2)]``.
+        couleur (`couleur <#couleurs>`_, optionnel): Couleur des cotés du rectangle (``noir`` par défaut).
+        type (str, optionnel): Le type de courbe à creer (``courbe`` ou ``points``)
+        taile (int, optionel): La taille de la courbe (``2``par default)
+    """
+
+    if type == "courbe":
+        empl = 0
+        for x, y in valeurs:
+            if empl != 0:
+                old_x, old_y = valeurs[empl]
+                segment(x, y, old_x, old_y, couleur='rouge', taille=2)
+                
+            
