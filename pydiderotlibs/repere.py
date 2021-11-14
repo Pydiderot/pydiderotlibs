@@ -559,6 +559,6 @@ def courbe(valeurs= [(1,1),(2,2)], couleur="noir", type="courbe", taille=2, form
             empl += 1
 
     else:
-        print("Type de courbe inconue :(")
+        print("Type de courbe inconnu :(")
 
             
