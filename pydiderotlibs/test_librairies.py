@@ -12,6 +12,7 @@ from .lycee import *
 import types
 import pydiderotlibs.repere as repere
 import pydiderotlibs.graphique as graphique
+from .nmea import *
 
 from .couleurs import _couleurs, rgb, rgb2hex
 
@@ -232,6 +233,19 @@ def test_couleurs():
 
     root.mainloop()
 
+def test_nmea():
+    """
+    Teste le module nmea
+    (pour la SNT, chapitre sur le GPS.)
+    """
+    vitesses=nmea_timedata('speed','testnmeatools.txt')
+    repere.window()
+    max=0
+    for x,y in vitesses:
+        repere.point(x,y,'red')
+        if y>max:
+            max=y
+    print(max)
 
 print("\n" * 10)
 message = "Vous pouvez tester les différents modules avec les fonctions suivantes:\n"
