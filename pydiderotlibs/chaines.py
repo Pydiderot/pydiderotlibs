@@ -60,7 +60,7 @@ def chaine2fich(ch, fichier='optionnel'):
 
     Arguments:
         ch (str): Une chaine de caractères
-        fichier (file, optionnel): Le nom complet (avec le chemnin) d'un fichier contenant du texte brut.
+        fichier (file, optionnel): Le nom complet (avec le chemin) d'un fichier contenant du texte brut.
     """
     if fichier == 'optionnel':
         fen = Tk.Tk()
