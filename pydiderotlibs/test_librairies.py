@@ -237,15 +237,24 @@ def test_nmea():
     """
     Teste le module nmea
     (pour la SNT, chapitre sur le GPS.)
+    Remarque : le fichier testnmeatools.txt se trouve dans pydiderotlibs/exemples
     """
-    vitesses=nmea_timedata('speed','testnmeatools.txt')
+    vitesses=nmea_timedata('speed','exemples/testnmeatools.txt')
     repere.window()
     max=0
     for x,y in vitesses:
         repere.point(x,y,'red')
         if y>max:
             max=y
-    print(max)
+    print("voici la vitesse maximale dans le fichier testnmeatools.txt : "+max)
+    
+    msg = pynmeagps.NMEAReader.parse("$GPGGA,122623.000,4325.8430,N,00523.6647,E,1,7,1.32,232.1,M,49.2,M,,*58")
+    #msg = pynmeagps.NMEAReader.parse("$GPRMC,122623.000,A,4325.8430,N,00523.6647,E,39.821,290.36,261219,,,A*60")
+    print("fonction mk_dict : ")
+    print(mk_dict(msg))
+    print("fonction mk_list : ")
+    print(mk_list(msg,datetime.datetime.now()))
+    nmea2csv()
 
 print("\n" * 10)
 message = "Vous pouvez tester les différents modules avec les fonctions suivantes:\n"
