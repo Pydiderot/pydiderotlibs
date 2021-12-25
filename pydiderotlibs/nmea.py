@@ -4,9 +4,7 @@ import pynmeagps
 import datetime
 from .chaines import fich2chaine
 
-#dans nmea2csv, revoir l'affichage du texte "vous n'avez pas précisé de fichier..."
-#dans nmea2csv, revoir l'endroit où entree etst recherché par défaut
-#et l'endroit où le csv est sauvegardé (plus voir comment être sûr que le suffixe est bien csv)
+#dans nmea_timedata et dans fich2chaine, revoir l'affichage d'un texte avant "choisissez un fichier" 
 
 def mk_dict(msg):
     """
@@ -119,29 +117,29 @@ def nmea2csv(entree='optionnel', fichier='optionnel'):
     """
     if entree == 'optionnel':
         fen = Tk.Tk()
-        tex1 = Tk.Label(fen, text='Vous n''avez pas précisé de fichier contenant les trames nmea')
-        tex1.pack()
-        fich = tkf.askopenfilename(initialdir=".",title="Choisissez un fichier",filetypes=(("text","*.txt"),("all files", "*.*"))) 
+        fich = tkf.askopenfilename(initialdir=".",title="Choisissez un fichier contenant des trames nmea.",filetypes=(("text","*.txt"),("all files", "*.*"))) 
         try:
             fen.destroy()
         except BaseException:
             pass
-        if fich is not None:
+        if not not fich: #si fich contient quelque chose 
             entree = fich
+        else:
+            return False
     if fichier == 'optionnel':
         fen = Tk.Tk()
-        tex1 = Tk.Label(fen, text='Vous n''avez pas précisé de fichier pour l''enregistrement au format csv')
-        tex1.pack()
         fich = tkf.asksaveasfile(
             parent=fen,
             mode='w',
-            title="Choisissez un fichier")
+            title="Choisissez un fichier pour l'enregistrement au format csv")
         try:
             fen.destroy()
         except BaseException:
             pass
-        if fich is not None:
+        if not not fich: #si fich contient quelque chose 
             fichier = fich.name
+        else:
+            return False
     if entree != 'optionnel':
         ch = fich2chaine(entree)
         if fichier != 'optionnel':
