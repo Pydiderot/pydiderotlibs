@@ -19,7 +19,7 @@ def taille(objet):
     return builtins.len(objet)
 
 
-def fich2chaine(fichier='optionnel'):
+def fich2chaine(fichier='optionnel', message=''):
     """
     Retourne chaine formée du contenu du fichier ``fichier``.
 
@@ -36,13 +36,15 @@ def fich2chaine(fichier='optionnel'):
         fich = tkf.askopenfile(
             parent=fen,
             mode='rb',
-            title="Choisissez un fichier")
+            title="Choisissez un fichier "+message)
         try:
             fen.destroy()
         except BaseException:
             pass
-        if fich is not None:
+        if not not fich : #si fich est différent de None ou de ()
             fichier = fich.name
+        else:
+            return ""
     if fichier != 'optionnel':
         filin = open(fichier, 'r')
         chaine = "\n".join([line.strip() for line in filin])

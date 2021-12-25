@@ -4,7 +4,8 @@ import pynmeagps
 import datetime
 from .chaines import fich2chaine
 
-#dans nmea_timedata et dans fich2chaine, revoir l'affichage d'un texte avant "choisissez un fichier" 
+#dans nmea_timedata et dans fich2chaine, revoir l'affichage d'un texte avant "choisissez un fichier"
+#ajouter un test pour que le csv soit enregistré avec le suffixe .csv
 
 def mk_dict(msg):
     """
@@ -75,7 +76,7 @@ def nmea_timedata(datatype,fichier='optionnel'):
         
         fichier (file,optionnel): Le nom complet (avec le chemin) d'un fichier contenant des trames nmea.
     """
-    ch = fich2chaine(fichier)
+    ch = fich2chaine(fichier,"contenant les trames nmea.")
     liste = []
     typ = []
     origin = None
@@ -101,7 +102,7 @@ def nmea_timedata(datatype,fichier='optionnel'):
         except Exception as e:
             excep=1
     if excep==1:
-        print('Error while parsing.')
+        print('Error while parsing in nmea_timedata().')
     return(liste)
 
 
@@ -122,7 +123,7 @@ def nmea2csv(entree='optionnel', fichier='optionnel'):
             fen.destroy()
         except BaseException:
             pass
-        if not not fich: #si fich contient quelque chose 
+        if not not fich: #si fich contient quelque chose de différent de None ou ()
             entree = fich
         else:
             return False
@@ -138,6 +139,7 @@ def nmea2csv(entree='optionnel', fichier='optionnel'):
             pass
         if not not fich: #si fich contient quelque chose 
             fichier = fich.name
+            print(fich.name)
         else:
             return False
     if entree != 'optionnel':
@@ -163,7 +165,7 @@ def nmea2csv(entree='optionnel', fichier='optionnel'):
                 except Exception as e:
                     excep=1
             if excep==1:
-                print('Error while parsing.')
+                print('Error while parsing in nmea2csv().')
             filout.close()
             return True
         else:
