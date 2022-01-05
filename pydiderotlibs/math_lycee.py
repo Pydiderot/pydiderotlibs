@@ -56,5 +56,5 @@ def alea_entre_bornes(a,b,p=15):
         c=int(c*10**p)/10**p
     return c
     
-def random_between(a,b,p=0):
-    alea_entre_bornes(a,b,p)
+def random_between(a,b,p=15):
+    return alea_entre_bornes(a,b,p)
