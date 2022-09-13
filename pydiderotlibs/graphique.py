@@ -135,7 +135,7 @@ def demande_evenements():
                 touche = touches_speciales[pygame.key.name(index)]
             else:
                 touche = pygame.key.name(index)
-            evenements[touche] = None
+            evenements[touche] = True
 
     return evenements
 
