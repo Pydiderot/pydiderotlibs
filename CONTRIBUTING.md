@@ -19,8 +19,14 @@ Si vous pensez participer nous vous en remercions et fournissons ce guide pour v
 ## J'ai un problème, une idée, une remarque
 Nous utilisons les issues github pour gérer cela. Vérifiez si votre cas est déjà présent dans la liste d'issues et n'hésitez pas à en ouvrir si besoin.
 
+## Je souhaite tester les librairies localement et soumettre une modification
+Suivez le [guide](faire_une_pr.html)!
 
-## J'ai codé un truc, fixé un bug
+## Conventions de code et de commentaires
+### Style du code
+Merci de fournir un code respectant les standards de style [PEP8](https://peps.python.org/pep-0008/). Si cela vous semble compliqué, sachez que le code sera [testé automatiquement avec flake8](https://github.com/Pydiderot/pydiderotlibs/actions) et nous vous aideront à modifier votre PR si besoin.
+
+### Commentaires
 Merci de commenter le code python en utilisant la [convention google](http://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings):
 ```python
 def trace_texte(x, y, texte, couleur='black'):

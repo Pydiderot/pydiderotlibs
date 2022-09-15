@@ -17,7 +17,7 @@ Vous allez avoir besoin d'installer sphinx dans votre environnement python.
 Il est conseillé de créer un environnement (nommé ici `env_pydiderot`) python dédié à cela: `python3 -m venv env_pydiderot`
 Vous pouvez ensuite activer l’environnement avec `source env_pydiderot/bin/activate` et le désactiver avec `deactivate`. Activons le.
 
-Installez ensuite [Sphinx](https://www.sphinx-doc.org/), le [theme readthedocs](https://sphinx-rtd-theme.readthedocs.io/) et l'extension [m2r](https://github.com/miyakogi/m2r) qui nous permet d'écrire en markdown: `pip install sphinx sphinx_rtd_theme m2r2`
+Installez ensuite [Sphinx](https://www.sphinx-doc.org/), le [theme readthedocs](https://sphinx-rtd-theme.readthedocs.io/) et l'extension [m2r](https://github.com/miyakogi/m2r) qui nous permet d'écrire en markdown: `pip install -r requirements_docs.txt`
 
 
 ### 2. Cloner le dépôt
