@@ -10,7 +10,7 @@ import sys
 import math
 import pygame
 from .couleurs import rgb
-
+from .touches_pygames import TOUCHES_PYGAMES
 # Un petit message invitant a lire la doc
 print("""
 Merci d'utiliser la librairie graphique du module pydiderotlibs.\n
@@ -109,13 +109,6 @@ def demande_evenements():
 
     # Initialisation du dictionnaire de sortie
     evenements = {}
-    touches_speciales = {
-        'up': 'haut',
-        'down': 'bas',
-        'left': 'gauche',
-        'right': 'droite',
-        'space': 'espace'
-    }
 
     for event in pygame.event.get():
         # Gestion de la fermeture de la fenetre
@@ -128,13 +121,9 @@ def demande_evenements():
             evenements['clic'] = list(event.pos)
     # Gestion des touches. pygame.KeyDown ne va pas gérer plusieurs touches enfoncées
     # https://www.pygame.org/docs/ref/key.html#pygame.key.get_pressed
-    for index, enfoncee in enumerate(pygame.key.get_pressed()):
-        if enfoncee:
-            # On traduit les touches speciales
-            if pygame.key.name(index) in touches_speciales:
-                touche = touches_speciales[pygame.key.name(index)]
-            else:
-                touche = pygame.key.name(index)
+    touches = pygame.key.get_pressed()
+    for touche, k_touche in TOUCHES_PYGAMES.items():
+        if touches[getattr(pygame, k_touche)]:
             evenements[touche] = None
 
     return evenements
